@@ -1,0 +1,82 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    width: 100vw;
+    min-height: 100vh;
+    background-color: aliceblue;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+h2 {
+    font-size: 2.2em;
+}
+
+h3 {
+    font-size: 2em;
+    font-weight: 500;
+}
+
+body>div {
+    max-width: 1024px;
+    width: 100%;
+    padding: 5px;
+    margin: 4px;
+    text-transform: capitalize;
+}
+
+div#logo {
+    background-color: gray;
+}
+
+div#navigation,
+div#header-banner,
+div#footer {
+    text-align: center;
+    background-color: gray;
+}
+
+div#header-banner,
+div#body>div {
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+div#mybody {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 15px 0;
+    padding: 0;
+}
+
+div#mybody>div {
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+div#mybody>div.component-sidebar {
+    width: 30%;
+    background-color: gray;
+}
+
+div#mybody>div.component-body-area {
+    width: 68%;
+    background-color: gray;
+}
