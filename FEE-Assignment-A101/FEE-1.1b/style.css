@@ -1,0 +1,75 @@
+:root {
+    --color-a: #B7C7C4;
+    --color-b: #29A28A;
+}
+
+body {
+    margin: 3em 0;
+    width: 100vw;
+    background-color: var(--color-a);
+    text-transform: uppercase;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.commont-bgr {
+    background-color: var(--color-b);
+}
+
+body>div {
+    max-width: 1025px;
+    width: 100%;
+    color: #fff;
+    margin: 15px auto;
+}
+
+#contained-image {
+    max-width: 100vw;
+    width: 100%;
+    height: 55vh;
+}
+
+#contained-image>img {
+    width: 100%;
+    height: 100%;
+}
+
+#nav,
+#sub-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#nav {
+    height: 7vh;
+}
+
+#sub-header {
+    height: 9vh;
+}
+
+#contained-content {
+    height: 40vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+#contained-content>div.content {
+    width: 30%;
+    height: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+#contained-content>div.content>img{
+    width: 100%;
+    height: 75%;
+}
+#contained-content>div.content>div{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,0 +1,12 @@
+:root {
+    --color-a: #B7C7C4;
+    --color-b: #29A28A;
+}
+
+body {
+    margin: 3em 0;
+    width: 100vw;
+    background-color: var(--color-a);
+    text-transform: uppercase;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

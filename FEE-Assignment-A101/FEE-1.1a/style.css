@@ -32,7 +32,7 @@ h3 {
 body>div {
     max-width: 1024px;
     width: 100%;
-    padding: 5px;
+    padding: 5px 0;
     margin: 4px;
     text-transform: capitalize;
 }
@@ -41,6 +41,9 @@ div#logo {
     background-color: gray;
 }
 
+div#logo h1{
+    margin-left: 1em;
+}
 div#navigation,
 div#header-banner,
 div#footer {
