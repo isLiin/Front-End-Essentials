@@ -1,12 +1,122 @@
 :root {
-    --color-a: #B7C7C4;
-    --color-b: #29A28A;
+    --color-0: #FB6447;
+    --color-1: #8A2BE2;
+    --color-2: #34F5F5;
+    --color-3: #7FFF00;
+    --color-4: #A52A2A;
+}
+
+* {
+    /* Reset all tag padding/margin by 0 */
+    padding: 0;
+    margin: 0;
 }
 
 body {
     margin: 3em 0;
     width: 100vw;
-    background-color: var(--color-a);
     text-transform: uppercase;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+div {
+    margin: 5px 0;
+}
+
+#main {
+    gap: 10px;
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#main>div {
+    gap: 5px;
+    color: #fff;
+}
+
+#menu,
+#component-0>div.component>div.cpn,
+#component-0>div.component>div.div-component>div,
+#list .item {
+    background-color: var(--color-0);
+}
+
+#component-0>div.component>div.header,
+#nav {
+    background-color: var(--color-1);
+}
+
+#menu {
+    width: 100%;
+    height: 5vh;
+}
+
+#component-0 {
+    display: flex;
+    justify-content: space-between;
+}
+
+#component-0>div.component {
+    height: 35vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#component-0>div.component:first-child {
+    width: 70%;
+}
+
+#component-0>div.component:last-child {
+    width: 30%;
+}
+
+#component-0>div.component>div.header {
+    width: 100%;
+    height: 10%;
+}
+
+#component-0>div.component>div.div-component {
+    margin: 0;
+    width: 100%;
+    height: calc((100% - 13%)/4);
+    gap: 10px;
+    display: grid;
+    grid-template-columns: 30% auto;
+}
+
+#component-0>div.component>div.div-component>div {
+    width: 100%;
+    height: calc(100% - 10px);
+}
+
+#component-0>div.component>div.div-component>div:first-child{
+    background-color: var(--color-2);    
+}
+#component-0>div.component>div.div-component>div:last-child{
+    background-color: var(--color-3);
+}
+
+#component-0>div.component>div.cpn {
+    width: 33%;
+    height: calc(90% - 20px);
+}
+
+#nav {
+    width: 100%;
+    height: 5vh;
+}
+
+#list {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 10px;
+}
+#list .item{
+    height: 30vh;
+}
+#footer{
+    height: 7vh;
+    background-color: var(--color-4);
 }
