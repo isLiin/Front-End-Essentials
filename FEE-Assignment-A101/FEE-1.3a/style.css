@@ -1,0 +1,63 @@
+:root {
+    --color-0: #37ECB9;
+    --color-1: #339966;
+    --color-2: #2BBF96;
+    --color-3: #19816A;
+    --color-4: #fff;
+}
+
+#main {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 10vh auto;
+    width: 650px;
+    height: 350px;
+    background-color: var(--color-0);
+    padding: 2em;
+}
+
+h1 {
+    font-size: 3em;
+    font-weight: 500;
+    color: var(--color-1);
+    text-align: center;
+    text-transform: capitalize;
+}
+
+#component-clock {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#component-clock .display-show {
+    margin: 0 1em;
+    width: 125px;
+    height: 150px;
+    border-radius: 4px;
+    color: var(--color-4);
+    background-color: var(--color-2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#component-clock .display-show div {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#component-clock .display-show div:first-child {
+    width: 85px;
+    height: 75px;
+    
+    font-size: 2em;
+    border-radius: 4px;
+    background-color: var(--color-3);
+}
+
+#component-clock .display-show div:last-child {
+    font-size: 1.5em;
+    text-transform: capitalize;
+}
