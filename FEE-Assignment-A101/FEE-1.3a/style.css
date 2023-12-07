@@ -7,12 +7,14 @@
 }
 
 #main {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 10vh auto;
     width: 650px;
     height: 350px;
     background-color: var(--color-0);
     padding: 2em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 4px;
+    box-shadow: gray 0 0 11px .5px;
 }
 
 h1 {
@@ -51,7 +53,7 @@ h1 {
 #component-clock .display-show div:first-child {
     width: 85px;
     height: 75px;
-    
+
     font-size: 2em;
     border-radius: 4px;
     background-color: var(--color-3);
