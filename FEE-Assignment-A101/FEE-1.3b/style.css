@@ -1,115 +1,156 @@
 * {
-  padding: 0;
-  margin: 0;
+    padding: 0;
+    margin: 0;
 }
 
 :root {
-  --color-0: #ffffff;
+    --color-0: #ffffff;
+    --color-1: #2782A7;
+    --color-2: #909090;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #main {
-  width: 100vw;
-  display: flex;
-  justify-content: space-between;
-  font-family: sans-serif;
+    width: 1025px;
+    height: 400px;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    font-family: sans-serif;
+    box-shadow: rgb(85, 90, 121) 0 0 11px 0.5px;
 }
 
-#main > .component {
-  width: 30%;
-  height: 550px;
-}
-#main > .component > .header {
-  width: 100%;
-  font-size: 2em;
-  display: flex;
-  justify-content: space-between;
-}
-#main > .component > .header a {
-  text-decoration: none;
-  color: #4e7288;
-  text-transform: capitalize;
-  font-size: 0.6em;
-  margin: auto 0;
-}
-#main > .component > .header a:hover {
-  text-decoration: underline !important;
+#main>.component {
+    width: 31%;
+    height: 100%;
 }
 
-.contained-news {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-.contained-news .n-items {
-  width: 100%;
-  height: calc(100% / 3);
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  padding: 1.5em 0;
-  border-bottom: 0.9px dashed gray;
+#main>.component>.header {
+    width: 100%;
+    height: 35px;
+    font-size: 2em;
+    text-transform: capitalize;
+    display: flex;
+    justify-content: space-between;
 }
 
-.contained-news .n-items .item-img {
-  width: 150px;
-  height: 90px;
-  padding: 10px;
-  box-shadow: gray 0 0 11px 0.5px;
-}
-.contained-news .n-items .item-img img {
-  width: 100%;
-  height: 100%;
-}
-.contained-news .n-items .item-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+#main>.component>.header a {
+    text-decoration: none;
+    color: var(--color-1);
+    text-transform: capitalize;
+    font-size: 0.6em;
+    margin: auto 0;
 }
 
-.contained-news
-  .n-items
-  .item-info
-  .contained-news
-  .n-items
-  .item-info
-  .item-date {
-  color: #ababab;
-  text-transform: capitalize;
+#main>.component>.header a:hover {
+    text-decoration: underline !important;
 }
 
-.contained-news .n-items .item-info .item-par {
-  color: #909090;
+#main>.component>.contained {
+    height: calc(100% - 35px);
 }
 
-.contained-news .n-items .item-info .item-par a {
-  text-decoration: none;
-  color: #4e7288;
-  text-transform: capitalize;
+.contained-news,
+.contained-agents {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.n-items {
+    width: 100%;
+    height: calc((100% / 3) - 3em);
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 1.5em 0;
+    border-bottom: 0.9px dashed gray;
+}
+
+.img-content {
+    width: 70px;
+    height: calc(80px - 10px);
+    padding: 10px;
+    box-shadow: gray 0 0 4px -0.5px;
+}
+
+.img-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.n-items .item-info {
+    width: calc(100% - 80px - 10px);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.n-items .item-info .item-date {
+    color: #ababab;
+    text-transform: capitalize;
+}
+
+.n-items .item-info .item-par {
+    color: var(--color-2);
+}
+
+.n-items .item-info>a {
+    text-transform: capitalize;
+    color: var(--color-1);
+    text-decoration: none;
+}
+
+.n-items .item-info .item-par .paragrap {
+    font-size: .9em;
+}
+
+.n-items .item-info .item-par a {
+    text-decoration: none;
+    color: var(--color-1);
+    text-transform: capitalize;
 }
 
 .contained-welcome {
-  width: 100%;
-  padding: 1.5em 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+    width: 100%;
+    padding: 1.5em 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .contained-welcome .w-item {
-  height: 100%;
-  gap: 10px;
-  padding: 10px;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    padding: 15px 0 0 0;
+    color: var(--color-2);
 }
 
 .contained-welcome .welcome-img {
-  width: 100%;
-  height: 50%;
-  padding: 10px;
-  box-shadow: gray 0 0 11px 0.5px;
+    width: calc(100% - 20px);
+    height: 50%;
+    padding: 10px;
+    box-shadow: gray 0 0 4px -0.5px;
 }
 
 .contained-welcome .welcome-img img {
-  width: 100%;
-  height: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.contained-agents .n-items .item-info .item-header {
+    text-transform: capitalize;
 }
