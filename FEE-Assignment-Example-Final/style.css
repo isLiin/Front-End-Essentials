@@ -1,0 +1,192 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --color-0: tomato;
+    --color-1: #fff;
+    --color-2: rgb(255, 187, 71);
+    --color-3: rgb(255, 80, 71);
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    font-family: sans-serif;
+}
+
+input,
+select {
+    cursor: pointer;
+}
+
+#main {
+    width: 100%;
+    height: 45%;
+    padding: 10px;
+    box-sizing: border-box;
+    display: grid;
+    gap: 1em;
+    grid-template-rows: auto auto;
+}
+
+#main #editing-infomation {
+    display: grid;
+    gap: 10px;
+    grid-template-rows: 10% auto 15%;
+}
+
+#main #editing-infomation>#header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#main #editing-infomation>#header h2 {
+    display: flex;
+    text-transform: uppercase;
+}
+
+#main #editing-infomation>#header h2 span {
+    margin-left: 4px;
+    color: var(--color-0);
+}
+
+
+#main #editing-infomation>#infomation {
+    display: grid;
+    gap: 50px;
+    grid-template-columns: auto auto;
+}
+
+#main #editing-infomation>#point {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: auto auto auto;
+}
+
+#main #editing-infomation>#point input {
+    width: calc(100% - 50px);
+    text-align: right;
+}
+
+
+#main #editing-infomation .info-left {
+    display: grid;
+    grid-template-rows: auto auto;
+}
+
+#main #editing-infomation input,
+#main #editing-infomation select {
+    padding: 5px 10px;
+    margin-top: .7em;
+}
+
+#main #editing-infomation .info-left input,
+#main #editing-infomation .info-right input {
+    width: calc(100% - 20px);
+    /* border: none;
+    outline: none; */
+}
+
+#main #editing-infomation .info-left select,
+#main #editing-infomation .info-right select {
+    width: 100%;
+}
+
+#main #editing-infomation .info-left label {
+    margin-bottom: 1em;
+    font-weight: 600;
+}
+
+#main #editing-infomation .info-right {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+#main #editing-infomation .info-right .info-right__gender label {
+    cursor: pointer;
+}
+
+#main #editing-infomation .info-right .info-right__gender div.choose-gender {
+    display: inline;
+    margin-right: 1em;
+}
+
+#main #editing-infomation .info-right input[type="radio"] {
+    width: auto;
+}
+
+#main #editing-infomation .info-right .info-right__class {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+#btn-submit {
+    background: none;
+    border: 1px var(--color-0) solid;
+    width: 150px;
+    height: 35px;
+    padding: 10px 15px !important;
+    font-weight: 600;
+    color: var(--color-0);
+    border-radius: 4px;
+}
+
+#btn-submit:hover {
+    background-color: tomato;
+    color: var(--color-1) !important;
+}
+
+#main #showing-infomation {
+    display: grid;
+    grid-template-rows: 80px auto;
+    gap: 15px;
+}
+
+#main #showing-infomation .showing-infomation__top h2 {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#main #showing-infomation .showing-infomation__top .showing-search {
+    display: grid;
+    grid-template-columns: 20% auto 10%;
+    gap: 25px;
+}
+.showing-infomation__top .showing-search *{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.showing-infomation__top .showing-search #showing__search{
+    padding: 5px 10px;
+}
+
+
+#main #showing-infomation .showing-infomation__bottom table{
+    width: 100%;
+    height: 100%;
+    box-shadow: gray 0 0 .5px 1px;
+}
+.showing-infomation__bottom table thead{
+    height: 50px;
+}
+
+.showing-infomation__bottom table .btn{
+    cursor: pointer;
+    width: 35px;
+    height: 35px;
+    border-radius: 4px;
+    background-color: #fff;
+}
+.showing-infomation__bottom table .btn-edit{
+    border-color: var(--color-2);
+    color: var(--color-2);
+}
+.showing-infomation__bottom table .btn-trash{
+    border-color: var(--color-3);
+    color: var(--color-3);
+}

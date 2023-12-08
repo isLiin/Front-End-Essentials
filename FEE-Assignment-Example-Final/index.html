@@ -4,16 +4,151 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../Common/fontAwesome/all.min.css">
+    <link rel="stylesheet" href="../Common/fontAwesome/all.min.css" />
     <link rel="stylesheet" href="style.css" />
     <title>Final</title>
   </head>
   <body>
     <div id="main">
-      <i class="far fa-edit"></i>
+      <div id="editing-infomation">
+        <div id="header">
+          <h2>
+            <p>QUAN LY HOC SINH</p>
+            <span> TRUÖNG THPT ABC</span>
+          </h2>
+        </div>
+
+        <div id="infomation">
+          <div class="info-left">
+            <div class="info__input info-left__input">
+              <div class="header">
+                <label for="student__name">Ho và tên Hoc sinh</label>
+              </div>
+              <input
+                id="student__name"
+                name="student__name"
+                type="text"
+                placeholder="Ho va ten hoc viên"
+              />
+            </div>
+            <div class="info__input info-left__input">
+              <div class="header">
+                <label for="student__khoi">Khoi lop hoc</label>
+              </div>
+              <select name="student__khoi" id="student__khoi">
+                <option value="0">Chon Khoi lóp hoc ...</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+              </select>
+            </div>
+          </div>
+          <div class="info-right">
+            <div class="info__input info-right__gender">
+              <div class="header">Giói tính</div>
+              <div class="choose-gender">
+                <input type="radio" name="gender" id="gender__male" checked />
+                <label for="gender__male">Nam</label>
+              </div>
+              <div class="choose-gender">
+                <input type="radio" name="gender" id="gender__female" />
+                <label for="gender__female">Nü</label>
+              </div>
+              <div class="choose-gender">
+                <input type="radio" name="gender" id="gender__other" />
+                <label for="gender__other">Khác</label>
+              </div>
+            </div>
+            <div class="info__input info-right__dob">
+              <div class="header">
+                <label for="student__dob">Ngay sinh</label>
+              </div>
+              <input type="date" name="student__dob" id="student__dob" />
+            </div>
+            <div class="info__input info-right__class">
+              <div class="header">
+                <label for="student__class">Lop hoc</label>
+              </div>
+              <select name="student__class" id="student__class">
+                <option value="0">Chon Khoi lóp hoc ...</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div id="point">
+          <div class="point-math">
+            <div class="header">
+              <label for="point-math">Diêm môn Toán</label>
+            </div>
+            <input type="text" id="point-ly" placeholder="HTML vs CSS" />
+          </div>
+          <div class="point-ly">
+            <div class="header">
+              <label for="point-ly">Diëm môn Ly</label>
+            </div>
+            <input type="text" id="point-ly" placeholder="JavaScript" />
+          </div>
+          <div class="point-ly">
+            <div class="header">
+              <label for="point-hoa">Diëm môn Hoa</label>
+            </div>
+            <input type="text" id="point-hoa" placeholder="Jquery" />
+          </div>
+        </div>
+
+        <input
+          id="btn-submit"
+          type="button"
+          value="Luu thông tin"
+          onclick="alert(123)"
+        />
+      </div>
+
+      <div id="showing-infomation">
+        <div class="showing-infomation__top">
+          <div class="header"><h2>DANH SáCH HọC SINH</h2></div>
+          <div class="showing-search">
+            <label for="showing__search">Nhâp tên Học sinh cần tìm kiếm</label>
+            <input
+              type="search"
+              name="showing__search"
+              id="showing__search"
+              placeholder="Nhap tên Hoc sinh"
+            />
+            <input type="button" value="search" />
+          </div>
+        </div>
+        <div class="showing-infomation__bottom">
+          <table>
+            <thead>
+              <tr>
+                <td>#</td>
+                <td>Họ và tên</td>
+                <td>Giới tính</td>
+                <td>Ngày sinh</td>
+                <td>Khối</td>
+                <td>Lớp học</td>
+                <td>M. Toán</td>
+                <td>M. Lý</td>
+                <td>M. Hóa</td>
+                <td>D.TB</td>
+                <td>Action</td>
+              </tr>
+            </thead>
+            <tbody id="container-data">
+              <!-- Data -->
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
+    <!-- close main -->
 
     <script src="../Common/fontAwesome/all.min.js"></script>
+    <script src="../Common/jquery/jquery.min.js"></script>
+    <script src="../Common/jquery/bootstrap.bundle.min.js"></script>
+    <script src="../Common/jquery/popper.min.js"></script>
     <script src="./script.js"></script>
   </body>
 </html>
