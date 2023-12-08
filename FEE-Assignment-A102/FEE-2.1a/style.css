@@ -1,0 +1,76 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --color-0: #2E2E2E;
+    --color-1: #EBA101;
+    --color-2: #ffffff;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+    font-size: 14px;
+}
+
+#main {
+    width: 1025px;
+    height: 250px;
+    padding: 15px;
+    border-radius: 4px;
+    color: var(--color-2);
+    background-color: var(--color-1);
+    box-shadow: var(--color-0) 0 0 4px -0.5px;
+
+    display: grid;
+    gap: 15px;
+    grid-template-columns: auto auto 50%;
+}
+
+#main>div>.header {
+    text-transform: uppercase;
+    padding-bottom: 1.5em;
+}
+#main>div>.header h3{
+    font-weight: 400;
+
+}
+
+#main>div>.par {
+    text-align: justify;
+}
+
+#get-in-touch .myform form {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: auto auto;
+}
+
+#get-in-touch .myform form input {
+    padding: 10px 15px;
+    outline: none;
+    border: none;
+}
+
+#get-in-touch .myform form input[type="button"] {
+    padding: 15px 0;
+    color: var(--color-2);
+    background-color: var(--color-0);
+}
+
+#get-in-touch .myform form input[type="button"],
+#i_mySubject {
+    margin-top: .5em;
+}
+
+#i_mySubject,
+#i_myMessage {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
