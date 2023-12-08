@@ -1,0 +1,168 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --color-0: #FFFFFF;
+    --color-1: #e0e0e0;
+    --color-2: #848484;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+}
+
+#main {
+    width: 1025px;
+    height: 450px;
+
+    border-radius: 7px;
+    background: var(--color-1);
+    box-shadow: 7px 7px 14px var(--color-2),
+        -7px -7px 14px var(--color-0);
+
+    overflow: hidden;
+    position: relative;
+}
+
+
+#main .list-imgs {
+    width: 100%;
+    height: 100%;
+}
+
+#main .list-imgs img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(2px);
+}
+
+#main>.component-body {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    display: grid;
+    grid-template-columns: 8% auto 8%;
+}
+
+#main>.component-body .btn-prew,
+#main>.component-body .btn-next {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    backdrop-filter: blur(5px);
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    transition: all .2s ease-in-out;
+    filter: blur(2px);
+}
+
+#main>.component-body .btn-prew {
+    justify-content: flex-end;
+}
+
+#main>.component-body .btn-next {
+    justify-content: flex-start;
+}
+
+#main>.component-body .btn-prew:hover,
+#main>.component-body .btn-next:hover {
+    cursor: pointer;
+    filter: blur(0);
+}
+
+#main>.component-body .btn-prew .prew,
+#main>.component-body .btn-next .next {
+    width: 50px;
+    height: 50px;
+    border-top: 2px solid var(--color-0);
+    border-left: 2px solid var(--color-0);
+}
+
+#main>.component-body .btn-prew .prew {
+    rotate: -45deg;
+}
+
+#main>.component-body .btn-next .next {
+    rotate: calc(45deg * 3);
+}
+
+#main>.component-body .content,
+#main>.component-body .content .nav,
+#main>.component-body .content .group-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#main>.component-body .content .header,
+#main>.component-body .content .header h2 {
+    font-size: 1.6em;
+    font-weight: 100;
+    color: var(--color-0);
+}
+
+#main>.component-body .content .nav {
+    margin: 15px 0 25px 0;
+}
+
+#main>.component-body .content .nav .nav-1 {
+    font-weight: 100;
+    color: var(--color-2);
+}
+
+#main>.component-body .content .nav .nav-2 {
+    font-weight: 600;
+    color: var(--color-0);
+}
+
+
+#main>.component-body .content .group-btn {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#main>.component-body .content .group-btn input {
+    margin: 10px 15px;
+    width: 30%;
+    height: 35px;
+
+    background: none;
+    color: var(--color-0);
+    border: 2px var(--color-0) solid;
+
+    text-transform: uppercase;
+    transition: all .2s ease-in-out;
+}
+
+#main>.component-body .content .group-btn input:hover {
+    cursor: pointer;
+    filter: blur(.1px);
+    color: var(--color-2);
+    background-color: var(--color-0) !important;
+}
+
+#main>.component-body .content .group-btn input.disaple {
+    filter: blur(.5px);
+    border-color: var(--color-2);
+    color: var(--color-2);
+}
+
+#main>.component-body .content .group-btn input.disaple:hover {
+    cursor: default;
+    background: none !important;
+}
