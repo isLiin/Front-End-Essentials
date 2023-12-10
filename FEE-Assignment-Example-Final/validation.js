@@ -38,7 +38,6 @@ function validateDateOfBirth(dateString) {
 
 function validateSelectedOption(selectElement) {
 
-    console.log(parseInt(selectElement) == 0);
     // Kiểm tra xem một mục đã được chọn hay chưa
     if (parseInt(selectElement) == 0) {
         return true;
