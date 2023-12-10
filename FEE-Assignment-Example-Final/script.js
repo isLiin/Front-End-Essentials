@@ -238,14 +238,17 @@ function deleteStudent() {
 }
 
 function searchStudent() {
-    let search = $("#showing__search").val();
     let result = [];
+    // Get
+    let search = $("#showing__search").val();
 
+    // Search
     for (let i = 0; i < listStudents.length; i++) {
         if (listStudents[i].name.toLowerCase().indexOf(search.toLowerCase()) != -1) {
             result.push(listStudents[i]);
         }
     }
 
+    // Show
     showData(result);
 }
