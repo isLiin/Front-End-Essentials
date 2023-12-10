@@ -70,18 +70,18 @@ function updateClass(grade) {
     switch (grade) {
         case "10":
             container.html("");
-            container.append(`<option value="10a">10a</option>`);
-            container.append(`<option value="10b">10b</option>`);
+            container.append(`<option value="10A">10A</option>`);
+            container.append(`<option value="10B">10B</option>`);
             break;
         case "11":
             container.html("");
-            container.append(`<option value="11a">11a</option>`)
-            container.append(`<option value="11b">11b</option>`)
+            container.append(`<option value="11A">11A</option>`)
+            container.append(`<option value="11B">11B</option>`)
             break;
         case "12":
             container.html("");
-            container.append(`<option value="12a">12a</option>`);
-            container.append(`<option value="12b">12b</option>`);
+            container.append(`<option value="12A">12A</option>`);
+            container.append(`<option value="12B">12B</option>`);
             break;
         default:
             container.html("");
