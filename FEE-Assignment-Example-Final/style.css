@@ -117,7 +117,7 @@ label {
 }
 
 #btn-submit {
-    width: 150px;
+    max-width: 250px;
     height: 45px;
     font-weight: 600;
     color: var(--color-0);

@@ -32,8 +32,27 @@ const showData = (listStudents) => {
     const container = $("#container-data");
     // clear: xoa du lieu
     container.html("");
+
+    // count
+    let count_10 = 0;
+    let count_11 = 0;
+    let count_12 = 0;
+
     // append: them du lieu vao table
     listStudents.forEach((student, index) => {
+
+        switch (student.grade) {
+            case "10":
+                count_10++;
+                break;
+            case "11":
+                count_11++;
+                break;
+            case "12":
+                count_12++;
+                break;
+        }
+
         container.append(`<tr class="row">
                                 <td class="col">${index}</td>
                                 <td class="col items-name">${student.name}</td>
@@ -56,6 +75,12 @@ const showData = (listStudents) => {
                             </tr>
                         `);
     })
+
+    // Show total number of students
+    $(".count-10").html("Grade 10: " + count_10);
+    $(".count-11").html("Grade 11: " + count_11);
+    $(".count-12").html("Grade 12: " + count_12);
+    $(".count-total").html("Grade total: " + listStudents.length);
 };
 
 
@@ -115,6 +140,7 @@ function cleanForm() {
  * @return {undefined} No return value.
  */
 function submitForm() {
+
     // Create new Student
     let std_name = $("#student__name").val();
     let std_gender = $("input[name=gender]:checked").val();
@@ -200,7 +226,7 @@ function submitForm() {
 
     // add data to table
     showData(listStudents);
-    cleanForm();
+    // cleanForm();
 }
 
 function changeStudentGrade() {
@@ -209,6 +235,10 @@ function changeStudentGrade() {
 }
 
 function editStudent(index) {
+
+    // change title
+    $("#btn-submit").attr('value', "Cập nhật thông tin");
+
     // Get
     let items_name = listStudents[index].name;
     let items_dob = listStudents[index].dob;
@@ -254,6 +284,13 @@ function searchStudent() {
     let result = [];
     // Get
     let search = $("#showing__search").val();
+
+    // Validate
+    if (!validateName(search)) {
+        alert("Kiểm tra lai ten");
+        $("#showing__search").focus();
+        return;
+    }
 
     // Search
     for (let i = 0; i < listStudents.length; i++) {
