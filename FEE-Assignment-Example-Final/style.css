@@ -71,12 +71,11 @@ label {
 
 #main #editing-infomation>#point {
     display: grid;
-    gap: 10px;
+    gap: 50px;
     grid-template-columns: auto auto auto;
 }
 
 #main #editing-infomation>#point input {
-    width: calc(100% - 50px);
     text-align: right;
 }
 
