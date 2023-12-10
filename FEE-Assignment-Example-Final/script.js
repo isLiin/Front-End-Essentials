@@ -94,18 +94,18 @@ function updateClass(grade) {
  * Clears the form fields 
  * */
 function cleanForm() {
-    Student.name = $("#student__name").val("");
-    Student.gender = $("#gender__male").prop("checked", true);
-    Student.dob = $("#student__dob").val("");
-    Student.grade = $("#student__grade").html(`
-                                    <option value="0">chọn khối ...</option>
-                                    <option value="10">10</option>
-                                    <option value="11">11</option>
-                                    <option value="12">12</option>`);
-    Student.class = $("#student__class").html(`<option value="0">Chọn lớp học ...</option>`);
-    Student.math = $("#point-math").val("");
-    Student.physics = $("#point-physics").val("");
-    Student.chemistry = $("#point-chemistry").val("");
+    $("#student__name").val("");
+    $("#gender__male").prop("checked", true);
+    $("#student__dob").val("");
+    $("#student__grade").html(`
+                <option value="0">chọn khối ...</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>`);
+    $("#student__class").html(`<option value="0">Chọn lớp học ...</option>`);
+    $("#point-math").val("");
+    $("#point-physics").val("");
+    $("#point-chemistry").val("");
     $("#student__name").focus();
 }
 
@@ -209,32 +209,45 @@ function changeStudentGrade() {
 }
 
 function editStudent(index) {
-    alert("edit")
+    // Get
+    let items_name = listStudents[index].name;
+    let items_dob = listStudents[index].dob;
+    let items_grade = listStudents[index].grade;
+    let items_class = listStudents[index].class;
+    let items_math = listStudents[index].math;
+    let items_physics = listStudents[index].physics;
+    let items_chemistry = listStudents[index].chemistry;
 
-    let items_name = $(".items-name").html();
-    let items_gender = $(".items-gender").html();
-    let items_dob = $(".items-dob").html();
-    let items_grade = $(".items-grade").html();
-    let items_class = $(".items-class").html();
-    let items_math = $(".items-math").html();
-    let items_physics = $(".items-physics").html();
-    let items_chemistry = $(".items-chemistry").html();
+    // Show
+    $("#student__name").val(items_name);
 
+    if (listStudents[index].gender == "nam") {
+        $("#gender__male").prop("checked", true);
+    } else if (listStudents[index].gender == "Nữ") {
+        $("#gender__female").prop("checked", true);
+    } else {
+        $("#gender__other").prop("checked", true);
+    }
 
-    $("#student__name").html(items_name);
-    $("#student__dob").html(items_dob);
-    $("#student__grade").html(items_grade);
-    $("#student__class").html(items_class);
-    $("#point-math").html(items_math);
-    $("#point-physics").html(items_physics);
-    $("#point-chemistry").html(items_chemistry);
+    $("#student__dob").val(items_dob);
+    $("#student__grade").val(items_grade);
+
+    updateClass(items_grade);
+    $("#student__class").val(items_class);
+
+    $("#point-math").val(items_math);
+    $("#point-physics").val(items_physics);
+    $("#point-chemistry").val(items_chemistry);
+
+    // Delete
     listStudents.splice(index, 1);
 }
 
-function deleteStudent() {
-    alert("delete")
-    // listStudents.splice(this, 1);
-    // showData();
+function deleteStudent(index) {
+    // Delete
+    listStudents.splice(index, 1);
+    // Show
+    showData(listStudents);
 }
 
 function searchStudent() {
