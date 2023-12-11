@@ -227,6 +227,11 @@ function submitForm() {
     // add data to table
     showData(listStudents);
     // cleanForm();
+    cleanForm();
+
+    if ($("#btn-submit").attr('value') == "Cập nhật thông tin") {
+        $("#btn-submit").attr('value', "Lưu thông tin");
+    }
 }
 
 function changeStudentGrade() {
@@ -242,6 +247,7 @@ function editStudent(index) {
     // Get
     let items_name = listStudents[index].name;
     let items_dob = listStudents[index].dob;
+    let items_gender = listStudents[index].gender;
     let items_grade = listStudents[index].grade;
     let items_class = listStudents[index].class;
     let items_math = listStudents[index].math;
@@ -250,13 +256,17 @@ function editStudent(index) {
 
     // Show
     $("#student__name").val(items_name);
-
-    if (listStudents[index].gender == "nam") {
-        $("#gender__male").prop("checked", true);
-    } else if (listStudents[index].gender == "Nữ") {
-        $("#gender__female").prop("checked", true);
-    } else {
-        $("#gender__other").prop("checked", true);
+    console.log(items_gender);
+    switch (items_gender) {
+        case "Nam":
+            $("#gender__male").prop("checked", true);
+            break;
+        case "Nữ":
+            $("#gender__female").prop("checked", true);
+            break;
+        case "Khác":
+            $("#gender__other").prop("checked", true);
+            break;
     }
 
     $("#student__dob").val(items_dob);
@@ -274,10 +284,12 @@ function editStudent(index) {
 }
 
 function deleteStudent(index) {
-    // Delete
-    listStudents.splice(index, 1);
-    // Show
-    showData(listStudents);
+    if (confirm("Bạn có chắc muốn xóa Row thông tin này không?”. ")) {
+        // Delete
+        listStudents.splice(index, 1);
+        // Show
+        showData(listStudents);
+    }
 }
 
 function searchStudent() {
