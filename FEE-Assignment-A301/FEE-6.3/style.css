@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css?family=Kaushan+Script");
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --color-0: #EF7998;
+    --color-1: #000;
+    --color-2: #fff;
+    --color-3: #EEEEEE;
+    --color-4: #888787;
+}
+
+body {
+    font-family: Kaushan Script;
+    background-color: var(--color-3);
+}
+
+.myFormSearch {
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.myInputSearch {
+    width: 40%;
+}
+
+.btnSearch {
+    color: var(--color-1);
+    background-color: var(--color-0) !important;
+}
+
+#group-data {
+    width: 1025px;
+    margin: 2.5em auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.card {
+    margin: 1em 0;
+    width: 300px;
+    height: 250px;
+
+    display: grid;
+    grid-template-rows: 75% 25%;
+
+    font-weight: 600;
+    text-transform: capitalize;
+
+    background-color: var(--color-2);
+    box-shadow: var(--color-4) 0 0 2px 0.25px;
+    overflow: hidden;
+    transition: all 0.2s ease;
+}
+
+.card:hover {
+    cursor: pointer;
+    box-shadow: var(--color-4) 0 0 2px 0.5px;
+}
+
+.card:hover img {
+    transform: scale(1.1);
+}
+
+.card>img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
