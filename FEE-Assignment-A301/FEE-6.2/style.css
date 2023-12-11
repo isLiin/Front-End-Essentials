@@ -1,0 +1,58 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --color-0: #FFFFFF;
+    --color-1: #e0e0e0;
+    --color-2: #848484;
+}
+
+#main {
+    padding: 3em;
+    margin: 5rem auto;
+    max-width: 1025px;
+    width: 50%;
+    box-shadow: 1px 3px 9px rgba(38, 116, 140, 0.357);
+    border-radius: 4px;
+}
+
+#main h3{
+    text-align: center;
+    text-transform: capitalize;
+}
+
+#title-error{
+    position: absolute;
+    bottom: -1.3em;
+    left: 0;
+}
+
+.customInput:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.customItems{
+    display: grid;
+    grid-template-columns: 80% 20%;
+}
+
+.customBtn,
+.customBtnEdit{
+    width: 30px;
+    height: 30px;
+    font-size: 1.3em;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.customBtnEdit{
+    border: none;
+}
+
+.btn{
+    text-transform: capitalize;
+}

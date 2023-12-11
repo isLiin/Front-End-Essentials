@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>7.3 - FEE-Assignment-A302</title>
+  <link rel="stylesheet" href="../../Common/fontAwesome/brands.min.css" />
+  <link rel="stylesheet" href="../../Common/fontAwesome/regular.min.css" />
+  <link rel="stylesheet" href="../../Common/fontAwesome/all.min.css" />
+  <link rel="stylesheet" href="../../Common/boostrap/bootstrap.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div id="main">
+    <h3 class="mb-4">to do list</h3>
+    <div class="input-group position-relative">
+      <input type="text" class="form-control btn-outline-success customInput" id="userInput" placeholder="Enter name" />
+      <div class="input-group-append">
+        <button id="userBtn-add" value="add" onclick="addValue()" class="btn btn-outline-success border-success">
+          Add item
+        </button>
+      </div>
+      <small class="text-danger" id="title-error"></small>
+    </div>
+
+    <div id="group-data" class="list-group mt-4"></div>
+
+    <div class="list-group mt-4 d-flex justify-content-center align-items-center">
+      <button onclick="clearAll()" class="btn btn-outline-success mt-4">Clear items</button>
+    </div>
+  </div>
+  </div>
+</body>
+<script src="../../Common/fontAwesome/brands.min.js"></script>
+<script src="../../Common/fontAwesome/regular.min.js"></script>
+<script src="../../Common/fontAwesome/all.min.js"></script>
+<script src="../../Common/jquery/popper.min.js"></script>
+<script src="../../Common/jquery/jquery.min.js"></script>
+<script src="../../Common/jquery/bootstrap.bundle.min.js"></script>
+<script src="./validation.js"></script>
+<script src="./script.js"></script>
+
+</html>
