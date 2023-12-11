@@ -41,7 +41,7 @@ function Search(keysItem) {
 $(document).ready(function () {
     isEmpty();
 
-    $("#search").on('change', function () {
+    $("#search").on('keyup', function () {
         let search = $(this).val();
         $("#group-data").html("");
         CONTAINER_DATA.forEach((item, index) => {
