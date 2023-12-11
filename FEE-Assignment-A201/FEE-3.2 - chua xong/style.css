@@ -1,0 +1,40 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --color-0: #C0C0C0;
+}
+
+.bg-myColor {
+    display: flex;
+    align-items: center;
+    text-transform: capitalize;
+    background-color: var(--color-0);
+}
+
+.logo {
+    height: 85px;
+}
+
+.nav,
+.myFooter {
+    height: 50px;
+    justify-content: center;
+}
+
+.header {
+    justify-content: center;
+    height: 250px;
+}
+
+.mybody-side,
+.mybody-body {
+    height: 550px;
+    justify-content: center;
+}
+
+.mybody-side{
+    max-width: 30%;
+}
