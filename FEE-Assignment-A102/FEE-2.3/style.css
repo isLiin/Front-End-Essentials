@@ -1,0 +1,117 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --color-0: #FFFFFF;
+    --color-1: #e0e0e0;
+    --color-2: #848484;
+}
+
+#main {
+    margin: 15vh auto;
+    max-width: 1025px;
+    width: 100%;
+    height: 250px;
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.18);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.357);
+    backdrop-filter: blur(5.7px);
+    -webkit-backdrop-filter: blur(5.7px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    display: grid;
+    gap: 50px;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+}
+
+#main .content {
+    position: relative;
+}
+
+#main .background:hover {
+    cursor: pointer;
+}
+
+#main .content:hover > .content-item{
+    display: flex;
+}
+
+#main .content .content-item {
+    display: none;
+
+    cursor: pointer;
+    color: var(--color-0);
+
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    position: absolute;
+    top: 0;
+    margin: 0;
+    left: 0;
+    right: 0;
+
+    background: rgb(106, 71, 184);
+    background: linear-gradient(137deg,
+            rgba(107, 71, 184, 0.8) 0%,
+            rgba(169, 57, 119, 0.8) 25%,
+            rgba(184, 102, 79, 0.8) 50%,
+            rgba(107, 148, 153, 0.8) 75%,
+            rgba(118, 113, 106, 0.8) 100%);
+    transition: all .2s ease-in-out;
+}
+
+#main .content .content-item .group-btns {
+    width: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#main .content .content-item .group-btns button:last-child {
+    transform: rotate(-45deg);
+}
+
+#main .content .content-item .group-btns button {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+
+#main .content .content-item .group-items {
+    width: 90%;
+    margin-top: 1em;
+}
+
+
+#main .content .content-item .title-2 h5 {
+    font-weight: 200 !important;
+}
+
+#main .content .background {
+    width: 100%;
+    height: 100%;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+h5,
+p {
+    text-align: center;
+}
+
+p {
+    margin: 0 auto;
+    width: 100%;
+    font-size: .6rem;
+}
