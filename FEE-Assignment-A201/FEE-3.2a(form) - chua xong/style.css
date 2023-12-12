@@ -51,9 +51,15 @@ div.row {
 .myForm{
     height: 500px !important;
 }
-.myForm .myContainer{
-    /* height: 100%; */
-}
+
 .myForm div.myContainer{
     height: 100%;
+}
+.myForm div.myContainer > div {
+    display: flex;
+    flex-direction: column;
+}
+
+h4{
+    border-bottom: 4px solid tomato;
 }
