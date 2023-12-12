@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>5.3 - FEE-Assignment-A301</title>
+    <link rel="stylesheet" href="../../Common/boostrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="main">
+      <div class="container">
+        <div class="input-group">
+          <button id="button-checkCredit" onclick="checkCredit()" class="btn btn-outline-secondary input-group-append" type="button">Kiem tra</button>
+          <input id="input-checkCredit" type="text" class="form-control" placeholder="Kiểm tra số credit card – chuỗi chỉ chứa giá trị số có độ dài 16 số;" aria-describedby="button-addon2">
+        </div>
+        <small id="error-checkCredit" class="text-danger"></small>
+      </div>
+      <div class="container mt-3">
+        <div class="input-group">
+          <button id="button-checkNumber" onclick="checkNumber()" class="btn btn-outline-secondary input-group-append" type="button">Kiem tra</button>
+          <input id="input-checkNumber" type="text" class="form-control" placeholder="Giá trị Khong phải là số?" aria-describedby="button-addon2">
+        </div>
+        <small id="error-checkNumber" class="text-danger"></small>
+      </div>
+      <div class="container mt-3">
+        <div class="input-group">
+          <button id="button-checkEmail" onclick="checkEmail()" class="btn btn-outline-secondary input-group-append" type="button">Kiem tra</button>
+          <input id="input-checkEmail" type="text" class="form-control" placeholder="Kiểm tra một chuỗi có thỏa mãn định dạng email hay không?" aria-describedby="button-addon2">
+        </div>
+        <small id="error-checkEmail" class="text-danger"></small>
+      </div>
+      <div class="container mt-3">
+        <div class="input-group">
+          <button id="button-checkUrl" onclick="checkUrl()" class="btn btn-outline-secondary input-group-append" type="button">Kiem tra</button>
+          <input id="input-checkUrl" type="text" class="form-control" placeholder="Kiểm tra một chuỗi có phải là chuỗi theo cú pháp url web hay không?" aria-describedby="button-addon2">
+        </div>
+        <small id="error-checkUrl" class="text-danger"></small>
+      </div>
+      <div class="container mt-3">
+        <div class="input-group">
+          <button id="button-checkString" onclick="checkString()" class="btn btn-outline-secondary input-group-append" type="button">Kiem tra</button>
+          <input id="input-checkString" type="text" class="form-control" placeholder="Kiểm tra một chuỗi thỏa mãn: Chỉ chứa ký tự alphabet và số, không chứa các ký tự đặc biệt." aria-describedby="button-addon2">
+        </div>
+        <small id="error-checkString" class="text-danger"></small>
+      </div>
+    </div>
+  </body>
+  <script src="../../Common/jquery/jquery.min.js"></script>
+  <script src="../../Common/jquery/bootstrap.bundle.min.js"></script>
+  <script src="../../Common/jquery/popper.min.js"></script>
+  <script src="script.js"></script>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>5.1 - FEE-Assignment-A301</title>
+  <link rel="stylesheet" href="../../Common/boostrap/bootstrap.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div id="main">
+    <div class="showList">
+      <div class="title text-secondary">List all: </div>
+      <div class="result-all d-flex flex-wrap"></div>
+    </div>
+    <div class="showList">
+      <div class="title text-secondary">danh sách các giá trị chẵn: </div>
+      <div class="result-chan d-flex flex-wrap"></div>
+    </div>
+    <div class="showList">
+      <div class="title text-secondary">danh sách các giá trị lẽ: </div>
+      <div class="result-le d-flex flex-wrap"></div>
+    </div>
+    <div class="showList list-group mt-4">
+      <label class="title text-secondary" for="input-start">Viết hàm hiển thị danh sách các giá trị trong mảng ban đầu
+        có giá trị nằm trong khoảng [a, b]. Trong đó, a và b nhập vào từ bàn phím và a ≥ b.</label>
+      <input class="form-control mb-2 w-50" type="number" id="input-start" placeholder="start">
+      <input class="form-control mb-2 w-50" type="number" id="input-end" placeholder="end">
+      <div class="result-fillter list-group">
+        <button id="button-fillter" onclick="fillter()" class="btn btn-secondary input-group-append w-25"
+          type="button">Fillter</button>
+        <label for="" class="title text-secondary">Result: </label>
+        <div class="result-filter d-flex flex-wrap"></div>
+      </div>
+    </div>
+
+    <div class="showList list-group mt-5">
+      <label for="" class="title text-secondary">Viết hàm sắp xếp các giá trị trong mảng chứa các giá trị chẵn, mảng
+        chứa các giá trị lẽ và mảng ban đầu theo thứ tự tăng dần. (Viết hàm sắp xếp theo các thuật toán (ít nhất 2 thuật
+        toán): Selection sort, Insertion sort, Merge sort, Quick sort, Stooge Sort)</label>
+
+      <div class="result-Selection d-flex flex-wrap mt-4">
+        <span class="title text-secondary">Selection Sort:</span>
+      </div>
+      <div class="result-Insertion d-flex flex-wrap mt-4">
+        <span class="title text-secondary">Insertion Sort:</span>
+      </div>
+      <div class="result-Merge d-flex flex-wrap mt-4">
+        <span class="title text-secondary">Merge Sort:</span>
+      </div>
+      <div class="result-Quick d-flex flex-wrap mt-4">
+        <span class="title text-secondary">Quick Sort:</span>
+      </div>
+    </div>
+
+  </div>
+</body>
+<script src="../../Common/jquery/jquery.min.js"></script>
+<script src="../../Common/jquery/bootstrap.bundle.min.js"></script>
+<script src="../../Common/jquery/popper.min.js"></script>
+<script src="script.js"></script>
+
+</html>

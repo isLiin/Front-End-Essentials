@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>5.2 - FEE-Assignment-A301</title>
+    <link rel="stylesheet" href="../../Common/boostrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../Common/fontAwesome/brands.min.css" />
+    <link rel="stylesheet" href="../../Common/fontAwesome/regular.min.css" />
+    <link rel="stylesheet" href="../../Common/fontAwesome/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="main">
+      <form action="#" method="post" id="form">
+        <div class="form-group">
+          <label for="input_name">Full Name</label>
+          <input type="text" class="form-control" id="input_name" />
+        </div>
+        <div class="form-group">
+          <label for="input_name">Dob</label>
+          <input type="date" class="form-control" id="input_dob" />
+        </div>
+        <div class="form-group">
+          <label for="input_name">Gender</label>
+          <select class="form-control" id="input_gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <input onclick="add()" type="button" value="Submit" class="btn btn-primary">
+      </form>
+    </div>
+
+    <div id="result">
+      <div class="record">
+        <div class="name text-secondary user-select-none">Full Name</div>
+        <div class="dob text-secondary user-select-none">Dob</div>
+        <div class="gender text-secondary user-select-none">Gender</div>
+      </div>
+    </div>
+  </body>
+  <script src="../../Common/jquery/jquery.min.js"></script>
+  <script src="../../Common/jquery/bootstrap.bundle.min.js"></script>
+  <script src="../../Common/fontAwesome/brands.min.js"></script>
+  <script src="../../Common/jquery/popper.min.js"></script>
+  <script src="script.js"></script>
+</html>
