@@ -7,6 +7,12 @@
     --color-0: #C0C0C0;
 }
 
+#main{
+    width: 1025px;
+    height: auto;
+    margin: 5vh auto;
+}
+
 .bg-myColor {
     display: flex;
     align-items: center;

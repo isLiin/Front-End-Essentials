@@ -17,6 +17,7 @@ body {
     width: 100vw;
     text-transform: uppercase;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgba(128, 128, 128, 0.324);
 }
 
 div {
