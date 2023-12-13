@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3.3 - FEE-Assignment-A301</title>
+  <link rel="stylesheet" href="../../Common/fontAwesome/brands.min.css" />
+  <link rel="stylesheet" href="../../Common/fontAwesome/regular.min.css" />
+  <link rel="stylesheet" href="../../Common/fontAwesome/all.min.css" />
+  <link rel="stylesheet" href="../../Common/boostrap/bootstrap.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="container main p-0">
+    <div class="myGroup-top mt-3">
+      <div class="myGroup-top__left">
+        <div class="myGroup-top__left__Specific">
+          <div class="header">
+            <h4>Specific</h4>
+          </div>
+          <div class="group-content">
+            <div class="list-group">
+              <label class="font-weight-bold" for="first_Name">First name contains</label>
+              <input class="form-control" type="text" placeholder="First name" required>
+            </div>
+            <div class="list-group">
+              <label class="font-weight-bold" for="last_Name">Last name contains</label>
+              <input class="form-control" id="last_Name" type="text" placeholder="Last name">
+            </div>
+            <div class="list-group">
+              <label class="font-weight-bold" for="email">Email contains</label>
+              <input class="form-control" id="email" type="text" placeholder="E-mail">
+            </div>
+            <div class="list-group">
+              <label class="font-weight-bold" for="correspondence">Correspondence</label>
+              <select class="custom-select" name="" id="">
+                <option value="1">Doesn't Matter</option>
+              </select>
+            </div>
+            <div class="list-group">
+              <label class="font-weight-bold" for="date_joined">Date joined</label>
+              <div class="d-flex justify-content-between align-items-center">
+                <input class="form-control" type="text" id="date_joined">
+                <span class="ml-1 mr-1">-</span>
+                <input class="form-control" type="text">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="myGroup-top__left__Related">
+          <div class="header">
+            <h4>Related</h4>
+          </div>
+          <div class="group-content">
+            <div class="list-group">
+              <label class="font-weight-bold" for="">Team</label>
+              <select class="form-control" name="" id=""></select>
+            </div>
+          </div>
+        </div>
+        <div class="myGroup-top__left__Permissions">
+          <div class="header">
+            <h4>Permissions</h4>
+          </div>
+          <div class="group-content">
+            <div class="list-group">
+              <label class="font-weight-bold" for="">Group</label>
+              <select class="form-control" name="" id=""></select>
+            </div>
+            <div class="list-group">
+              <label class="font-weight-bold" for="">Permission</label>
+              <select class="form-control" name="" id="" style="width: calc(100% - 1em);"></select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="myGroup-top__right">
+        <div class="header">
+          <h4>Attributes</h4>
+        </div>
+
+        <div class="group-content">
+          <div class="list-group">
+            <label class="font-weight-bold" for="">Active</label>
+            <div class="d-flex justify-content-between flex-column">
+              <div class="group-radio custom-control custom-radio custom-control-inline">
+                <input type="radio" class="mr-2 custom-control-input is-invalid" name="active"
+                  id="Active_doesnt_matter">
+                <label class="custom-control-label text-dark" for="Active_doesnt_matter">Doesn't matter</label>
+              </div>
+              <div class="group-radio custom-control custom-radio custom-control-inline">
+                <input type="radio" class="mr-2 custom-control-input is-invalid" name="active" id="Active_yes">
+                <label class="custom-control-label text-dark" for="Active_yes">yes</label>
+              </div>
+              <div class="group-radio custom-control custom-radio custom-control-inline">
+                <input type="radio" class="mr-2 custom-control-input is-invalid" name="active" id="Active_no">
+                <label class="custom-control-label text-dark" for="Active_no">no</label>
+              </div>
+            </div>
+          </div>
+          <div class="list-group mt-4">
+            <label class="font-weight-bold" for="">Online status</label>
+            <div class="d-flex justify-content-between flex-column">
+              <div class="group-radio custom-control custom-radio custom-control-inline">
+                <input type="radio" class="mr-2 custom-control-input is-invalid" name="OnlineStatus"
+                  id="OnlineStatus_doesnt_matter">
+                <label class="custom-control-label text-dark" for="OnlineStatus_doesnt_matter">Doesn't matter</label>
+              </div>
+              <div class="group-radio custom-control custom-radio custom-control-inline">
+                <input type="radio" class="mr-2 custom-control-input is-invalid" name="OnlineStatus"
+                  id="OnlineStatus_yes">
+                <label class="custom-control-label text-dark" for="OnlineStatus_yes">yes</label>
+              </div>
+              <div class="group-radio custom-control custom-radio custom-control-inline">
+                <input type="radio" class="mr-2 custom-control-input is-invalid" name="OnlineStatus"
+                  id="OnlineStatus_no">
+                <label class="custom-control-label text-dark" for="OnlineStatus_no">no</label>
+              </div>
+            </div>
+          </div>
+          <div class="list-group mt-4">
+            <label class="font-weight-bold" for="">Superuser status</label>
+            <div class="d-flex justify-content-between flex-column">
+              <div class="group-radio custom-control custom-radio custom-control-inline">
+                <input type="radio" class="mr-2 custom-control-input is-invalid" name="SuperuserStatus"
+                  id="SuperuserStatus_doesnt_matter">
+                <label class="custom-control-label text-dark" for="SuperuserStatus_doesnt_matter">Doesn't matter</label>
+              </div>
+              <div class="group-radio custom-control custom-radio custom-control-inline">
+                <input type="radio" class="mr-2 custom-control-input is-invalid" name="SuperuserStatus"
+                  id="SuperuserStatus_yes">
+                <label class="custom-control-label text-dark" for="SuperuserStatus_yes">yes</label>
+              </div>
+              <div class="group-radio custom-control custom-radio custom-control-inline">
+                <input type="radio" class="mr-2 custom-control-input is-invalid" name="SuperuserStatus"
+                  id="SuperuserStatus_no">
+                <label class="custom-control-label text-dark" for="SuperuserStatus_no">no</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row bg-myBgr ml-0">
+      <div class="col-8 row">
+        <div class="col-3 d-flex align-items-center text-muted">
+          <i class="fa fa-rotate mr-2"></i>
+          Reset filter
+        </div>
+        <div class="col-9 d-flex align-items-center"></div>
+      </div>
+      <div class="col-4 d-flex align-items-center myGroup-btn">
+        <button type="button" class="btn btn-light">Cancel</button>
+        <button type="button" class="btn btn-danger ml-4">
+          <i class="fa fa-search"></i>
+          Search
+        </button>
+      </div>
+    </div>
+  </div>
+
+  </div>
+</body>
+<script src="../../Common/fontAwesome/brands.min.js"></script>
+<script src="../../Common/fontAwesome/regular.min.js"></script>
+<script src="../../Common/fontAwesome/all.min.js"></script>
+
+</html>

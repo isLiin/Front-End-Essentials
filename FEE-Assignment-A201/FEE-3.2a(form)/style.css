@@ -1,0 +1,122 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --color-0: #FFFFFF;
+    --color-1: #e0e0e0;
+    --color-2: #848484bd;
+    --color-3: #D4265E;
+}
+
+.main {
+    margin: 15vh auto;
+    max-width: 1025px;
+    width: 100%;
+    height: auto;
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.18);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.357);
+    backdrop-filter: blur(5.7px);
+    -webkit-backdrop-filter: blur(5.7px);
+    /* border: 1px solid rgba(255, 255, 255, 0.3); */
+
+    /* padding: 2em; */
+
+    display: grid;
+    grid-template-rows: auto 60px;
+    gap: 1em;
+}
+
+h4 {
+    width: 100%;
+    border-bottom: 4px solid var(--color-3);
+}
+
+label {
+    font-weight: bold;
+    font-size: .8em;
+    text-transform: capitalize;
+}
+
+.bg-myBgr {
+    padding: 0 3%;
+    width: 100%;
+    background-color: var(--color-1);
+}
+
+.btn-danger {
+    background-color: var(--color-3);
+}
+
+.myGroup-top {
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: calc(75% - 1em) auto;
+    gap: 1em;
+}
+
+.myGroup-top .myGroup-top__left__Specific .group-content {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    gap: 1em;
+}
+
+.myGroup-top .myGroup-top__left__Permissions {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.myGroup-top .myGroup-top__left {
+    display: grid;
+    grid-template-columns: calc(75% - 1em) auto;
+    gap: 1em;
+}
+
+.myGroup-top .myGroup-top__left .group-content {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1em;
+}
+
+.myGroup-top .myGroup-top__left__Permissions .group-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1em;
+}
+
+.myGroup-top .myGroup-top__left .group-content .list-group:last-child {
+    grid-column-start: 2;
+    grid-column-end: 4;
+}
+
+.myGroup-top .myGroup-top__left__Permissions .group-content .list-group:last-child {
+    grid-column-start: 2;
+    grid-column-end: 4;
+}
+
+.myGroup-top .myGroup-top__right .group-content {
+    grid-template-columns: 1fr;
+
+}
+
+.myGroup-btn {
+    justify-content: flex-end;
+}
+
+.myGroup-btn .btn {
+    width: 90%;
+}
+
+
+.custom-control-input.is-invalid~.custom-control-label{
+    cursor: pointer;
+}
+.custom-control-input.is-invalid~.custom-control-label::before {
+    border-color: var(--color-2) !important;
+}
+.custom-control-input.is-invalid:checked~.custom-control-label::before {
+    background-color: var(--color-3);
+}
