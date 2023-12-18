@@ -1,13 +1,13 @@
 
 
-function validateName(name) {
+function validateString(name) {
     // Kiểm tra xem chuỗi có bị bỏ trống hay không
-    if (name.trim() === '') {
+    if (name === null || name.trim().length === 0) {
         return false;
     }
 
     // Kiểm tra xem chuỗi chỉ chứa các ký tự alphabet và khoảng trắng hay không
-    var regex = /^[a-zA-Z\s]+$/;
+    var regex = /^[a-zA-Z0-9\s]+$/;
     return regex.test(name);
 }
 
@@ -36,22 +36,6 @@ function validateDateOfNow(dateString) {
     return true;
 }
 
-function validateSelectedOption(selectElement) {
-
-    // Kiểm tra xem một mục đã được chọn hay chưa
-    if (parseInt(selectElement) == 0) {
-        return true;
-    }
-
-    return false;
-}
-function validateSubjectScore(score) {
-    // Kiểm tra xem điểm môn học đã được nhập hay chưa
-    if (!score) {
-        return false;
-    }
-
-    // Kiểm tra xem điểm môn học có hợp lệ hay không
-    var regex = /^\d{1,2}(\.\d{1,2})?$/;
-    return regex.test(score) && parseFloat(score) >= 0 && parseFloat(score) <= 10;
+function validateCMND(cmnd) {
+    return /^[0-9]{9,12}$/.test(cmnd);
 }

@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>3.1 - FEE-Assignment-A301</title>
+  <title>FEE-Final-Example</title>
   <link rel="stylesheet" href="../../Common/fontAwesome/brands.min.css" />
   <link rel="stylesheet" href="../../Common/fontAwesome/regular.min.css" />
   <link rel="stylesheet" href="../../Common/fontAwesome/all.min.css" />
@@ -24,22 +24,22 @@
           <div class="group-info">
             <div class="form-info-body form-group">
               <label for="form-info_fullName">họ và tên</label>
-              <input id="form-info_fullName" type="text" class="form-control"/>
+              <input value="Liin" id="form-info_fullName" type="text" class="form-control" />
               <small id="error-info_fullName" class="text-danger"></small>
             </div>
             <div class="form-info-body form-group">
               <label for="form-info_cmnd" class="text-uppercase">cmnd</label>
-              <input id="form-info_cmnd" type="text" class="form-control" />
+              <input value="123456789" id="form-info_cmnd" type="text" class="form-control" />
               <small id="error-info_cmnd" class="text-danger"></small>
             </div>
             <div class="form-info-body form-group">
               <label for="form-info_date">ngày xuất hoá đơn</label>
-              <input id="form-info_date" type="date" class="form-control" />
+              <input value="2020-01-01" id="form-info_date" type="date" class="form-control" />
               <small id="error-info_date" class="text-danger"></small>
             </div>
             <div class="form-info-body form-group">
               <label for="form-info_address">địa chỉ</label>
-              <input id="form-info_address" type="text" class="form-control" />
+              <input value="Hanoi" id="form-info_address" type="text" class="form-control" />
               <small id="error-info_address" class="text-danger"></small>
             </div>
             <div class="form-info-body form-group">
@@ -49,7 +49,7 @@
             </div>
           </div>
           <div class="form-info-footer d-flex justify-content-end mt-3">
-            <button type="submit" class="btn btn-primary">Tạo hoá đơn</button>
+            <input id="btn-createBill" type="submit" value="Tạo hoá đơn" class="btn btn-primary">
           </div>
         </form>
       </div>
@@ -68,8 +68,8 @@
                 <th></th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
+            <tbody id="listDetail">
+              <!-- <tr class="row-bill">
                 <td>1</td>
                 <td>
                   <input type="text" class="form-control" value="" disabled />
@@ -86,7 +86,7 @@
                   </button>
                 </td>
               </tr>
-              <tr>
+              <tr class="row-bill">
                 <td>1</td>
                 <td>
                   <input type="text" class="form-control" value="" disabled />
@@ -102,13 +102,13 @@
                     <i class="fa fa-trash"></i>
                   </button>
                 </td>
-              </tr>
+              </tr> -->
             </tbody>
           </table>
           <div class="group-btn mt-3 float-right">
-            <button class="btn btn-primary custom-btn">sửa thông tin hoá đơn</button>
-            <button class="btn btn-primary custom-btn">thêm row</button>
-            <button class="btn btn-primary custom-btn">xuất hoá đơn</button>
+            <input type="button" value="sửa thông tin hoá đơn" class="btn btn-primary " disabled>
+            <input type="button" value="thêm row" class="btn btn-primary " disabled>
+            <input type="button" value="xuất hoá đơn" class="btn btn-primary " disabled>
           </div>
         </div>
       </div>
@@ -186,10 +186,8 @@
 <script src="../../Common/fontAwesome/all.min.js"></script>
 <script src="../../Common/jquery/popper.min.js"></script>
 <script src="../../Common/jquery/jquery.min.js"></script>
-<script src="../../Common/jquery/jquery.validate.min.js"></script>
-<script src="../../Common/jquery/bootstrapValidator.min.js"></script>
-<script src="../../Common/jquery/additional-methods.min.js"></script>
 <script src="../../Common/jquery/bootstrap.bundle.min.js"></script>
+<script src="./validation.js"></script>
 <script src="./script.js"></script>
 
 </html>

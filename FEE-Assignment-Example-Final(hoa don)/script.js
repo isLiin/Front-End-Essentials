@@ -1,4 +1,14 @@
 'use strick'
+let listDefault = [{
+    productName: "",
+    qtt: "",
+    price: ""
+}, {
+    productName: "",
+    qtt: "",
+    price: ""
+}];
+
 var listBills = [
     {
         name: "Tuấn1",
@@ -237,12 +247,153 @@ function deleteRowBill(index) {
     renderBills();
 }
 
-function handleSubmitFormInfo(e) {
+
+$("#form-info-body").on('submit', function (e) {
     e.preventDefault();
-    alert(123)
+
+    let name = $("#form-info_fullName");
+    let cmnd = $("#form-info_cmnd");
+    let date = $("#form-info_date");
+    let address = $("#form-info_address");
+    let note = $("#form-info_note");
+
+    if (checkValidateAll(name.val(), cmnd.val(), date.val(), address.val(), note.val())) {
+        $(".row-bill td>input").prop("disabled", false);
+        $(".group-btn input").prop("disabled", false);
+        $("#btn-createBill").prop("disabled", true);
+        $("#form-info_fullName").prop("disabled", true);;
+        $("#form-info_cmnd").prop("disabled", true);;
+        $("#form-info_date").prop("disabled", true);;
+        $("#form-info_address").prop("disabled", true);;
+        $("#form-info_note").prop("disabled", true);;
+    }
+})
+
+function checkValidateAll(name, cmnd, date, address, note) {
+    return isValidateNote(note) & isValidateAddress(address) & isValidateDate(date) & isValidateCmnd(cmnd) & isValidateName(name);
 }
 
-$.ready(() => {
+function isValidateName(name) {
+    let error = $("#error-info_fullName");
+    error.html("");
+    $("#form-info_fullName").removeClass("border-danger");
+    if (!validateString(name)) {
+        $("#form-info_fullName").focus();
+        $("#form-info_fullName").addClass("border-danger");
+        error.html("Yêu cầu nhập họ và tên");
+    }
+    return validateString(name);
+}
+
+function isValidateAddress(address) {
+    let error = $("#error-info_address");
+    error.html("");
+    $("#form-info_address").removeClass("border-danger");
+    if (!validateString(address)) {
+        $("#form-info_address").focus();
+        $("#form-info_address").addClass("border-danger");
+        error.html("Yêu cầu nhập địa chỉ");
+    }
+    return validateString(address);
+}
+
+function isValidateNote(note) {
+    let error = $("#error-info_note");
+    error.html("");
+    $("#form-info_note").removeClass("border-danger");
+    if (!validateString(note)) {
+        $("#form-info_note").focus();
+        $("#form-info_note").addClass("border-danger");
+        error.html("Yêu cầu nhập ghi chú");
+    }
+    return validateString(note);
+}
+
+function isValidateCmnd(cmnd) {
+    let error = $("#error-info_cmnd");
+    error.html("");
+    $("#form-info_cmnd").removeClass("border-danger");
+    if (!validateCMND(cmnd)) {
+        $("#form-info_cmnd").focus();
+        $("#form-info_cmnd").addClass("border-danger");
+        error.html("Yêu cầu nhập CMND");
+    }
+    return validateCMND(cmnd);
+}
+function isValidateDate(date) {
+    let error = $("#error-info_date");
+    error.html("");
+    $("#form-info_date").removeClass("border-danger");
+    if (!validateDateOfNow(date)) {
+        $("#form-info_date").focus();
+        $("#form-info_date").addClass("border-danger");
+        error.html("Ngày xuất hoá đơn không hợp lệ");
+    }
+    return validateDateOfNow(date);
+
+}
+
+function setRowItem(item, index) {
+    return `
+            <tr class="row-bill">
+                <td>${index + 1}</td>
+                <td>
+                  <input type="text" class="form-control" value="${item.productName}" disabled/>
+                </td>
+                <td>
+                  <input type="number" class="form-control" value="${item.qtt}" disabled/>
+                </td>
+                <td>
+                  <input type="number" class="form-control" value="${item.price}" disabled/>
+                </td>
+                <td>
+                    <button class="btn" onclick="deleteRowDetail(${index})">
+                        <i class="fa fa-trash"></i>
+                    </button>
+                </td>
+            </tr>
+    `
+}
+function getRowItem(index) {
+    return `
+            <tr class="row-bill">
+                <td>${index + 1}</td>
+                <td>
+                  <input type="text" class="form-control" value="" disabled/>
+                </td>
+                <td>
+                  <input type="number" class="form-control" value="" disabled/>
+                </td>
+                <td>
+                  <input type="number" class="form-control" value="" disabled/>
+                </td>
+                <td>
+                  <button class="btn" onclick="deleteRowDetail(${index})">
+                    <i class="fa fa-trash"></i>
+                  </button>
+                </td>
+            </tr>
+    `
+}
+
+function renderListDetail(listDetail) {
+    if (listDetail.length > 0) {
+        listDetail.forEach((item, index) => {
+            $("#listDetail").append(getRowItem(item, index));
+        })
+    } else{
+        listDefault.forEach((item, index) => {
+            $("#listDetail").append(getRowItem(index));
+        })
+    }
+}
+
+function deleteRowDetail(index) {
+    alert(index)
+}
+
+$(document).ready(() => {
     renderBills();
     deleteRowBill();
+    renderListDetail([]);
 })
