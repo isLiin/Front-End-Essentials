@@ -7,12 +7,42 @@
     --color-0: #FFFFFF;
     --color-1: #e0e0e0;
     --color-2: #848484;
+    --color-3: rgb(88, 171, 255);
+}
+
+body {
+    font-size: 12px;
+}
+
+h2,
+h4 {
+    text-transform: uppercase;
+}
+
+button {
+    text-transform: capitalize;
+    font-size: .85em !important;
+}
+
+.custom-btn {
+    border: 1px solid var(--color-3);
+    background-color: var(--color-3);
+}
+
+#main,
+#main>div,
+.datas-body table,
+#production #form-info,
+#form-detail thead,
+#form-detail tbody,
+#form-detail thead tr,
+#form-detail tbody tr {
+    width: 100%;
 }
 
 #main {
-    margin: 15vh auto;
-    max-width: 1025px;
-    width: 100%;
+    margin: 5vh auto;
+    max-width: 95vw;
     height: auto;
     background: rgba(255, 255, 255, 0.18);
     border-radius: 16px;
@@ -20,4 +50,89 @@
     backdrop-filter: blur(5.7px);
     -webkit-backdrop-filter: blur(5.7px);
     border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 2em;
+
+    display: grid;
+    grid-template-rows: 330px auto;
+    gap: 1em;
+}
+
+#main>div {
+    height: 100%;
+}
+
+#production {
+    display: grid;
+    grid-template-columns: calc(50% - (2em/2)) auto;
+    gap: 2em;
+}
+
+/* #production #form-info {
+    display: grid;
+    gap: 1em;
+    height: 100%;
+} */
+
+#production #form-info form {
+    padding: 10px;
+    box-shadow: 0 0 .8px gray;
+}
+
+#production #form-info form label {
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+#production #form-info .form-info-body.form-group {
+    margin: 0;
+}
+
+#production #form-info .group-info {
+    display: grid;
+    grid-template-columns: calc(50% - .5em) auto;
+    gap: 1em;
+}
+
+#production #form-info .group-info .form-group:last-child {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.datas-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#form-detail thead tr th,
+#form-detail tbody tr td,
+.datas-body thead tr th,
+.datas-body tbody tr td,
+.datas-body tfoot tr td {
+    padding: 5px;
+    text-transform: capitalize;
+}
+
+#form-detail thead tr th:first-child,
+#form-detail tbody tr td:first-child {
+    padding: 5px 15px;
+}
+
+
+.datas-body thead tr th,
+.datas-body tbody tr td,
+.datas-body tfoot tr td {
+    text-align: center;
+}
+
+.datas-body .table-bordered,
+.datas-body tfoot tr {
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+}
+
+.datas-body tfoot tr td.border-none {
+    border: none !important;
 }

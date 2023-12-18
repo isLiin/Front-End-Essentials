@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.1/css/bootstrapValidator.min.css"/> -->
+  <link rel="stylesheet" href="main.css" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="row" style="gap: 10px">
+      <div class="col">
+        <h2>Thông tin đơn hàng</h2>
+      </div>
+      <div class="col">
+        <h2>Chi tiết hóa đơn</h2>
+      </div>
+    </div>
+    <div class="row" style="gap: 10px">
+      <div class="col mt-2 pb-3" style="border: 1px solid #eaedf0" ;>
+        
+        <form class="mt-2" id="formCreateBill">
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="name">Họ và tên </label>
+              <input type="text" class="form-control" id="name" name="name" />
+            </div>
+            <div class="form-group col-md-6">
+              <label for="cmnd">CMND</label>
+              <input type="number" class="form-control" id="cmnd" name="cmnd" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="day">Ngày xuất hóa đơn</label>
+              <input type="date" class="form-control" id="day" name="day"/>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="address">Địa chỉ </label>
+              <input type="text" class="form-control" id="address" name="address"/>
+            </div>
+          </div>
+          <div class="form-group">
+            <p for="note">Ghi chú</p>
+            <textarea id="note" name="w3review" rows="4" cols="70" name="note"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary float-right" id="createBill">
+            Tạo hóa đơn
+          </button>
+        </form>
+
+      </div>
+      <div class="col">
+        <form action="" id="formDetails">
+          <div class="row mt-2">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Tên hàng hóa</th>
+                  <th scope="col">Số lượng</th>
+                  <th scope="col">Đơn giá</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody id="listDetail">
+                <th scope="row">1</th>
+                    <td class="form-group"><input type="text" class="form-control productName" name="productName" disabled/></td>
+                    <td class="form-group"><input type="text" class="form-control qtt" name="qtt" disabled/></td>
+                    <td class="form-group"><input type="text" class="form-control price" name="price" disabled/></td>
+                    <td onclick="deleteDetail(this)">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
+                            <path
+                            d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z" />
+                        </svg>
+                    </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="row mt-2" style="gap: 17px">
+            <div class="col-2"></div>
+            <div class="col-4">
+              <button class="btn btn-primary" id="editBill" disabled>
+                Sửa thông tin hóa đơn
+              </button>
+            </div>
+            <div class="col-2">
+              <button class="btn btn-primary" id="addRow" disabled>
+                Thêm row
+              </button>
+            </div>
+            <div class="col-2">
+              <button type="submit" class="btn btn-primary" id="printBill" disabled>
+                Xuất hóa đơn
+              </button>
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12 text-center mt-4">
+        <h2>DANH SÁCH HÓA ĐƠN</h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Tên</th>
+              <th scope="col">CMND</th>
+              <th scope="col">Ngày xuất </th>
+              <th scope="col">Tên hàng hóa </th>
+              <th scope="col">Số lượng </th>
+              <th scope="col">Đơn giá </th>
+              <th scope="col">Thành tiền </th>
+              <th scope="col">Tổng tiền </th>
+              <th scope="col"></th>
+
+
+            </tr>
+          </thead>
+          <tbody id="listBill">
+            <!-- <tr>
+              <th scope="row" rowspan="3">1</th>
+              <td rowspan="3">Tuấn </td>
+              <td rowspan="3">2002200220</td>
+              <td rowspan="3">19/09/2021</td>
+              <td>Xi măng</td>
+              <td>10</td>
+              <td>20000</td>
+              <td>200000</td>
+              <td rowspan="3">200000</td>
+              <td rowspan="3">&nbsp;&nbsp;&nbsp;&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                  fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
+                  <path
+                    d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z" />
+                </svg></td>
+            </tr>
+            <tr>
+              <td>Xi măng</td>
+              <td>10</td>
+              <td>20000</td>
+              <td>200000</td>
+              
+            </tr>
+            <tr>
+              <td>Xi măng</td>
+              <td>10</td>
+              <td>20000</td>
+              <td>200000</td>
+            </tr> -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js" integrity="sha512-rstIgDs0xPgmG6RX1Aba4KV5cWJbAMcvRCVmglpam9SoHZiUCyQVDdH2LPlxoHtrv17XWblE/V/PP+Tr04hbtA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/additional-methods.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.5.3/js/bootstrapValidator.min.js" integrity="sha512-Vp2UimVVK8kNOjXqqj/B0Fyo96SDPj9OCSm1vmYSrLYF3mwIOBXh/yRZDVKo8NemQn1GUjjK0vFJuCSCkYai/A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.1/js/bootstrapValidator.min.js"></script>     -->
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://cdn.rawgit.com/PascaleBeier/bootstrap-validate/v2.2.5/dist/bootstrap-validate.js"></script>
+  <script src="script.js"></script>
+
+</body>
+
+</html>

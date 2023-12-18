@@ -1,24 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>3.1 - FEE-Assignment-A301</title>
-    <link rel="stylesheet" href="../../Common/fontAwesome/brands.min.css" />
-    <link rel="stylesheet" href="../../Common/fontAwesome/regular.min.css" />
-    <link rel="stylesheet" href="../../Common/fontAwesome/all.min.css" />
-    <link rel="stylesheet" href="../../Common/boostrap/bootstrap.min.css" />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    
-  </body>
-  <script src="../../Common/fontAwesome/brands.min.js"></script>
-  <script src="../../Common/fontAwesome/regular.min.js"></script>
-  <script src="../../Common/fontAwesome/all.min.js"></script>
-  <script src="../../Common/jquery/popper.min.js"></script>
-  <script src="../../Common/jquery/jquery.min.js"></script>
-  <script src="../../Common/jquery/bootstrap.bundle.min.js"></script>
-  <script src="./script.js"></script>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3.1 - FEE-Assignment-A301</title>
+  <link rel="stylesheet" href="../../Common/fontAwesome/brands.min.css" />
+  <link rel="stylesheet" href="../../Common/fontAwesome/regular.min.css" />
+  <link rel="stylesheet" href="../../Common/fontAwesome/all.min.css" />
+  <link rel="stylesheet" href="../../Common/boostrap/bootstrap.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div id="main">
+    <div id="production">
+      <div id="form-info">
+        <div class="form-info-header mb-0">
+          <h4 class="mb-0">thông tin hoá đơn</h4>
+        </div>
+        <form action="" class="form-info-body form" id="form-info">
+          <div class="group-info">
+            <div class="form-info-body form-group">
+              <label for="form-info_fullName">họ và tên</label>
+              <input id="form-info_fullName" type="text" class="form-control" />
+            </div>
+            <div class="form-info-body form-group">
+              <label for="form-info_cmnd" class="text-uppercase">cmnd</label>
+              <input id="form-info_cmnd" type="text" class="form-control" />
+            </div>
+            <div class="form-info-body form-group">
+              <label for="form-info_date">ngày xuất hoá đơn</label>
+              <input id="form-info_date" type="date" class="form-control" />
+            </div>
+            <div class="form-info-body form-group">
+              <label for="form-info_address">địa chỉ</label>
+              <input id="form-info_address" type="text" class="form-control" />
+            </div>
+            <div class="form-info-body form-group">
+              <label for="form-info_note">ghi chú</label>
+              <textarea id="form-info_note" cols="30" class="form-control"></textarea>
+            </div>
+          </div>
+          <div class="form-info-footer d-flex justify-content-end mt-1">
+            <button type="submit" class="btn btn-primary">Tạo hoá đơn</button>
+          </div>
+        </form>
+      </div>
+      <div id="form-detail">
+        <div class="form-detail-header">
+          <h4 class="mb-0">chi tiết hoá đơn</h4>
+        </div>
+        <div class="form-detail-body">
+          <table class="table-bordered">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>tên sản phẩm</th>
+                <th>số lượng</th>
+                <th>đơn giá</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>
+                  <input type="text" class="form-control" value="" disabled />
+                </td>
+                <td>
+                  <input type="number" class="form-control" value="" disabled />
+                </td>
+                <td>
+                  <input type="number" class="form-control" value="" disabled />
+                </td>
+                <td>
+                  <button class="btn">
+                    <i class="fa fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>
+                  <input type="text" class="form-control" value="" disabled />
+                </td>
+                <td>
+                  <input type="number" class="form-control" value="" disabled />
+                </td>
+                <td>
+                  <input type="number" class="form-control" value="" disabled />
+                </td>
+                <td>
+                  <button class="btn">
+                    <i class="fa fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="group-btn mt-3 float-right">
+            <button class="btn btn-primary custom-btn">sửa thông tin hoá đơn</button>
+            <button class="btn btn-primary custom-btn">thêm row</button>
+            <button class="btn btn-primary custom-btn">xuất hoá đơn</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="datas">
+      <div class="datas-header border-top pt-2">
+        <h2><label for="">DANH SÁCH HoÁ ĐƠN</label></h2>
+      </div>
+      <div class="datas-body">
+        <table class="table-bordered">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>tên</th>
+              <th>cmnd</th>
+              <th>ngày suất</th>
+              <th>tên hàng hoá</th>
+              <th>số lượng</th>
+              <th>đơn giá</th>
+              <th>thành tiền</th>
+              <th>tổng tiền</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="showBills">
+            <!-- <tr>
+              <td rowspan="3">1</td>
+              <td rowspan="3">Tuấn</td>
+              <td rowspan="3">222222222</td>
+              <td rowspan="3">19/05/2021</td>
+              <td>Xi măng</td>
+              <td>2</td>
+              <td>500.000</td>
+              <td>1.000.000</td>
+              <td rowspan="3">3.300.000</td>
+              <td rowspan="3">
+                <button class="btn">
+                  <i class="fa fa-trash"></i>
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>Thep</td>
+              <td>5</td>
+              <td>400.000</td>
+              <td>2.000.000</td>
+            </tr>
+            <tr>
+              <td>cat</td>
+              <td>1</td>
+              <td>300.000</td>
+              <td>300.000</td>
+            </tr> -->
+          </tbody>
+          <tfoot>
+            <tr>
+              <td class="border-none"></td>
+              <td class="border-none"></td>
+              <td class="border-none"></td>
+              <td class="border-none"></td>
+              <td>tổng số lượng</td>
+              <td class="totalQuantity"></td>
+              <td colspan="2">tổng số tiền:</td>
+              <td class="totalPriceBill"></td>
+              <td class="border-none"></td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="../../Common/fontAwesome/brands.min.js"></script>
+<script src="../../Common/fontAwesome/regular.min.js"></script>
+<script src="../../Common/fontAwesome/all.min.js"></script>
+<script src="../../Common/jquery/popper.min.js"></script>
+<script src="../../Common/jquery/jquery.min.js"></script>
+<script src="../../Common/jquery/bootstrap.bundle.min.js"></script>
+<script src="./script.js"></script>
+
 </html>

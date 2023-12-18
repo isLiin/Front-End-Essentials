@@ -1,0 +1,17 @@
+/* input{
+    width: 100%;
+    border: none;
+}
+
+input:focus-visible{
+    outline: none;
+} */
+
+label.error{
+    color: red;
+}
+
+/* 
+.is-invalid{
+    background-color: red;
+} */
