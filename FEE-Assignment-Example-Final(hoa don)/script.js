@@ -249,8 +249,10 @@ function deleteRowBill(index) {
 
 
 $("#form-info-body").on('submit', function (e) {
+    // khong bat event submit cua window
     e.preventDefault();
-
+    
+    // de thuc thi theo code nay
     let name = $("#form-info_fullName");
     let cmnd = $("#form-info_cmnd");
     let date = $("#form-info_date");
@@ -268,6 +270,8 @@ $("#form-info-body").on('submit', function (e) {
         $("#form-info_note").prop("disabled", true);;
     }
 })
+
+
 
 function checkValidateAll(name, cmnd, date, address, note) {
     return isValidateNote(note) & isValidateAddress(address) & isValidateDate(date) & isValidateCmnd(cmnd) & isValidateName(name);
