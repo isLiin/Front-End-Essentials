@@ -63,7 +63,7 @@ button {
 
 #production {
     display: grid;
-    grid-template-columns: calc(50% - (2em/2)) auto;
+    grid-template-columns: calc(40% - (2em/2)) auto;
     gap: 2em;
 }
 

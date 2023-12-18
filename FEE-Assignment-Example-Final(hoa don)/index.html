@@ -20,30 +20,35 @@
         <div class="form-info-header mb-0">
           <h4 class="mb-0">thông tin hoá đơn</h4>
         </div>
-        <form action="" class="form-info-body form" id="form-info">
+        <form class="form-info-body form" id="form-info-body">
           <div class="group-info">
             <div class="form-info-body form-group">
               <label for="form-info_fullName">họ và tên</label>
-              <input id="form-info_fullName" type="text" class="form-control" />
+              <input id="form-info_fullName" type="text" class="form-control"/>
+              <small id="error-info_fullName" class="text-danger"></small>
             </div>
             <div class="form-info-body form-group">
               <label for="form-info_cmnd" class="text-uppercase">cmnd</label>
               <input id="form-info_cmnd" type="text" class="form-control" />
+              <small id="error-info_cmnd" class="text-danger"></small>
             </div>
             <div class="form-info-body form-group">
               <label for="form-info_date">ngày xuất hoá đơn</label>
               <input id="form-info_date" type="date" class="form-control" />
+              <small id="error-info_date" class="text-danger"></small>
             </div>
             <div class="form-info-body form-group">
               <label for="form-info_address">địa chỉ</label>
               <input id="form-info_address" type="text" class="form-control" />
+              <small id="error-info_address" class="text-danger"></small>
             </div>
             <div class="form-info-body form-group">
               <label for="form-info_note">ghi chú</label>
               <textarea id="form-info_note" cols="30" class="form-control"></textarea>
+              <small id="error-info_note" class="text-danger"></small>
             </div>
           </div>
-          <div class="form-info-footer d-flex justify-content-end mt-1">
+          <div class="form-info-footer d-flex justify-content-end mt-3">
             <button type="submit" class="btn btn-primary">Tạo hoá đơn</button>
           </div>
         </form>
@@ -53,7 +58,7 @@
           <h4 class="mb-0">chi tiết hoá đơn</h4>
         </div>
         <div class="form-detail-body">
-          <table class="table-bordered">
+          <table class="table-bordered w-100">
             <thead>
               <tr>
                 <th>#</th>
@@ -181,6 +186,9 @@
 <script src="../../Common/fontAwesome/all.min.js"></script>
 <script src="../../Common/jquery/popper.min.js"></script>
 <script src="../../Common/jquery/jquery.min.js"></script>
+<script src="../../Common/jquery/jquery.validate.min.js"></script>
+<script src="../../Common/jquery/bootstrapValidator.min.js"></script>
+<script src="../../Common/jquery/additional-methods.min.js"></script>
 <script src="../../Common/jquery/bootstrap.bundle.min.js"></script>
 <script src="./script.js"></script>
 

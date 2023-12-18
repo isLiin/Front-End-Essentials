@@ -232,11 +232,17 @@ function convertFormatNumber(numb) {
 }
 
 function deleteRowBill(index) {
+    // let isComfirm = confirm("Delete?")
     listBills.splice(index, 1);
     renderBills();
 }
 
-$(document).ready(() => {
+function handleSubmitFormInfo(e) {
+    e.preventDefault();
+    alert(123)
+}
+
+$.ready(() => {
     renderBills();
     deleteRowBill();
 })
