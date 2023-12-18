@@ -20,9 +20,12 @@ h4 {
 }
 
 button,
-#btn-createBill{
+.btn-createBill {
     text-transform: capitalize;
-    font-size: .85em !important;
+    font-size: .95em !important;
+}
+.h-15{
+    height: 15%;
 }
 
 #main,
@@ -30,7 +33,6 @@ button,
 .datas-body table,
 #production #form-info,
 #form-detail thead,
-#form-detail tbody,
 #form-detail thead tr,
 #form-detail tbody tr {
     width: 100%;
@@ -131,4 +133,41 @@ button,
 
 .datas-body tfoot tr td.border-none {
     border: none !important;
+}
+
+#table-detail-bill {
+    height: 100%;
+    overflow: auto;
+}
+
+.form-detail-body {
+    display: grid;
+    gap: 1em;
+    grid-template-rows: calc(100% - 50px) 50px;
+}
+
+.form-detail-body>table {
+    overflow: auto;
+}
+
+.form-detail-body>div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+#form-detail tbody tr {
+    width: 100%;
+    height: calc(100%/5);
+    max-height: 50px !important;
+}
+
+#form-detail tbody tr td {
+    max-height: 50px !important;
+    height: calc(100%/5);
+}
+
+#listDetail{
+    /* height: calc(50px * 5); */
+    overflow: auto;
 }

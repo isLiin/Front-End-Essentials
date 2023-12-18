@@ -1,5 +1,5 @@
 'use strick'
-let listDefault = [{
+const listDefault = [{
     productName: "",
     qtt: "",
     price: ""
@@ -9,6 +9,7 @@ let listDefault = [{
     price: ""
 }];
 
+var listProducts = listDefault;
 var listBills = [
     {
         name: "Tuấn1",
@@ -247,32 +248,6 @@ function deleteRowBill(index) {
     renderBills();
 }
 
-
-$("#form-info-body").on('submit', function (e) {
-    // khong bat event submit cua window
-    e.preventDefault();
-    
-    // de thuc thi theo code nay
-    let name = $("#form-info_fullName");
-    let cmnd = $("#form-info_cmnd");
-    let date = $("#form-info_date");
-    let address = $("#form-info_address");
-    let note = $("#form-info_note");
-
-    if (checkValidateAll(name.val(), cmnd.val(), date.val(), address.val(), note.val())) {
-        $(".row-bill td>input").prop("disabled", false);
-        $(".group-btn input").prop("disabled", false);
-        $("#btn-createBill").prop("disabled", true);
-        $("#form-info_fullName").prop("disabled", true);;
-        $("#form-info_cmnd").prop("disabled", true);;
-        $("#form-info_date").prop("disabled", true);;
-        $("#form-info_address").prop("disabled", true);;
-        $("#form-info_note").prop("disabled", true);;
-    }
-})
-
-
-
 function checkValidateAll(name, cmnd, date, address, note) {
     return isValidateNote(note) & isValidateAddress(address) & isValidateDate(date) & isValidateCmnd(cmnd) & isValidateName(name);
 }
@@ -280,10 +255,10 @@ function checkValidateAll(name, cmnd, date, address, note) {
 function isValidateName(name) {
     let error = $("#error-info_fullName");
     error.html("");
-    $("#form-info_fullName").removeClass("border-danger");
+    $("#form-info_fullName").removeClass("is-invalid");
     if (!validateString(name)) {
         $("#form-info_fullName").focus();
-        $("#form-info_fullName").addClass("border-danger");
+        $("#form-info_fullName").addClass("is-invalid");
         error.html("Yêu cầu nhập họ và tên");
     }
     return validateString(name);
@@ -292,10 +267,10 @@ function isValidateName(name) {
 function isValidateAddress(address) {
     let error = $("#error-info_address");
     error.html("");
-    $("#form-info_address").removeClass("border-danger");
+    $("#form-info_address").removeClass("is-invalid");
     if (!validateString(address)) {
         $("#form-info_address").focus();
-        $("#form-info_address").addClass("border-danger");
+        $("#form-info_address").addClass("is-invalid");
         error.html("Yêu cầu nhập địa chỉ");
     }
     return validateString(address);
@@ -304,10 +279,10 @@ function isValidateAddress(address) {
 function isValidateNote(note) {
     let error = $("#error-info_note");
     error.html("");
-    $("#form-info_note").removeClass("border-danger");
+    $("#form-info_note").removeClass("is-invalid");
     if (!validateString(note)) {
         $("#form-info_note").focus();
-        $("#form-info_note").addClass("border-danger");
+        $("#form-info_note").addClass("is-invalid");
         error.html("Yêu cầu nhập ghi chú");
     }
     return validateString(note);
@@ -316,10 +291,10 @@ function isValidateNote(note) {
 function isValidateCmnd(cmnd) {
     let error = $("#error-info_cmnd");
     error.html("");
-    $("#form-info_cmnd").removeClass("border-danger");
+    $("#form-info_cmnd").removeClass("is-invalid");
     if (!validateCMND(cmnd)) {
         $("#form-info_cmnd").focus();
-        $("#form-info_cmnd").addClass("border-danger");
+        $("#form-info_cmnd").addClass("is-invalid");
         error.html("Yêu cầu nhập CMND");
     }
     return validateCMND(cmnd);
@@ -327,49 +302,28 @@ function isValidateCmnd(cmnd) {
 function isValidateDate(date) {
     let error = $("#error-info_date");
     error.html("");
-    $("#form-info_date").removeClass("border-danger");
+    $("#form-info_date").removeClass("is-invalid");
     if (!validateDateOfNow(date)) {
         $("#form-info_date").focus();
-        $("#form-info_date").addClass("border-danger");
+        $("#form-info_date").addClass("is-invalid");
         error.html("Ngày xuất hoá đơn không hợp lệ");
     }
     return validateDateOfNow(date);
 
 }
 
-function setRowItem(item, index) {
+function setRowItem(index) {
     return `
             <tr class="row-bill">
                 <td>${index + 1}</td>
                 <td>
-                  <input type="text" class="form-control" value="${item.productName}" disabled/>
+                  <input onChange="changeValueProducts('productName', ${index})" name="productName-${index}" type="text" class="form-control" value="${listProducts[index].productName}"/>
                 </td>
                 <td>
-                  <input type="number" class="form-control" value="${item.qtt}" disabled/>
+                  <input onChange="changeValueProducts('qtt', ${index})" name="qtt-${index}" type="number" class="form-control" value="${listProducts[index].qtt}"/>
                 </td>
                 <td>
-                  <input type="number" class="form-control" value="${item.price}" disabled/>
-                </td>
-                <td>
-                    <button class="btn" onclick="deleteRowDetail(${index})">
-                        <i class="fa fa-trash"></i>
-                    </button>
-                </td>
-            </tr>
-    `
-}
-function getRowItem(index) {
-    return `
-            <tr class="row-bill">
-                <td>${index + 1}</td>
-                <td>
-                  <input type="text" class="form-control" value="" disabled/>
-                </td>
-                <td>
-                  <input type="number" class="form-control" value="" disabled/>
-                </td>
-                <td>
-                  <input type="number" class="form-control" value="" disabled/>
+                  <input onChange="changeValueProducts('price', ${index})" name="price-${index}" type="number" class="form-control" value="${listProducts[index].price}"/>
                 </td>
                 <td>
                   <button class="btn" onclick="deleteRowDetail(${index})">
@@ -380,24 +334,96 @@ function getRowItem(index) {
     `
 }
 
+function changeValueProducts(type, index) {
+    switch (type) {
+        case "productName":
+            listProducts[index].productName = $(`input[name="productName-${index}"]`).val();
+            break;
+        case "qtt":
+            listProducts[index].qtt = $(`input[name="qtt-${index}"]`).val();
+            break;
+        case "price":
+            listProducts[index].price = $(`input[name="price-${index}"]`).val();
+            break;
+    }
+}
+
 function renderListDetail(listDetail) {
+    $("#listDetail").html("");
     if (listDetail.length > 0) {
         listDetail.forEach((item, index) => {
-            $("#listDetail").append(getRowItem(item, index));
+            $("#listDetail").append(setRowItem(item, index));
         })
-    } else{
-        listDefault.forEach((item, index) => {
-            $("#listDetail").append(getRowItem(index));
+    } else {
+        listProducts.forEach((item, index) => {
+            $("#listDetail").append(setRowItem(index));
         })
     }
 }
 
 function deleteRowDetail(index) {
-    alert(index)
+    // $(evt.target).parent().parent().remove();
+    listProducts.splice(index, 1);
+    renderListDetail([]);
 }
+
+$("#form-info-body").on('submit', function (e) {
+    // khong bat event submit cua window
+    e.preventDefault();
+
+    // de thuc thi theo code nay
+    let name = $("#form-info_fullName");
+    let cmnd = $("#form-info_cmnd");
+    let date = $("#form-info_date");
+    let address = $("#form-info_address");
+    let note = $("#form-info_note");
+
+    if (checkValidateAll(name.val(), cmnd.val(), date.val(), address.val(), note.val())) {
+        $(".row-bill td>input").prop("disabled", false);
+        $(".group-btn input").prop("disabled", false);
+        $(".row-bill .btn").prop("disabled", false);
+        $("#btn-createBill").prop("disabled", true);
+        $("#form-info_fullName").prop("disabled", true);
+        $("#form-info_cmnd").prop("disabled", true);
+        $("#form-info_date").prop("disabled", true);
+        $("#form-info_address").prop("disabled", true);
+        $("#form-info_note").prop("disabled", true);
+    }
+})
+
+function disableInputCreateBill() {
+    $(".row-bill td>input").prop("disabled", true);
+    $(".group-btn input").prop("disabled", true);
+    $(".row-bill .btn").prop("disabled", true);
+    $("#btn-createBill").prop("disabled", false);
+    $("#form-info_fullName").prop("disabled", false);
+    $("#form-info_cmnd").prop("disabled", false);
+    $("#form-info_date").prop("disabled", false);
+    $("#form-info_address").prop("disabled", false);
+    $("#form-info_note").prop("disabled", false);
+}
+$("#edit-info-bill").on("click", disableInputCreateBill)
+
+// reUse
+$("#add-row-bill").on("click", function (e) {
+    e.preventDefault();
+    listProducts.push({
+        productName: "",
+        qtt: "",
+        price: ""
+    })
+    renderListDetail([]);
+})
+
+
+$("#create-bill").on("click", function (e) {
+    e.preventDefault();
+    $(".row-bill input").addClass("is-invalid");
+})
 
 $(document).ready(() => {
     renderBills();
     deleteRowBill();
     renderListDetail([]);
+    disableInputCreateBill();
 })

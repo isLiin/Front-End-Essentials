@@ -49,18 +49,18 @@
             </div>
           </div>
           <div class="form-info-footer d-flex justify-content-end mt-3">
-            <input id="btn-createBill" type="submit" value="Tạo hoá đơn" class="btn btn-primary">
+            <input id="btn-createBill" type="submit" value="Tạo hoá đơn" class="btn btn-primary btn-createBill">
           </div>
         </form>
       </div>
-      <div id="form-detail">
+      <div id="form-detail" class="overflow-hidden">
         <div class="form-detail-header">
           <h4 class="mb-0">chi tiết hoá đơn</h4>
         </div>
         <div class="form-detail-body">
-          <table class="table-bordered w-100">
-            <thead>
-              <tr>
+          <table id="table-detail-bill" class="table-bordered w-100">
+            <thead class="h-15">
+              <tr class="h-100">
                 <th>#</th>
                 <th>tên sản phẩm</th>
                 <th>số lượng</th>
@@ -105,10 +105,10 @@
               </tr> -->
             </tbody>
           </table>
-          <div class="group-btn mt-3 float-right">
-            <input type="button" value="sửa thông tin hoá đơn" class="btn btn-primary " disabled>
-            <input type="button" value="thêm row" class="btn btn-primary " disabled>
-            <input type="button" value="xuất hoá đơn" class="btn btn-primary " disabled>
+          <div class="group-btn">
+            <input type="button" id="edit-info-bill" value="sửa thông tin hoá đơn" class="btn btn-primary btn-createBill mr-2" disabled>
+            <input type="button" id="add-row-bill" value="thêm row" class="btn btn-primary btn-createBill mr-2" disabled>
+            <input type="button" id="create-bill" value="xuất hoá đơn" class="btn btn-primary btn-createBill" disabled>
           </div>
         </div>
       </div>
