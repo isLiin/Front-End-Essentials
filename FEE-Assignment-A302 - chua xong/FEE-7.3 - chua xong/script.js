@@ -1,4 +1,4 @@
-
+'use strict';
 const LIST_DEFAULT = new Array();
 
 function validate() {
@@ -243,6 +243,7 @@ $("#btn-submit").on('click', function () {
 
         // render
         renderDatas();
+
         // clear
         // $("#my_state").val(0);
         // $("input.form-control").prop('value', '');
@@ -288,8 +289,3 @@ function renderDatas() {
         $("#list-data").append(recordData(item, index));
     })
 }
-
-$(document).ready(function () {
-    // Code to run when the document is ready.
-    // validate;
-});
