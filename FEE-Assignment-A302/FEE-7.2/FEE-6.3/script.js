@@ -61,7 +61,7 @@ $(document).ready(function () {
     $("#cakes").on('click', function () {
         $("#group-data").html("");
         CONTAINER_DATA.forEach((item, index) => {
-            if (item.title.toLowerCase().includes("cake")) {
+            if ((item.title.toLowerCase().includes("cake"))) {
                 $("#group-data").append(recordData(item, index));
             }
         })
