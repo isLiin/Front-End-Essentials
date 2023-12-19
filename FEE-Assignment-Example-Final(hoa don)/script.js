@@ -252,6 +252,46 @@ function checkValidateAll(name, cmnd, date, address, note) {
     return isValidateNote(note) & isValidateAddress(address) & isValidateDate(date) & isValidateCmnd(cmnd) & isValidateName(name);
 }
 
+function checkValidateBill(index, productName, qtt, price) {
+    return isValidateProductName(productName, index) & isValidateQtt(qtt, index) & isValidatePrice(price, index);
+}
+
+function isValidateProductName(productName, index) {
+    let error = $(`#error-info_productName-${index}`);
+    error.html("");
+    $(`#form-info_productName-${index}`).removeClass("is-invalid");
+    if (!validateString(productName)) {
+        $(`#form-info_productName-${index}`).focus();
+        $(`#form-info_productName-${index}`).addClass("is-invalid");
+        error.html("Yêu cầu nhap ten san pham");
+    }
+    return validateString(productName);
+}
+
+function isValidateQtt(qtt, index) {
+    let error = $(`#error-info_qtt-${index}`);
+    error.html("");
+    $(`#form-info_qtt-${index}`).removeClass("is-invalid");
+    if (!validateNumber(qtt)) {
+        $(`#form-info_qtt-${index}`).focus();
+        $(`#form-info_qtt-${index}`).addClass("is-invalid");
+        error.html("Yêu cầu nhap so luong");
+    }
+    return validateNumber(qtt);
+}
+
+function isValidatePrice(price, index) {
+    let error = $(`#error-info_price-${index}`);
+    error.html("");
+    $(`#form-info_price-${index}`).removeClass("is-invalid");
+    if (!validateNumber(price)) {
+        $(`#form-info_price-${index}`).focus();
+        $(`#form-info_price-${index}`).addClass("is-invalid");
+        error.html("Yêu cầu nhap giá");
+    }
+    return validateNumber(price);
+}
+
 function isValidateName(name) {
     let error = $("#error-info_fullName");
     error.html("");
@@ -299,6 +339,7 @@ function isValidateCmnd(cmnd) {
     }
     return validateCMND(cmnd);
 }
+
 function isValidateDate(date) {
     let error = $("#error-info_date");
     error.html("");
@@ -317,13 +358,16 @@ function setRowItem(index) {
             <tr class="row-bill">
                 <td>${index + 1}</td>
                 <td>
-                  <input onChange="changeValueProducts('productName', ${index})" name="productName-${index}" type="text" class="form-control" value="${listProducts[index].productName}"/>
+                  <input id="form-info_productName-${index}" onChange="changeValueProducts('productName', ${index})" name="productName-${index}" type="text" class="form-control" value="${listProducts[index].productName}"/>
+                  <small id="error-info_productName-${index}" class="text-danger"></small>
                 </td>
                 <td>
                   <input onChange="changeValueProducts('qtt', ${index})" name="qtt-${index}" type="number" class="form-control" value="${listProducts[index].qtt}"/>
+                  <small id="error-info_qtt-${index}" class="text-danger"></small>
                 </td>
                 <td>
                   <input onChange="changeValueProducts('price', ${index})" name="price-${index}" type="number" class="form-control" value="${listProducts[index].price}"/>
+                  <small id="error-info_price-${index}" class="text-danger"></small>
                 </td>
                 <td>
                   <button class="btn" onclick="deleteRowDetail(${index})">
@@ -418,7 +462,10 @@ $("#add-row-bill").on("click", function (e) {
 
 $("#create-bill").on("click", function (e) {
     e.preventDefault();
-    $(".row-bill input").addClass("is-invalid");
+
+    listProducts.forEach((item, index) => {
+        checkValidateBill(index, item.productName, item.qtt, item.price);
+    })
 })
 
 $(document).ready(() => {

@@ -209,29 +209,46 @@ function submitForm() {
     }
 
 
-    // add data to list
-    listStudents.push({
-        name: std_name,
-        gender: std_gender,
-        dob: std_dob,
-        grade: std_grade,
-        class: std_class,
-        math: std_math,
-        physics: std_physics,
-        chemistry: std_chemistry,
-        sum: function () {
-            return ((parseFloat(this.math) + parseFloat(this.physics) + parseFloat(this.chemistry)) / 3).toFixed(2);
+    if ($("#btn-submit").attr('value') == "Cập nhật thông tin") {
+        let index = $("#infomation").prop("keys");
+        console.log(index);
+        // update data to list
+        listStudents[index] = {
+            name: std_name,
+            gender: std_gender,
+            dob: std_dob,
+            grade: std_grade,
+            class: std_class,
+            math: std_math,
+            physics: std_physics,
+            chemistry: std_chemistry,
+            sum: function () {
+                return ((parseFloat(this.math) + parseFloat(this.physics) + parseFloat(this.chemistry)) / 3).toFixed(2);
+            }    
         }
-    });
+        $("#btn-submit").attr('value', "Lưu thông tin");
+    } else {
+        // add data to list
+        listStudents.push({
+            name: std_name,
+            gender: std_gender,
+            dob: std_dob,
+            grade: std_grade,
+            class: std_class,
+            math: std_math,
+            physics: std_physics,
+            chemistry: std_chemistry,
+            sum: function () {
+                return ((parseFloat(this.math) + parseFloat(this.physics) + parseFloat(this.chemistry)) / 3).toFixed(2);
+            }
+        });
+    }
 
     // add data to table
     showData(listStudents);
     // cleanForm();
     cleanForm();
 
-    if ($("#btn-submit").attr('value') == "Cập nhật thông tin") {
-        $("#btn-submit").attr('value', "Lưu thông tin");
-    }
 }
 
 function changeStudentGrade() {
@@ -256,7 +273,7 @@ function editStudent(index) {
 
     // Show
     $("#student__name").val(items_name);
-    console.log(items_gender);
+    // console.log(items_gender);
     switch (items_gender) {
         case "Nam":
             $("#gender__male").prop("checked", true);
@@ -280,11 +297,12 @@ function editStudent(index) {
     $("#point-chemistry").val(items_chemistry);
 
     // Delete
-    listStudents.splice(index, 1);
+    // listStudents.splice(index, 1);
+    $("#infomation").prop("keys", index);
 }
 
 function deleteStudent(index) {
-    if (confirm("Bạn có chắc muốn xóa Row thông tin này không?”. ")) {
+    if (confirm("Bạn có chắc muốn xóa Row thông tin này không?")) {
         // Delete
         listStudents.splice(index, 1);
         // Show
@@ -298,11 +316,11 @@ function searchStudent() {
     let search = $("#showing__search").val();
 
     // Validate
-    if (!validateName(search)) {
-        alert("Kiểm tra lai ten");
+    // if (!validateName(search)) {
+    //     alert("Kiểm tra lai ten");
         $("#showing__search").focus();
-        return;
-    }
+    //     return;
+    // }
 
     // Search
     for (let i = 0; i < listStudents.length; i++) {
