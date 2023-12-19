@@ -1,4 +1,10 @@
-
+function validateNumber(numb) {
+    // Kiểm tra xem số có be hon hoặc bằng 0 hay không
+    if (numb <= 0) {
+        return false;
+    }
+    return true;
+}
 
 function validateString(name) {
     // Kiểm tra xem chuỗi có bị bỏ trống hay không

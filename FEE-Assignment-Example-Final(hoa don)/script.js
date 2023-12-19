@@ -12,7 +12,7 @@ const listDefault = [{
 var listProducts = listDefault;
 var listBills = [
     {
-        name: "Tuấn1",
+        name: "Tuấn",
         cmnd: "1002200202",
         date: "10/10/2021",
         details: [
@@ -34,7 +34,7 @@ var listBills = [
         ]
     },
     {
-        name: "Tuấn2",
+        name: "Khan",
         cmnd: "2002200202",
         date: "12/10/2021",
         details: [
@@ -55,78 +55,12 @@ var listBills = [
             },
             {
                 productName: "Gạch",
-                qtt: 51,
+                qtt: 99,
                 price: 10000
             },
             {
                 productName: "Gạch",
-                qtt: 51,
-                price: 10000
-            },
-        ]
-    },
-    {
-        name: "Tuấn1",
-        cmnd: "1002200202",
-        date: "10/10/2021",
-        details: [
-            {
-                productName: "Xi Măng1",
-                qtt: 10,
-                price: 100000
-            },
-            {
-                productName: "Cát1",
                 qtt: 5,
-                price: 120000
-            },
-            {
-                productName: "Gạch1",
-                qtt: 51,
-                price: 10000
-            },
-        ]
-    },
-    {
-        name: "Tuấn1",
-        cmnd: "1002200202",
-        date: "10/10/2021",
-        details: [
-            {
-                productName: "Xi Măng1",
-                qtt: 10,
-                price: 100000
-            },
-            {
-                productName: "Cát1",
-                qtt: 5,
-                price: 120000
-            },
-            {
-                productName: "Gạch1",
-                qtt: 51,
-                price: 10000
-            },
-        ]
-    },
-    {
-        name: "Tuấn1",
-        cmnd: "1002200202",
-        date: "10/10/2021",
-        details: [
-            {
-                productName: "Xi Măng1",
-                qtt: 10,
-                price: 100000
-            },
-            {
-                productName: "Cát1",
-                qtt: 5,
-                price: 120000
-            },
-            {
-                productName: "Gạch1",
-                qtt: 51,
                 price: 10000
             },
         ]
@@ -362,11 +296,11 @@ function setRowItem(index) {
                   <small id="error-info_productName-${index}" class="text-danger"></small>
                 </td>
                 <td>
-                  <input onChange="changeValueProducts('qtt', ${index})" name="qtt-${index}" type="number" class="form-control" value="${listProducts[index].qtt}"/>
+                  <input id="form-info_qtt-${index}" onChange="changeValueProducts('qtt', ${index})" name="qtt-${index}" type="number" class="form-control" value="${listProducts[index].qtt}"/>
                   <small id="error-info_qtt-${index}" class="text-danger"></small>
                 </td>
                 <td>
-                  <input onChange="changeValueProducts('price', ${index})" name="price-${index}" type="number" class="form-control" value="${listProducts[index].price}"/>
+                  <input id="form-info_price-${index}" onChange="changeValueProducts('price', ${index})" name="price-${index}" type="number" class="form-control" value="${listProducts[index].price}"/>
                   <small id="error-info_price-${index}" class="text-danger"></small>
                 </td>
                 <td>
@@ -409,6 +343,12 @@ function deleteRowDetail(index) {
     // $(evt.target).parent().parent().remove();
     listProducts.splice(index, 1);
     renderListDetail([]);
+}
+
+function resetInputAll() {
+    $(".row-bill td>input").prop("value", "");
+    $(".group-info input").prop("value", "");
+    $(".group-info textarea").prop("value", "");
 }
 
 $("#form-info-body").on('submit', function (e) {
@@ -462,15 +402,38 @@ $("#add-row-bill").on("click", function (e) {
 
 $("#create-bill").on("click", function (e) {
     e.preventDefault();
+    let isValidate = true;
 
     listProducts.forEach((item, index) => {
-        checkValidateBill(index, item.productName, item.qtt, item.price);
+        isValidate = checkValidateBill(index, item.productName, item.qtt, item.price);
+
+        if (!isValidate) {
+            return false;
+        }
+
     })
+
+    if (isValidate) {
+        let bill = {
+            id: listBills.length++,
+            name: $("#form-info_fullName").val(),
+            cmnd: $("#form-info_cmnd").val(),
+            date: $("#form-info_date").val(),
+            address: $("#form-info_address").val(),
+            note: $("#form-info_note").val(),
+            details: listProducts
+        }
+        listBills.push(bill);
+        renderBills();
+        renderListDetail([]);
+        disableInputCreateBill();
+        resetInputAll();
+    }
 })
 
 $(document).ready(() => {
     renderBills();
-    deleteRowBill();
+    deleteRowBill;
     renderListDetail([]);
     disableInputCreateBill();
 })

@@ -88,7 +88,7 @@ button,
 #production #form-info .group-info {
     display: grid;
     grid-template-columns: calc(50% - .5em) auto;
-    gap: 1em;
+    gap: 2em;
 }
 
 #production #form-info .group-info .form-group:last-child {
@@ -136,38 +136,59 @@ button,
 }
 
 #table-detail-bill {
-    height: 100%;
+    max-height: 300px;
     overflow: auto;
 }
 
 .form-detail-body {
-    display: grid;
-    gap: 1em;
-    grid-template-rows: calc(100% - 50px) 50px;
+    overflow-y: auto;
+    position: relative;
 }
 
 .form-detail-body>table {
     overflow: auto;
 }
 
-.form-detail-body>div {
+.form-detail-body>table thead{
+    height: 40px;
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 9;
+}
+
+div.group-btn {
     display: flex;
     align-items: center;
     justify-content: flex-end;
 }
 
+div.group-btn{
+    padding: 7px 0;
+    z-index: 9;
+    position: sticky;
+    right: 0;
+    bottom: 0;
+    background: white;
+}
+
 #form-detail tbody tr {
     width: 100%;
-    height: calc(100%/5);
-    max-height: 50px !important;
 }
 
 #form-detail tbody tr td {
-    max-height: 50px !important;
-    height: calc(100%/5);
+    position: relative;
 }
 
-#listDetail{
-    /* height: calc(50px * 5); */
+/* #listDetail{
+    height: calc(50px * 5);
+    max-height: 300px;
+    height: 100%;
     overflow: auto;
+} */
+
+#form-detail{
+    display: grid;
+    gap: 1em;
+    grid-template-rows: 25px calc(50px * 6 + 30px) 50px;
 }
