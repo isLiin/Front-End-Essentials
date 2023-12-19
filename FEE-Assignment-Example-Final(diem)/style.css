@@ -157,3 +157,7 @@ label {
 .choose-gender label {
     font-weight: 100;
 }
+
+.custom-p{
+    padding: 0 5px;
+}

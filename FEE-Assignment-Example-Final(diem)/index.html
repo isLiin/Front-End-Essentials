@@ -1,275 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../Common/boostrap/bootstrap.min.css" />
 
-    <link rel="stylesheet" href="../Common/fontAwesome/all.min.css" />
-    <link rel="stylesheet" href="../Common/fontAwesome/brands.min.css" />
-    
-    <link rel="stylesheet" href="style.css" />
-    <title>Final</title>
-  </head>
-  <body>
-    <div id="main">
-      <div id="editing-infomation">
-        <div id="header">
-          <h2>
-            <p class="m-0">quản lý học sinh</p>
-            <span> trường THPT ABC</span>
-          </h2>
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../Common/boostrap/bootstrap.min.css" />
 
-        <div id="infomation">
-          <div class="info-left">
-            <div class="info__input info-left__input position-relative">
-              <div class="header">
-                <label for="student__name">họ và tên học sinh</label>
-              </div>
-              <input
-                id="student__name"
-                name="student__name"
-                type="text"
-                class="form-control"
-                placeholder="Họ và tên học viên"
-              />
-              <div
-                class="alert alert-danger d-none position-absolute"
-              style="z-index: 1; font-size: .6em"
-                role="alert"
-                id="name-alert"
-              ></div>
-            </div>
-            <div class="info__input info-left__input position-relative">
-              <div class="header">
-                <label for="student__grade">Khối lớp học</label>
-              </div>
-              <select
-                class="form-control"
-                name="student__grade"
-                id="student__grade"
-              >
-                <option value="0">Chọn khối ...</option>
-                <option value="10">10</option>
-                <option value="11">11</option>
-                <option value="12">12</option>
-              </select>
-              <div
-                class="alert alert-danger d-none position-absolute"
-              style="z-index: 1; font-size: .6em"
-                role="alert"
-                id="grade-alert"
-              ></div>
-            </div>
-          </div>
-          <div class="info-right">
-            <div class="info__input info-right__gender position-relative">
-              <div class="header"><label>Giới tính</label></div>
-              <form class="myGender">
-                <div class="choose-gender">
-                  <input
-                    type="radio"
-                    name="gender"
-                    id="gender__male"
-                    value="Nam"
-                    checked
-                  />
-                  <label for="gender__male">Nam</label>
-                </div>
-                <div class="choose-gender">
-                  <input
-                    type="radio"
-                    name="gender"
-                    id="gender__female"
-                    value="Nữ"
-                  />
-                  <label for="gender__female">Nữ</label>
-                </div>
-                <div class="choose-gender">
-                  <input
-                    type="radio"
-                    name="gender"
-                    id="gender__other"
-                    value="Khác"
-                  />
-                  <label for="gender__other">Khác</label>
-                </div>
-                <div
-                  class="alert alert-danger d-none position-absolute"
-              style="z-index: 1; font-size: .6em"
-                  role="alert"
-                  id="gender-alert"
-                ></div>
-              </form>
-            </div>
-            <div class="info__input info-right__dob position-relative">
-              <div class="header">
-                <label for="student__dob">Ngày sinh</label>
-              </div>
-              <input
-                class="form-control"
-                type="date"
-                name="student__dob"
-                id="student__dob"
-              />
-              <div
-                class="alert alert-danger d-none position-absolute"
-              style="z-index: 1; font-size: .6em"
-                role="alert"
-                id="dob-alert"
-              ></div>
-            </div>
-            <div class="info__input info-right__class position-relative">
-              <div class="header">
-                <label for="student__class">lớp học</label>
-              </div>
-              <select
-                class="form-control"
-                name="student__class"
-                id="student__class"
-              >
-                <option value="0">Chọn lớp học ...</option>
-              </select>
+  <link rel="stylesheet" href="../Common/fontAwesome/all.min.css" />
+  <link rel="stylesheet" href="../Common/fontAwesome/brands.min.css" />
 
-              <div
-                class="alert alert-danger d-none position-absolute"
-              style="z-index: 1; font-size: .6em"
-                role="alert"
-                id="class-alert"
-              ></div>
-            </div>
-          </div>
-        </div>
+  <link rel="stylesheet" href="style.css" />
+  <title>Final</title>
+</head>
 
-        <div id="point">
-          <div class="point-math position-relative">
-            <div class="header">
-              <label for="point-math">điểm môn Toán</label>
-            </div>
-            <input
-              class="form-control"
-              type="text"
-              id="point-math"
-              placeholder="HTML vs CSS"
-            />
-
-            <div
-              class="alert alert-danger d-none position-absolute"
-              style="z-index: 1; font-size: .6em"
-              role="alert"
-              id="math-alert"
-            ></div>
-          </div>
-          <div class="point-physics position-relative">
-            <div class="header">
-              <label for="point-physics">điểm môn lý</label>
-            </div>
-            <input
-              class="form-control"
-              type="text"
-              id="point-physics"
-              placeholder="JavaScript"
-            />
-            <div
-              class="alert alert-danger d-none position-absolute"
-              style="z-index: 1; font-size: .6em"
-              role="alert"
-              id="physics-alert"
-            ></div>
-          </div>
-          <div class="point-chemistry position-relative">
-            <div class="header">
-              <label for="point-chemistry">điểm môn hoá</label>
-            </div>
-            <input
-              class="form-control"
-              type="text"
-              id="point-chemistry"
-              placeholder="Jquery"
-            />
-            <div
-              class="alert alert-danger d-none position-absolute"
-              style="z-index: 1; font-size: .6em"
-              style="z-index: 1; font-size: .6em"
-              role="alert"
-              id="chemistry-alert"
-            ></div>
-          </div>
-        </div>
-
-        <input
-          id="btn-submit"
-          class="btn btn-outline-danger"
-          type="button"
-          value="Lưu thông tin"
-        />
+<body>
+  <div id="main">
+    <div id="editing-infomation">
+      <div id="header">
+        <h2>
+          <p class="m-0">quản lý học sinh</p>
+          <span> trường THPT ABC</span>
+        </h2>
       </div>
 
-      <div id="showing-infomation">
-        <div class="showing-infomation__top">
-          <div class="header"><h2>DANH SáCH HọC SINH</h2></div>
-          <div class="showing-search">
-            <label for="showing__search">Nhâp tên Học sinh cần tìm kiếm</label>
-            <input
-              class="form-control"
-              type="search"
-              name="showing__search"
-              id="showing__search"
-              placeholder="Nhập tên học sinh"
-            />
-            <input
-              type="button"
-              value="Search"
-              class="btn btn-success form-control"
-              id="btn-search"
-            />
+      <div id="infomation">
+        <div class="info-left">
+          <div class="info__input info-left__input position-relative">
+            <div class="header">
+              <label for="student__name">họ và tên học sinh</label>
+            </div>
+            <input id="student__name" name="student__name" type="text" class="form-control"
+              placeholder="Họ và tên học viên" />
+            <div class="alert alert-danger d-none position-absolute custom-p" style="z-index: 1; font-size: .6em" role="alert"
+              id="name-alert"></div>
+          </div>
+          <div class="info__input info-left__input position-relative">
+            <div class="header">
+              <label for="student__grade">Khối lớp học</label>
+            </div>
+            <select class="form-control" name="student__grade" id="student__grade">
+              <option value="0">Chọn khối ...</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+            </select>
+            <div class="alert alert-danger d-none position-absolute custom-p" style="z-index: 1; font-size: .6em" role="alert"
+              id="grade-alert"></div>
           </div>
         </div>
-        <div class="showing-infomation__bottom">
-          <table class="table">
-            <thead>
-              <tr class="row">
-                <th class="col">#</th>
-                <th class="col">Họ và tên</th>
-                <th class="col">Giới tính</th>
-                <th class="col">Ngày sinh</th>
-                <th class="col">Khối</th>
-                <th class="col">Lớp học</th>
-                <th class="col">M. Toán</th>
-                <th class="col">M. Lý</th>
-                <th class="col">M. Hóa</th>
-                <th class="col">D.TB</th>
-                <th class="col">Action</th>
-              </tr>
-            </thead>
-            <tbody id="container-data">
-              <!-- Data -->
-              <!-- data is null -->
-            </tbody>
-            <tfoot>
-              <tr class="row">
-                <td class="col count-12"></td>
-                <td class="col count-11"></td>
-                <td class="col count-10"></td>
-                <td class="col count-total"></td>
-              </tr>
-            </tfoot>
-          </table>
+        <div class="info-right">
+          <div class="info__input info-right__gender position-relative">
+            <div class="header"><label>Giới tính</label></div>
+            <form class="myGender">
+              <div class="choose-gender">
+                <input type="radio" name="gender" id="gender__male" value="Nam" checked />
+                <label for="gender__male">Nam</label>
+              </div>
+              <div class="choose-gender">
+                <input type="radio" name="gender" id="gender__female" value="Nữ" />
+                <label for="gender__female">Nữ</label>
+              </div>
+              <div class="choose-gender">
+                <input type="radio" name="gender" id="gender__other" value="Khác" />
+                <label for="gender__other">Khác</label>
+              </div>
+              <div class="alert alert-danger d-none position-absolute custom-p" style="z-index: 1; font-size: .6em" role="alert"
+                id="gender-alert"></div>
+            </form>
+          </div>
+          <div class="info__input info-right__dob position-relative">
+            <div class="header">
+              <label for="student__dob">Ngày sinh</label>
+            </div>
+            <input class="form-control" type="date" name="student__dob" id="student__dob" />
+            <div class="alert alert-danger d-none position-absolute custom-p" style="z-index: 1; font-size: .6em" role="alert"
+              id="dob-alert"></div>
+          </div>
+          <div class="info__input info-right__class position-relative">
+            <div class="header">
+              <label for="student__class">lớp học</label>
+            </div>
+            <select class="form-control" name="student__class" id="student__class">
+              <option value="0">Chọn lớp học ...</option>
+            </select>
+
+            <div class="alert alert-danger d-none position-absolute custom-p" style="z-index: 1; font-size: .6em" role="alert"
+              id="class-alert"></div>
+          </div>
         </div>
+      </div>
+
+      <div id="point">
+        <div class="point-math position-relative">
+          <div class="header">
+            <label for="point-math">điểm môn Toán</label>
+          </div>
+          <input class="form-control" type="text" id="point-math" placeholder="HTML vs CSS" />
+
+          <div class="alert alert-danger d-none position-absolute custom-p" style="z-index: 1; font-size: .6em" role="alert"
+            id="math-alert"></div>
+        </div>
+        <div class="point-physics position-relative">
+          <div class="header">
+            <label for="point-physics">điểm môn lý</label>
+          </div>
+          <input class="form-control" type="text" id="point-physics" placeholder="JavaScript" />
+          <div class="alert alert-danger d-none position-absolute custom-p" style="z-index: 1; font-size: .6em" role="alert"
+            id="physics-alert"></div>
+        </div>
+        <div class="point-chemistry position-relative">
+          <div class="header">
+            <label for="point-chemistry">điểm môn hoá</label>
+          </div>
+          <input class="form-control" type="text" id="point-chemistry" placeholder="Jquery" />
+          <div class="alert alert-danger d-none position-absolute custom-p" style="z-index: 1; font-size: .6em"
+            style="z-index: 1; font-size: .6em" role="alert" id="chemistry-alert"></div>
+        </div>
+      </div>
+
+      <input id="btn-submit" class="btn btn-outline-danger" type="button" value="Lưu thông tin" />
+    </div>
+
+    <div id="showing-infomation">
+      <div class="showing-infomation__top">
+        <div class="header">
+          <h2>DANH SáCH HọC SINH</h2>
+        </div>
+        <div class="showing-search">
+          <label for="showing__search">Nhâp tên Học sinh cần tìm kiếm</label>
+          <input class="form-control" type="search" name="showing__search" id="showing__search"
+            placeholder="Nhập tên học sinh" />
+          <input type="button" value="Search" class="btn btn-success form-control" id="btn-search" />
+        </div>
+      </div>
+      <div class="showing-infomation__bottom">
+        <table class="table">
+          <thead>
+            <tr class="row">
+              <th class="col">#</th>
+              <th class="col">Họ và tên</th>
+              <th class="col">Giới tính</th>
+              <th class="col">Ngày sinh</th>
+              <th class="col">Khối</th>
+              <th class="col">Lớp học</th>
+              <th class="col">M. Toán</th>
+              <th class="col">M. Lý</th>
+              <th class="col">M. Hóa</th>
+              <th class="col">D.TB</th>
+              <th class="col">Action</th>
+            </tr>
+          </thead>
+          <tbody id="container-data">
+            <!-- Data -->
+            <!-- data is null -->
+          </tbody>
+          <tfoot>
+            <tr class="row">
+              <td class="col count-12"></td>
+              <td class="col count-11"></td>
+              <td class="col count-10"></td>
+              <td class="col count-total"></td>
+            </tr>
+          </tfoot>
+        </table>
       </div>
     </div>
-    <!-- close main -->
+  </div>
+  <!-- close main -->
 
-    <script src="../Common/fontAwesome/all.min.js"></script>
-    <script src="../Common/fontAwesome/brands.min.js"></script>
-    
-    <script src="../Common/jquery/jquery.min.js"></script>
-    <script src="../Common/jquery/bootstrap.bundle.min.js"></script>
-    <script src="../Common/jquery/popper.min.js"></script>
+  <script src="../Common/fontAwesome/all.min.js"></script>
+  <script src="../Common/fontAwesome/brands.min.js"></script>
 
-    <script src="./validation.js"></script>
-    <script src="./script.js"></script>
-  </body>
+  <script src="../Common/jquery/jquery.min.js"></script>
+  <script src="../Common/jquery/bootstrap.bundle.min.js"></script>
+  <script src="../Common/jquery/popper.min.js"></script>
+
+  <script src="./validation.js"></script>
+  <script src="./script.js"></script>
+</body>
+
 </html>

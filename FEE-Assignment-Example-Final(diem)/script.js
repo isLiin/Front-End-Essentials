@@ -134,14 +134,88 @@ function cleanForm() {
     $("#student__name").focus();
 }
 
+function validateForm(std_name, std_dob, std_grade, std_class, std_math, std_physics, std_chemistry) {
+    let isValidate = true;
+    // Validate
+    $("#name-alert").addClass("d-none");
+    $("#student__name").removeClass("is-invalid");
+    if (!validateName(std_name)) {
+        $("#student__name").addClass("is-invalid");
+        $("#name-alert").removeClass("d-none");
+        $("#name-alert").html("Tên học sinh phải bao gồm chuỗi và khoảng trắng!");
+        $("#name-alert").focus();
+        isValidate = false;
+    }
+
+    $("#dob-alert").addClass("d-none");
+    $("#student__dob").removeClass("is-invalid");
+    if (!validateDateOfBirth(std_dob)) {
+        $("#student__dob").addClass("is-invalid");
+        $("#dob-alert").removeClass("d-none");
+        $("#dob-alert").html("Ngày sinh cua học sinh phải nhỏ hơn ngày hien tai!");
+        $("#dob-alert").focus();
+        isValidate = false;
+    }
+
+    $("#grade-alert").addClass("d-none");
+    $("#student__grade").removeClass("is-invalid");
+    if (validateSelectedOption(std_grade)) {
+        $("#student__grade").addClass("is-invalid");
+        $("#grade-alert").removeClass("d-none");
+        $("#grade-alert").html("Chọn Khối lớp học!");
+        $("#grade-alert").focus();
+        isValidate = false;
+    }
+
+    $("#class-alert").addClass("d-none");
+    $("#student__class").removeClass("is-invalid");
+    if (validateSelectedOption(std_class)) {
+        $("#student__class").addClass("is-invalid");
+        $("#class-alert").removeClass("d-none");
+        $("#class-alert").html("Chọn lớp học!");
+        $("#class-alert").focus();
+        isValidate = false;
+    }
+
+    $("#math-alert").addClass("d-none");
+    $("#student__math").removeClass("is-invalid");
+    if (!validateSubjectScore(std_math)) {
+        $("#student__math").addClass("is-invalid");
+        $("#math-alert").removeClass("d-none");
+        $("#math-alert").html("Điem môn toan phải nhỏ hơn hoặc bằng 10!");
+        $("#math-alert").focus();
+        isValidate = false;
+    }
+
+    $("#physics-alert").addClass("d-none");
+    $("#student__physics").removeClass("is-invalid");
+    if (!validateSubjectScore(std_physics)) {
+        $("#student__physics").addClass("is-invalid");
+        $("#physics-alert").removeClass("d-none");
+        $("#physics-alert").html("Điem môn ly phải nhỏ hơn hoặc bằng 10!");
+        $("#physics-alert").focus();
+        isValidate = false;
+    }
+
+    $("#chemistry-alert").addClass("d-none");
+    $("#student__chemistry").removeClass("is-invalid");
+    if (!validateSubjectScore(std_chemistry)) {
+        $("#student__chemistry").addClass("is-invalid");
+        $("#chemistry-alert").removeClass("d-none");
+        $("#chemistry-alert").html("Điem môn hoa phải nhỏ hơn hoặc bằng 10!");
+        $("#chemistry-alert").focus();
+        isValidate = false;
+    }
+
+    return isValidate;
+}
+
 /**
  * Submits the form and performs various validations before adding the student data to the list and table.
  *
  * @return {undefined} No return value.
  */
 function submitForm() {
-
-    // Create new Student
     let std_name = $("#student__name").val();
     let std_gender = $("input[name=gender]:checked").val();
     let std_dob = $("#student__dob").val();
@@ -152,62 +226,9 @@ function submitForm() {
     let std_chemistry = $("#point-chemistry").val();
 
     // Validate
-    $("#name-alert").addClass("d-none");
-    if (!validateName(std_name)) {
-        $("#name-alert").removeClass("d-none");
-        $("#name-alert").html("Tên học sinh phải bao gồm chuỗi và khoảng trắng!");
-        $("#name-alert").focus();
+    if (!validateForm(std_name, std_dob, std_grade, std_class, std_math, std_physics, std_chemistry)) {
         return;
     }
-
-    $("#dob-alert").addClass("d-none");
-    if (!validateDateOfBirth(std_dob)) {
-        $("#dob-alert").removeClass("d-none");
-        $("#dob-alert").html("Ngày sinh cua học sinh phải nhỏ hơn ngày hien tai!");
-        $("#dob-alert").focus();
-        return;
-    }
-
-    $("#grade-alert").addClass("d-none");
-    if (validateSelectedOption(std_grade)) {
-        $("#grade-alert").removeClass("d-none");
-        $("#grade-alert").html("Chọn Khối lớp học!");
-        $("#grade-alert").focus();
-        return;
-    }
-
-    $("#class-alert").addClass("d-none");
-    if (validateSelectedOption(std_class)) {
-        $("#class-alert").removeClass("d-none");
-        $("#class-alert").html("Chọn lớp học!");
-        $("#class-alert").focus();
-        return;
-    }
-
-    $("#math-alert").addClass("d-none");
-    if (!validateSubjectScore(std_math)) {
-        $("#math-alert").removeClass("d-none");
-        $("#math-alert").html("Điem môn toan phải nhỏ hơn hoặc bằng 10!");
-        $("#math-alert").focus();
-        return;
-    }
-
-    $("#physics-alert").addClass("d-none");
-    if (!validateSubjectScore(std_physics)) {
-        $("#physics-alert").removeClass("d-none");
-        $("#physics-alert").html("Điem môn ly phải nhỏ hơn hoặc bằng 10!");
-        $("#physics-alert").focus();
-        return;
-    }
-
-    $("#chemistry-alert").addClass("d-none");
-    if (!validateSubjectScore(std_chemistry)) {
-        $("#chemistry-alert").removeClass("d-none");
-        $("#chemistry-alert").html("Điem môn hoa phải nhỏ hơn hoặc bằng 10!");
-        $("#chemistry-alert").focus();
-        return;
-    }
-
 
     if ($("#btn-submit").attr('value') == "Cập nhật thông tin") {
         let index = $("#infomation").prop("keys");
@@ -224,7 +245,7 @@ function submitForm() {
             chemistry: std_chemistry,
             sum: function () {
                 return ((parseFloat(this.math) + parseFloat(this.physics) + parseFloat(this.chemistry)) / 3).toFixed(2);
-            }    
+            }
         }
         $("#btn-submit").attr('value', "Lưu thông tin");
     } else {
@@ -248,7 +269,6 @@ function submitForm() {
     showData(listStudents);
     // cleanForm();
     cleanForm();
-
 }
 
 function changeStudentGrade() {
@@ -318,7 +338,7 @@ function searchStudent() {
     // Validate
     // if (!validateName(search)) {
     //     alert("Kiểm tra lai ten");
-        $("#showing__search").focus();
+    $("#showing__search").focus();
     //     return;
     // }
 
