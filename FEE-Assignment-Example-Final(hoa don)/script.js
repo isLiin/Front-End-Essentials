@@ -166,13 +166,17 @@ function changeTotalQuantity() {
 }
 
 function convertFormatNumber(numb) {
-    // resutl.html(Intl.NumberFormat(total, {
+    // return Intl.NumberFormat(numb, {
     //     style: "currency",
     //     currency: "VND",
-    // }).format(total));
+    // }).format(numb)
 
-    return Intl.NumberFormat("vi-VN", {
-        maximumSignificantDigits: 3,
+    // return Intl.NumberFormat("vi-vn", {
+    //     maximumSignificantDigits: 3,
+    // }).format(numb)
+
+    return Intl.NumberFormat("vi-vn", {
+        style: "decimal",
     }).format(numb)
 }
 
