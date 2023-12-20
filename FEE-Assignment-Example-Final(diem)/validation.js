@@ -37,13 +37,8 @@ function validateDateOfBirth(dateString) {
 }
 
 function validateSelectedOption(selectElement) {
-
     // Kiểm tra xem một mục đã được chọn hay chưa
-    if (parseInt(selectElement) == 0) {
-        return true;
-    }
-
-    return false;
+    return (parseInt(selectElement) !== null && parseInt(selectElement) > 0);
 }
 function validateSubjectScore(score) {
     // Kiểm tra xem điểm môn học đã được nhập hay chưa

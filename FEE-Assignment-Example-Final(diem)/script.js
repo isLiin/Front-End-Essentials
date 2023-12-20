@@ -94,22 +94,25 @@ function updateClass(grade) {
     switch (grade) {
         case "10":
             container.html("");
+            container.append(`<option value="0" disabled selected>chọn khối ...</option>`);
             container.append(`<option value="10A">10A</option>`);
             container.append(`<option value="10B">10B</option>`);
             break;
         case "11":
             container.html("");
+            container.append(`<option value="0" disabled selected>chọn khối ...</option>`);
             container.append(`<option value="11A">11A</option>`)
             container.append(`<option value="11B">11B</option>`)
             break;
         case "12":
             container.html("");
+            container.append(`<option value="0" disabled selected>chọn khối ...</option>`);
             container.append(`<option value="12A">12A</option>`);
             container.append(`<option value="12B">12B</option>`);
             break;
         default:
             container.html("");
-            container.append(`<option value="0">chọn khối ...</option>`);
+            container.append(`<option value="0" disabled selected>chọn khối ...</option>`);
             break;
     }
 }
@@ -138,11 +141,11 @@ function cleanForm() {
     $("#gender__male").prop("checked", true);
     $("#student__dob").val("");
     $("#student__grade").html(`
-                <option value="0">chọn khối ...</option>
+                <option value="0" disabled selected>chọn khối ...</option>
                 <option value="10">10</option>
                 <option value="11">11</option>
                 <option value="12">12</option>`);
-    $("#student__class").html(`<option value="0">Chọn lớp học ...</option>`);
+    $("#student__class").html(`<option value="0" disabled selected>Chọn lớp học ...</option>`);
     $("#point-math").val("");
     $("#point-physics").val("");
     $("#point-chemistry").val("");
@@ -174,7 +177,7 @@ function validateForm(std_name, std_dob, std_grade, std_class, std_math, std_phy
 
     $("#grade-alert").addClass("d-none");
     $("#student__grade").removeClass("is-invalid");
-    if (validateSelectedOption(std_grade)) {
+    if (!validateSelectedOption(std_grade)) {
         $("#student__grade").addClass("is-invalid");
         $("#grade-alert").removeClass("d-none");
         $("#grade-alert").html("Chọn Khối lớp học!");
@@ -184,7 +187,7 @@ function validateForm(std_name, std_dob, std_grade, std_class, std_math, std_phy
 
     $("#class-alert").addClass("d-none");
     $("#student__class").removeClass("is-invalid");
-    if (validateSelectedOption(std_class)) {
+    if (!validateSelectedOption(std_class)) {
         $("#student__class").addClass("is-invalid");
         $("#class-alert").removeClass("d-none");
         $("#class-alert").html("Chọn lớp học!");
@@ -193,9 +196,9 @@ function validateForm(std_name, std_dob, std_grade, std_class, std_math, std_phy
     }
 
     $("#math-alert").addClass("d-none");
-    $("#student__math").removeClass("is-invalid");
+    $("#point-math").removeClass("is-invalid");
     if (!validateSubjectScore(std_math)) {
-        $("#student__math").addClass("is-invalid");
+        $("#point-math").addClass("is-invalid");
         $("#math-alert").removeClass("d-none");
         $("#math-alert").html("Điem môn toan phải nhỏ hơn hoặc bằng 10!");
         $("#math-alert").focus();
@@ -203,9 +206,9 @@ function validateForm(std_name, std_dob, std_grade, std_class, std_math, std_phy
     }
 
     $("#physics-alert").addClass("d-none");
-    $("#student__physics").removeClass("is-invalid");
+    $("#point-physics").removeClass("is-invalid");
     if (!validateSubjectScore(std_physics)) {
-        $("#student__physics").addClass("is-invalid");
+        $("#point-physics").addClass("is-invalid");
         $("#physics-alert").removeClass("d-none");
         $("#physics-alert").html("Điem môn ly phải nhỏ hơn hoặc bằng 10!");
         $("#physics-alert").focus();
@@ -213,9 +216,9 @@ function validateForm(std_name, std_dob, std_grade, std_class, std_math, std_phy
     }
 
     $("#chemistry-alert").addClass("d-none");
-    $("#student__chemistry").removeClass("is-invalid");
+    $("#point-chemistry").removeClass("is-invalid");
     if (!validateSubjectScore(std_chemistry)) {
-        $("#student__chemistry").addClass("is-invalid");
+        $("#point-chemistry").addClass("is-invalid");
         $("#chemistry-alert").removeClass("d-none");
         $("#chemistry-alert").html("Điem môn hoa phải nhỏ hơn hoặc bằng 10!");
         $("#chemistry-alert").focus();
