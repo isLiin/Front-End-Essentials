@@ -7,17 +7,16 @@ const recordData = (item, index) => `
                         <div class="title">${item.title}</div>
                         <div class="price">$${item.price}</div>
                     </div>
-                </div>`
+                </div>`;
 
 const recordEmpty = `
-    <div class="card">
-        <div class="card-body d-flex justify-content-between w-100">
-            <div class="title">Empty</div>
-        </div>
-    </div>
-`;
+                <div class="card">
+                    <div class="card-body d-flex justify-content-between w-100">
+                        <div class="title">Empty</div>
+                    </div>
+                </div>`;
 
-function isEmpty() {
+function showAllDatas() {
     if (CONTAINER_DATA.length == 0) {
         $("#group-data").html("");
         $("#group-data").append(recordEmpty);
@@ -29,17 +28,8 @@ function isEmpty() {
     }
 }
 
-function Search(keysItem) {
-    $("#group-data").html("");
-    CONTAINER_DATA.forEach((item, index) => {
-        if (item.title.toLowerCase().includes(keysItem.toLowerCase())) {
-            $("#group-data").append(recordData(item, index));
-        }
-    })
-}
-
 $(document).ready(function () {
-    isEmpty();
+    showAllDatas();
 
     $("#search").on('keyup', function () {
         let search = $(this).val();
