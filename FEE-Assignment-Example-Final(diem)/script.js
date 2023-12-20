@@ -2,7 +2,7 @@
 
 // Application static
 $(document).ready(function () {
-    console.log("ready!");
+    console.log('%c LIIN Coder!!', 'font-weight: bold; font-size: 50px;color: red; text-shadow: 3px 3px 0 rgb(217,31,38) , 6px 6px 0 rgb(226,91,14) , 9px 9px 0 rgb(245,221,8) , 12px 12px 0 rgb(5,148,68) , 15px 15px 0 rgb(2,135,206) , 18px 18px 0 rgb(4,77,145) , 21px 21px 0 rgb(42,21,113)');
 
     $("#student__name").val("liin");
     $("#point-math").val(10);
@@ -15,7 +15,7 @@ $(document).ready(function () {
     $("#btn-submit").on("click", submitForm);
     // Edit student
     $("#btn-edit").on("click", () => editStudent);
-    // Delete student
+    // Delete studentx
     $("#btn-delete").on("click", () => deleteStudent);
     // Search student
     $("#btn-search").on("click", searchStudent);
@@ -28,7 +28,6 @@ const listStudents = new Array();
  * Show data
  */
 const showData = (listStudents) => {
-
     const container = $("#container-data");
     // clear: xoa du lieu
     container.html("");
@@ -119,6 +118,22 @@ function updateClass(grade) {
  * Clears the form fields 
  * */
 function cleanForm() {
+
+    $("#name-alert").addClass("d-none");
+    $("#student__name").removeClass("is-invalid");
+    $("#dob-alert").addClass("d-none");
+    $("#student__dob").removeClass("is-invalid");
+    $("#grade-alert").addClass("d-none");
+    $("#student__grade").removeClass("is-invalid");
+    $("#class-alert").addClass("d-none");
+    $("#student__class").removeClass("is-invalid");
+    $("#math-alert").addClass("d-none");
+    $("#student__math").removeClass("is-invalid");
+    $("#physics-alert").addClass("d-none");
+    $("#student__physics").removeClass("is-invalid");
+    $("#chemistry-alert").addClass("d-none");
+    $("#student__chemistry").removeClass("is-invalid");
+
     $("#student__name").val("");
     $("#gender__male").prop("checked", true);
     $("#student__dob").val("");
@@ -278,6 +293,7 @@ function changeStudentGrade() {
 
 function editStudent(index) {
 
+    cleanForm();
     // change title
     $("#btn-submit").attr('value', "Cập nhật thông tin");
 
