@@ -1,14 +1,9 @@
-
+'use strict'
 
 function validateName(name) {
-    // Kiểm tra xem chuỗi có bị bỏ trống hay không
-    if (name.trim() === '') {
-        return false;
-    }
-
     // Kiểm tra xem chuỗi chỉ chứa các ký tự alphabet và khoảng trắng hay không
     var regex = /^[a-zA-Z\s]+$/;
-    return regex.test(name);
+    return (name.trim() !== '') && regex.test(name);
 }
 
 function validateDateOfBirth(dateString) {
