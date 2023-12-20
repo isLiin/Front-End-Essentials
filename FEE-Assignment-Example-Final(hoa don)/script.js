@@ -19,12 +19,12 @@ var listBills = [
             {
                 productName: "Xi Măng",
                 qtt: 10,
-                price: 100000
+                price: 101500
             },
             {
                 productName: "Cát",
                 qtt: 5,
-                price: 120000
+                price: 124000
             },
             {
                 productName: "Gạch",
