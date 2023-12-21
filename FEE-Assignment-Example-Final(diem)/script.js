@@ -94,25 +94,25 @@ function updateClass(grade) {
     switch (grade) {
         case "10":
             container.html("");
-            container.append(`<option value="0" disabled selected>chọn khối ...</option>`);
+            container.append(`<option value="0" disabled selected>Chọn khối ...</option>`);
             container.append(`<option value="10A">10A</option>`);
             container.append(`<option value="10B">10B</option>`);
             break;
         case "11":
             container.html("");
-            container.append(`<option value="0" disabled selected>chọn khối ...</option>`);
+            container.append(`<option value="0" disabled selected>Chọn khối ...</option>`);
             container.append(`<option value="11A">11A</option>`)
             container.append(`<option value="11B">11B</option>`)
             break;
         case "12":
             container.html("");
-            container.append(`<option value="0" disabled selected>chọn khối ...</option>`);
+            container.append(`<option value="0" disabled selected>Chọn khối ...</option>`);
             container.append(`<option value="12A">12A</option>`);
             container.append(`<option value="12B">12B</option>`);
             break;
         default:
             container.html("");
-            container.append(`<option value="0" disabled selected>chọn khối ...</option>`);
+            container.append(`<option value="0" disabled selected>Chọn khối ...</option>`);
             break;
     }
 }
@@ -141,7 +141,7 @@ function cleanForm() {
     $("#gender__male").prop("checked", true);
     $("#student__dob").val("");
     $("#student__grade").html(`
-                <option value="0" disabled selected>chọn khối ...</option>
+                <option value="0" disabled selected>Chọn khối ...</option>
                 <option value="10">10</option>
                 <option value="11">11</option>
                 <option value="12">12</option>`);
