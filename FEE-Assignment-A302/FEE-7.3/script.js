@@ -75,7 +75,7 @@ function validate() {
     if (!validateEmail(email.val())) {
         email.focus();
         email.addClass("is-invalid");
-        emailError.html("invalid email");
+        emailError.html("invalid email (*@fsoft.com.vn)");
         isValidEmailError = false;
     }
 

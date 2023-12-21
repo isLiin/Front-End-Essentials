@@ -34,6 +34,10 @@ function addValue() {
     messError.html("");
     if (validateText(keysValueUser.val())) {
         if (btnAdd.val() == "add") {
+            if (CONTAINER_DATA.filter(value => value == keysValueUser.val()).length > 0) {
+                messError.html("Title already exists");
+                return;
+            } 
             CONTAINER_DATA.push(keysValueUser.val());
         } else {
             CONTAINER_DATA[parseInt(btnAdd.attr('flagKeys'))] = keysValueUser.val();
