@@ -245,8 +245,9 @@ $("#btn-submit").on('click', function () {
         renderDatas();
 
         // clear
-        // $("#my_state").val(0);
-        // $("input.form-control").prop('value', '');
+        $("#my_state").val(0);
+        $("input.form-control").prop('value', '');
+        $("#myCheck").prop('checked', false);
     }
 })
 
