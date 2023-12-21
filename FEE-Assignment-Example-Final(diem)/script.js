@@ -4,9 +4,9 @@
 $(document).ready(function () {
     console.log('%c LIIN Coder!!', 'font-weight: bold; font-size: 50px;color: red; text-shadow: 3px 3px 0 rgb(217,31,38) , 6px 6px 0 rgb(226,91,14) , 9px 9px 0 rgb(245,221,8) , 12px 12px 0 rgb(5,148,68) , 15px 15px 0 rgb(2,135,206) , 18px 18px 0 rgb(4,77,145) , 21px 21px 0 rgb(42,21,113)');
 
-    $("#student__name").val("liin");
-    // $("#student__age").val(22);
-    $("#point-math").val(10);
+    $("#student__name").val("Liin");
+    $("#student__dob").val("2001-06-14")
+    $("#point-math").val(8);
     $("#point-physics").val(9);
     $("#point-chemistry").val(9);
 
@@ -95,25 +95,25 @@ function updateClass(grade) {
     switch (grade) {
         case "10":
             container.html("");
-            container.append(`<option value="0" disabled selected>Chọn khối ...</option>`);
+            container.append(`<option value="0" disabled selected>Chọn lớp học ...</option>`);
             container.append(`<option value="10A">10A</option>`);
             container.append(`<option value="10B">10B</option>`);
             break;
         case "11":
             container.html("");
-            container.append(`<option value="0" disabled selected>Chọn khối ...</option>`);
+            container.append(`<option value="0" disabled selected>Chọn lớp học ...</option>`);
             container.append(`<option value="11A">11A</option>`)
             container.append(`<option value="11B">11B</option>`)
             break;
         case "12":
             container.html("");
-            container.append(`<option value="0" disabled selected>Chọn khối ...</option>`);
+            container.append(`<option value="0" disabled selected>Chọn lớp học ...</option>`);
             container.append(`<option value="12A">12A</option>`);
             container.append(`<option value="12B">12B</option>`);
             break;
         default:
             container.html("");
-            container.append(`<option value="0" disabled selected>Chọn khối ...</option>`);
+            container.append(`<option value="0" disabled selected>Chọn lớp học ...</option>`);
             break;
     }
 }
@@ -251,7 +251,6 @@ function submitForm() {
 
     if ($("#btn-submit").attr('value') == "Cập nhật thông tin") {
         let index = $("#infomation").prop("keys");
-        console.log(index);
         // update data to list
         listStudents[index] = {
             name: std_name,
