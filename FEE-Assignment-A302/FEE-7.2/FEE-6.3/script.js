@@ -1,5 +1,16 @@
+/**
+ * @author Ho Ngoc Khanh
+ * @since 1.8.0
+ */
 'use strict';
 
+/**
+ * Handler create a record data.
+ * 
+ * @param {Object} item 
+ * @param {Number} index 
+ * @returns 
+ */
 const recordData = (item, index) => `
                 <div class="card" keys="${index}">
                     <img src="${item.art}" class="card-img-top" alt="">
@@ -7,80 +18,67 @@ const recordData = (item, index) => `
                         <div class="title">${item.title}</div>
                         <div class="price">$${item.price}</div>
                     </div>
-                </div>`;
+                </div>`
 
-const recordEmpty = `
-                <div class="card">
-                    <div class="card-body d-flex justify-content-between w-100">
-                        <div class="title">Empty</div>
-                    </div>
-                </div>`;
-
-function showAllDatas() {
-    if (CONTAINER_DATA.length == 0) {
-        $("#group-data").html("");
-        $("#group-data").append(recordEmpty);
-    } else {
-        $("#group-data").html("");
-        CONTAINER_DATA.forEach((item, index) => {
-            $("#group-data").append(recordData(item, index));
-        })
-    }
+/**
+ * Handler start GUI.
+ */
+function startGUI() {
+    const datas = CONTAINER_DATA.filter(item => item.title.toLowerCase().includes(""));
+    renderGUI(datas);
 }
 
-$(document).ready(function () {
-    showAllDatas();
+/**
+ * Handler render GUI with datas.
+ * 
+ * @param {Array} datas 
+ */
+function renderGUI(datas) {
+    $("#group-data").html("");
+    datas.forEach((item, index) => {
+        $("#group-data").append(recordData(item, index));
+    })
+}
 
+/**
+ * Ready function
+ * */
+$(document).ready(function () {
+    startGUI();
+
+    // handler search
     $("#search").on('keyup', function () {
         let search = $(this).val();
-        $("#group-data").html("");
-        CONTAINER_DATA.forEach((item, index) => {
-            if (item.title.toLowerCase().includes(search.toLowerCase())) {
-                $("#group-data").append(recordData(item, index));
-            }
-        })
+        const datas = CONTAINER_DATA.filter(item => item.title.toLowerCase().includes(search.toLowerCase()));
+        renderGUI(datas);
     })
 
+    // handler get all
     $("#all").on('click', function () {
-        $("#group-data").html("");
-        CONTAINER_DATA.forEach((item, index) => {
-            $("#group-data").append(recordData(item, index));
-        })
+        startGUI();
     })
 
+    // handler get cakes items
     $("#cakes").on('click', function () {
-        $("#group-data").html("");
-        CONTAINER_DATA.forEach((item, index) => {
-            if ((item.title.toLowerCase().includes("cake"))) {
-                $("#group-data").append(recordData(item, index));
-            }
-        })
+        const datas = CONTAINER_DATA.filter(item => item.title.toLowerCase().includes("cake"));
+        renderGUI(datas);
     })
 
+    // handler get cupcakes items
     $("#cupcakes").on('click', function () {
-        $("#group-data").html("");
-        CONTAINER_DATA.forEach((item, index) => {
-            if (item.title.toLowerCase().includes("cupcake")) {
-                $("#group-data").append(recordData(item, index));
-            }
-        })
+        const datas = CONTAINER_DATA.filter(item => item.title.toLowerCase().includes("cupcake"));
+        renderGUI(datas);
     })
 
+    // handler get sweets items
     $("#sweets").on('click', function () {
-        $("#group-data").html("");
-        CONTAINER_DATA.forEach((item, index) => {
-            if (item.title.toLowerCase().includes("sweet")) {
-                $("#group-data").append(recordData(item, index));
-            }
-        })
+        const datas = CONTAINER_DATA.filter(item => item.title.toLowerCase().includes("sweet"));
+        renderGUI(datas);
     })
 
+    // handler get doughnuts items
     $("#doughnuts").on('click', function () {
-        $("#group-data").html("");
-        CONTAINER_DATA.forEach((item, index) => {
-            if (item.title.toLowerCase().includes("doughnut")) {
-                $("#group-data").append(recordData(item, index));
-            }
-        })
+        const datas = CONTAINER_DATA.filter(item => item.title.toLowerCase().includes("doughnut"));
+        renderGUI(datas);
     })
 });

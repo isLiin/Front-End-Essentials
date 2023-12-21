@@ -13,51 +13,10 @@
     --color-6: #C8C6FA;
 }
 
-#main {
-    max-width: 1024px;
-    width: 100%;
-    margin: 0 auto;
+.h-100px {
+    height: 100px;
 }
 
-.f-flex {
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#nav {
-    background-color: var(--color-0);
-    height: 5vh;
-}
-
-#header {
-    background-color: var(--color-1);
-    height: 20vh;
-}
-
-#content {
-    height: calc(50vh - 20vh - 5vh);
-    background-color: var(--color-2);
-}
-
-.c-signup,
-.c-feature {
-    height: calc(50vh/4);
-}
-
-.c-signup {
-    background-color: var(--color-3);
-}
-
-.c-feature:nth-child(2) {
-    background-color: var(--color-4);
-}
-
-.c-feature:nth-child(3) {
-    background-color: var(--color-5);
-}
-
-.c-feature:nth-child(4) {
-    background-color: var(--color-6);
+.bg-pup {
+    background-color: blueviolet;
 }

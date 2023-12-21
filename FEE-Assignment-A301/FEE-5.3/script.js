@@ -1,17 +1,26 @@
+/**
+ * @author Ho Ngoc Khanh
+ */
+'use strict';
 
-// filter: tim kiem
-function checkUser(user) {
-    if (user.gender == "Male" && user.age <= 40) {
-        return true;
-    }
-    return false;
+/**
+ * 
+ * @param {Document} dcm 
+ * @param {Object} user 
+ */
+function renderGUI(dcm, users) {
+    users.forEach(user => {
+        $(dcm).html(`${user.first_name}`);
+    })
 }
 
+/**
+ * Ready function
+ */
 $(document).ready(function () {
-    users.filter(checkUser).forEach((user) => {
-        $("#group-data-filter").html(`${user.first_name}</>`);
-    })
-
-    const avgAge = users.reduce((sum, user) => sum + user.age, 0) / users.length;
-    $("#group-data-reduce").html(`Average age: ${avgAge.toFixed(2)}`);
+    const getUsers = users.filter(user => (user.gender == "Male" && user.age <= 40));
+    renderGUI("#group-data-filter", getUsers);
+    
+    const getAvgAge = users.reduce((avgAge, user) => avgAge + user.age, 0) / users.length;
+    $("#group-data-reduce").html(`${getAvgAge.toFixed(2)}`);
 });

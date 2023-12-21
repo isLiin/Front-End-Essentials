@@ -14,9 +14,6 @@
 }
 
 .bg-myColor {
-    display: flex;
-    align-items: center;
-    text-transform: capitalize;
     background-color: var(--color-0);
 }
 
@@ -27,18 +24,15 @@
 .nav,
 .myFooter {
     height: 50px;
-    justify-content: center;
 }
 
 .header {
-    justify-content: center;
     height: 250px;
 }
 
 .mybody-side,
 .mybody-body {
     height: 550px;
-    justify-content: center;
 }
 
 .mybody-side{

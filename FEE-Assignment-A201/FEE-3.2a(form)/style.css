@@ -117,6 +117,9 @@ label {
 .custom-control-input.is-invalid~.custom-control-label::before {
     border-color: var(--color-2) !important;
 }
+.custom-control-input.is-invalid:checked~.custom-control-label::before{
+    border-color: var(--color-3) !important;
+}
 .custom-control-input.is-invalid:checked~.custom-control-label::before {
     background-color: var(--color-3);
 }

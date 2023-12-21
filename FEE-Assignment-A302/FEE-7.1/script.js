@@ -2,27 +2,29 @@
 
 function updatePrice() {
     let price = $(".myPrice").html();
-    let quantity = $(".myQuantity").val();
+    let quantity = $(".myQuantity");
+    let total = $(".myTotal");
+    let msgError = $(".error");
 
-    // sum
-
-    if ($(".myQuantity").val() > 0) {
+    if (quantity.val() > 0) {
         // update
-        let sum = parseInt(price) * parseInt(quantity)
-        $(".myTotal").html(sum);
-        $(".error").html("");
+        let sum = parseInt(price) * parseInt(quantity.val())
+        total.html(sum);
+        msgError.html("");
     } else {
-        $(".myQuantity").val(1);
-        $(".error").html("Quantity more than 0.");
+        quantity.val(1);
+        msgError.html("Quantity more than 0.");
     }
 }
 
 function plusQuantity() {
-    $(".myQuantity").val(parseInt($(".myQuantity").val()) + 1);
+    let quantity = $(".myQuantity");
+    quantity.val(parseInt(quantity.val()) + 1);
     updatePrice();
 }
 function minusQuantity() {
-    $(".myQuantity").val(parseInt($(".myQuantity").val()) - 1);
+    let quantity = $(".myQuantity");
+    quantity.val(parseInt(quantity.val()) - 1);
     updatePrice();
 }
 

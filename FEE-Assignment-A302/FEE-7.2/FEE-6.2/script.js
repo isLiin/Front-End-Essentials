@@ -12,66 +12,63 @@ const recordData = (title, index) => `
                 <i class="fa-solid fa-times"></i>
             </button>
         </div>
-    </div>
-`
-const recordEmpty = `
-    <div class="list-group-item customItems">
-        <div class="line-data text-secondary">Empty</div>
-    </div>
-`;
+    </div>`
 
-function isEmpty() {
-    if (CONTAINER_DATA.length == 0) {
-        $("#group-data").html("");
-        $("#group-data").append(recordEmpty);
-    } else {
-        $("#group-data").html("");
-        CONTAINER_DATA.forEach((title, index) => {
-            $("#group-data").append(recordData(title, index));
-        })
-    }
+function renderGUI() {
+    const groupData = $("#group-data").html("");
+    CONTAINER_DATA.forEach((title, index) => {
+        groupData.append(recordData(title, index));
+    })
 }
+
 function deleteValue(index) {
     CONTAINER_DATA.splice(index, 1);
-    isEmpty();
+    renderGUI();
 }
 
 function addValue() {
-    $("#title-error").html("");
-    let title = $('#userInput').val();
+    let messError = $("#title-error");
+    let btnAdd = $("#userBtn-add");
+    let keysValueUser = $('#userInput');
 
-    if (validateText(title)) {
-        if ($("#userBtn-add").val() == "add") {
-            CONTAINER_DATA.push(title);
+    messError.html("");
+    if (validateText(keysValueUser.val())) {
+        if (btnAdd.val() == "add") {
+            CONTAINER_DATA.push(keysValueUser.val());
         } else {
-            CONTAINER_DATA[parseInt($("#userBtn-add").attr('keys'))] = title;
-            $("#userBtn-add").val("add"); 
-            $("#userBtn-add").html("Add item");
+            CONTAINER_DATA[parseInt(btnAdd.attr('flagKeys'))] = keysValueUser.val();
+            btnAdd.val("add");
+            btnAdd.html("Add item");
         }
     } else {
-        $("#title-error").html("Please enter a valid title");
+        messError.html("Please enter a valid title");
     }
-    isEmpty();
-    $('#userInput').val("");
-    $('#userInput').focus();
+    renderGUI();
+    keysValueUser.val("");
+    keysValueUser.focus();
 }
 
 function editValue(index) {
-    let data = CONTAINER_DATA[index];
-    $('#userInput').val(data);
-
-    $("#userBtn-add").val("edit");
-    $("#userBtn-add").attr('keys', index);
-    $("#userBtn-add").html("Change item");
-    $('#userInput').focus();
+    let messError = $("#title-error");    
+    let keysValueUser = $('#userInput');
+    let btnAdd = $("#userBtn-add");
+    
+    let oldValue = CONTAINER_DATA[index];
+    keysValueUser.val(oldValue);
+    
+    messError.html("");
+    btnAdd.val("edit");
+    btnAdd.attr('flagKeys', index);
+    btnAdd.html("Change item");
+    keysValueUser.focus();
 }
 
 function clearAll() {
     CONTAINER_DATA = [];
-    isEmpty();
+    renderGUI();
 }
 
 // Code to run when the document is ready.
 $(document).ready(function () {
-    isEmpty();
+    renderGUI();
 });

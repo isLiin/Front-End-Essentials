@@ -1,61 +1,71 @@
+'use strict';
 
 function checkString() {
     let string = $("#input-checkString").val();
+    let errorString = $("#error-checkString");
     let regex = /^[a-zA-Z0-9.-\s]*$/;
+
     if (string.match(regex) && string.length > 0) {
-        $("#error-checkString").html("");
+        errorString.html("");
         return true;
     } else {
-        $("#error-checkString").html("không chứa các ký tự đặc biệt.");
+        errorString.html("không chứa các ký tự đặc biệt.");
         return false;
     }
 }
 
 function checkUrl() {
     let url = $("#input-checkUrl").val();
+    let errorUrl = $("#error-checkUrl");
     let regex = /^(http:\/\/| https:\/\/|www.).+/;
 
     if (url.match(regex)) {
-        $("#error-checkUrl").html("");
+        errorUrl.html("");
         return true;
     } else {
-        $("#error-checkUrl").html("Kiểm tra lồi Url – chứa giá trị trên http://, https://, www.);");
+        errorUrl.html("Kiểm tra lồi Url – chứa giá trị trên http://, https://, www.);");
         return false;
     }
 
 }
 function checkCredit() {
     let credit = $("#input-checkCredit").val();
+    let errorCredit = $("#error-checkCredit");
     let regex = /^[0-9]{16}$/;
+
     if (credit.match(regex)) {
-        $("#error-checkCredit").html("");
+        errorCredit.html("");
         return true;
     } else {
-        $("#error-checkCredit").html("Kiểm tra số credit card – chuỗi chỉ chứa giá trị số có độ dài 16 số;");
+        errorCredit.html("Kiểm tra số credit card – chuỗi chỉ chứa giá trị số có độ dài 16 số;");
+        return false;
     }
-    return false;
 }
 
 function checkNumber() {
     let number = $("#input-checkNumber").val();
+    let errorNumber = $("#error-checkNumber");
     let regex = /[0-9]$/g;
+
     if (number.match(regex)) {
-        $("#error-checkNumber").html("");
+        errorNumber.html("");
         return true;
     } else {
-        $("#error-checkNumber").html("Giá trị Khong phải là số?");
+        errorNumber.html("Giá trị không phải là số?");
+        return false;
     }
-    return false;
 }
 
 function checkEmail() {
     let email = $("#input-checkEmail").val();
+    let errorEmail = $("#error-checkEmail");
     let regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
     if (email.match(regex)) {
-        $("#error-checkEmail").html("");
+        errorEmail.html("");
         return true;
     } else {
-        $("#error-checkEmail").html("Kiem tra email");
+        errorEmail.html("Kiểm tra lỗi email");
+        return false;
     }
-    return false;
 }
