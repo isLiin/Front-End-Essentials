@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3.1 - FEE-Assignment-A301</title>
+  <link rel="stylesheet" href="../../Common/fontAwesome/brands.min.css" />
+  <link rel="stylesheet" href="../../Common/fontAwesome/regular.min.css" />
+  <link rel="stylesheet" href="../../Common/fontAwesome/all.min.css" />
+  <link rel="stylesheet" href="../../Common/boostrap/bootstrap.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div id="main">
+    <!-- myForm -->
+    <div id="myForm">
+      <div class="fromHeader w-100">
+        <h4 class="w-100 mb-2 text-uppercase text-center">Phiếu xuất kho</h4>
+      </div>
+      <div class="fromTable">
+        <form action="#" method="post" class="w-100 form-detail-body">
+          <div class="form-group form-inline justify-content-between">
+            <label for="codeProduct">Mã sản phẩm</label>
+            <input type="text" class="form-control  border-none w-75" id="codeProduct" disabled/>
+          </div>
+          <div class="form-group">
+            <label for="nameProduct">Tên sản phẩm</label>
+            <input type="text" class="form-control  border-none w-100" id="nameProduct" disabled/>
+          </div>
+          <div class="form-group">
+            <label for="quantityProduct">Danh mục sản phẩm</label>
+            <input type="text" class="form-control  border-none w-100" id="typeProduct" disabled/>
+          </div>
+          <div class="form-group">
+            <label for="priceProduct">Đơn giá(VND)</label>
+            <input type="text" class="form-control  border-none w-100" id="priceProduct" />
+            <small class="form-text text-danger" id="errorPriceProduct"></small>
+          </div>
+          <div class="align-items-center my-group-input">
+            <div class="form-group">
+              <label for="quantityProductEjact">Số lượng xuất kho</label>
+              <input type="number" class="form-control  border-none w-100" id="quantityProductEjact" />
+              <small class="form-text text-danger" id="errorQuantityProductEjact"></small>
+            </div>
+            <div class="form-group">
+              <label for="dateProductEjact">Ngày xuất kho</label>
+              <input type="date" class="form-control  border-none w-100" id="dateProductEjact" />
+              <small class="form-text text-danger" id="errorDateProductEjact"></small>
+            </div>
+            <div class="form-group d-flex justify-content-center align-items-center">
+              <input type="button" value="Xuất kho" class="btn btn-primary" id="btnSubmit" disabled />
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- myListProduct -->
+    <div id="myListProduct" class="">
+      <div class="listProductHeader">
+        <h4 class="mb-2 text-uppercase">Danh sách sản phẩm</h4>
+      </div>
+      <div class="listProductTable">
+        <table class="table">
+          <thead>
+            <tr class="text-capitalize">
+              <th>#</th>
+              <th>Mã SP</th>
+              <th>Tên SP</th>
+              <th>SL Còn</th>
+              <th>Danh mục SP</th>
+              <th>action</th>
+            </tr>
+          </thead>
+          <tbody id="myListProductTable" class="w-100"></tbody>
+          <tfoot id="myListProductFooter">
+            <tr>
+              <td colspan="3" class="text-center">
+                <h6>Tổng số lượng còn</h6>
+              </td>
+              <td colspan="3" id="totalQuantity"></td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+    <!--  -->
+    <div id="myListProductEjact">
+      <div class="listProductEjactHeader">
+        <h4 class="mb-2 text-uppercase text-center">Danh sách sản phẩm đã xuất kho</h4>
+      </div>
+      <div class="listProductEjactTable">
+        <table class="table">
+          <thead>
+            <tr class="text-capitalize">
+              <th>#</th>
+              <th>Mã SP</th>
+              <th>Tên SP</th>
+              <th>Danh mục SP</th>
+              <th>SL Xuất</th>
+              <th>Đơn giá</th>
+              <th>Ngày Xuất</th>
+              <th>Thành tiền</th>
+              <th>action</th>
+            </tr>
+          </thead>
+          <tbody id="myListProductEjactTable" class="w-100"></tbody>
+          <tfoot id="myListProductEjactFooter">
+            <tr>
+              <td colspan="4" class="text-center">
+                <h6>Tổng số lượng xuất kho</h6>
+              </td>
+              <td colspan="1" id="totalQuantityEjact">0</td>
+
+              <td colspan="2" class="text-center">
+                <h6>Tổng tiền số lượng thành tiền</h6>
+              </td>
+              <td colspan="2" id="totalPriceEjact">0</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+    <!--  -->
+  </div>
+</body>
+<script src="../../Common/fontAwesome/brands.min.js"></script>
+<script src="../../Common/fontAwesome/regular.min.js"></script>
+<script src="../../Common/fontAwesome/all.min.js"></script>
+<script src="../../Common/jquery/popper.min.js"></script>
+<script src="../../Common/jquery/jquery.min.js"></script>
+<script src="../../Common/jquery/bootstrap.bundle.min.js"></script>
+<script src="./data.js"></script>
+<script src="./validation.js"></script>
+<script src="./script.js"></script>
+
+</html>

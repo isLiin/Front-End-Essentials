@@ -10,8 +10,8 @@
 }
 
 #main {
-    margin: 15vh auto;
-    max-width: 1400px;
+    margin: 2vh auto;
+    max-width: calc(1400px + 20px);
     padding: 10px;
     width: 100%;
     height: auto;
@@ -21,4 +21,19 @@
     backdrop-filter: blur(5.7px);
     -webkit-backdrop-filter: blur(5.7px);
     border: 1px solid rgba(255, 255, 255, 0.3);
+
+    display: grid;
+    gap: 50px;
+    grid-template-columns: 40% calc(60% - 50px);
+}
+
+#main #myListProductEjact{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.my-group-input{
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 25% 30% calc(50% - 50px);
 }

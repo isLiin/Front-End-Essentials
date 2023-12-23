@@ -13,7 +13,7 @@
  */
 const recordData = (item, index) => `
                 <div class="card" keys="${index}">
-                    <img src="${item.art}" class="card-img-top" alt="">
+                    <img src="${item.art}" class="card-img-top" alt="${item.title}">
                     <div class="card-body d-flex justify-content-between w-100">
                         <div class="title">${item.title}</div>
                         <div class="price">$${item.price}</div>
