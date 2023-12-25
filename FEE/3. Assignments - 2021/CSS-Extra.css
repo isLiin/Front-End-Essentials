@@ -1,0 +1,213 @@
+/* bai 1 */
+
+.bai1 {
+    display: grid;
+    height: 1000px;
+    color: white;
+    font-size: 40px;
+    grid-gap: 8px;
+    margin: auto;
+}
+
+.bai1>div {
+    padding: 20px 0 0 20px;
+}
+
+/* tablet landscape and desktop */
+@media screen and (min-width:768px) {
+    .bai1 {
+        grid-template-columns: auto auto;
+        grid-template-rows: 1fr 5fr;
+    }
+
+    .bai1 .first {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+}
+
+/* tablet portrait */
+@media screen and (min-width: 481px) {
+    .bai1 {
+        grid-template-rows: 1fr 3fr 1fr;
+    }
+
+    .bai1 .second {
+        order: 4;
+    }
+}
+
+/* mobiles */
+@media screen and (max-width: 480px) {
+    .bai1 {
+        grid-template-rows: 1fr 7fr 3fr;
+    }
+
+    .bai1 .second {
+        order: 4;
+    }
+}
+
+/* Bai 2 */
+.bai2 {
+    height: 1000px;
+    display: grid;
+    grid-template-rows: 0.7fr 0.6fr 2fr 2fr;
+}
+
+h2 {
+    padding: 0;
+    margin: 0;
+}
+
+p {
+    font-size: 2vh;
+}
+
+h4 {
+    font-size: 3vh;
+}
+
+.bai2>div {
+    padding: 0 30px;
+}
+
+.bai2 .header {
+    background-color: #2f2f2f;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    align-items: center;
+}
+
+.bai2 .header .logo {
+    font-size: 4vh;
+}
+
+.bai2 span {
+    color: #ff753d;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.bai2 .header ul {
+    list-style: none;
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+    font-size: 2.5vh;
+}
+
+/* row */
+.bai2 .row1 h2 {
+    padding-top: 20px;
+    font-size: 4vh;
+}
+
+.bai2 .row1 p {
+    padding-top: 5px;
+    margin: 0;
+    font-size: 20px;
+    color: rgb(189, 185, 185);
+}
+
+/* content */
+.picture {
+    position: relative;
+    color: white;
+}
+
+.content {
+    margin: 5px 20px;
+    width: 50%;
+    text-align: center;
+    position: absolute;
+    left: 5px;
+    top: 0;
+}
+
+hr {
+    border-top: 1px dotted black;
+}
+
+.content hr,
+.column1 hr {
+    width: 50%;
+    border-top: 1px dotted white;
+}
+
+.bai2 .column {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    padding: 10px 0;
+    height: 100%;
+}
+
+.column1 {
+    width: 28%;
+    text-align: center;
+    background-color: #e6854d;
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.column1 button {
+    margin-top: 5%;
+    width: 60%;
+    height: 10%;
+    color: #e6854d;
+    border: 0;
+}
+
+.column1 h4,
+p {
+    margin: 10px 0;
+    padding: 0;
+}
+
+.bai2 .column1 button:hover {
+    background-color: black;
+    color: white;
+}
+
+/* Bai3  */
+.bai3 {
+    display: grid;
+    grid-template-rows: 1fr 8fr 7fr 5fr 1fr;
+    height: 1000px;
+    color: white;
+}
+
+.bai3 .menu {
+    background-color: black;
+}
+
+.bai3 ul {
+    list-style: none;
+    display: flex;
+    width: 40%;
+    justify-content: space-between;
+}
+
+.bai3 .picture {
+    background-image: url(https://media.istockphoto.com/id/1142810284/vector/colorful-geometric-background.jpg?s=170667a&w=0&k=20&c=bz8WOj4mCCNK3iED7KMyy4MzUpwUwzo7azs7lf_fYhc=);
+    background-size: cover;
+    position: relative;
+}
+
+.bai3 .desc{
+    position: absolute;
+    right: 200px;
+    top: 50px;
+    text-align: center;
+    color: blue;
+}
+.bai3 .desc h3{
+    font-size: 7vh;
+    font-weight: normal;
+    margin: 0;
+    
+}

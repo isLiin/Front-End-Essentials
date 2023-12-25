@@ -1,0 +1,76 @@
+#site {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 80px auto 200px 40px 200px 50px;
+  grid-gap: 5px;
+  grid-template:
+    "h1 h1 h1 h1" 80px
+    "h2 h2 h2 h3" 40px
+    "c1 c2 c3 c4" 200px
+    "s s s s" 40px
+    "c5 c6 c7 c8" 200px
+    "f f f f" 50px;
+}
+
+#header1 {
+  grid-area: h1;
+  background-color: hsl(9.13deg 100% 63.92%);
+}
+
+#header2 {
+  grid-area: h2;
+  background-color: hsl(271.15deg 75.93% 52.75%);
+  grid-column-start: 1;
+  grid-column-end: span 3;
+}
+
+#header3 {
+  grid-area: h3;
+  background-color: hsl(271.15deg 75.93% 52.75%);
+  grid-column-start: 4;
+  grid-column-end: 5;
+}
+
+#content1 {
+  grid-area: c1;
+  background-color: hsl(16.11deg 100% 65.69%);
+}
+#content2 {
+  grid-area: c2;
+  background-color: hsl(16.11deg 100% 65.69%);
+}
+#content3 {
+  grid-area: c3;
+  background-color: hsl(16.11deg 100% 65.69%);
+}
+#content4 {
+  grid-area: c4;
+  background-color: hsl(16.11deg 100% 65.69%);
+}
+
+#content5 {
+  grid-area: c5;
+  background-color: hsl(16.11deg 100% 65.69%);
+}
+#content6 {
+  grid-area: c6;
+  background-color: hsl(16.11deg 100% 65.69%);
+}
+#content7 {
+  grid-area: c7;
+  background-color: hsl(16.11deg 100% 65.69%);
+}
+#content8 {
+  grid-area: c8;
+  background-color: hsl(16.11deg 100% 65.69%);
+}
+
+#sidebar {
+  grid-area: s;
+  background-color: hsl(271.15deg 75.93% 52.75%);
+}
+
+#footer {
+  grid-area: f;
+  background-color: hsl(0deg 59.42% 40.59%);
+}

@@ -1,0 +1,94 @@
+.image-area{
+    width: 900px;
+    height: 450px;
+    margin: 0 auto;
+    position: relative;
+}
+.image-area img{
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    transition: 0.5s ease-in;
+}
+.image-area .overlay-content{
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: white;
+    transition: 0.5s ease-in;
+}
+.midle{
+    position: relative;
+    width: 50%;
+    left: 25%;
+    top: 15%;
+    display: none;
+}
+.midle a{
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    text-align: center;
+}
+.midle a:visited, a:link{
+    color: white;
+}
+.midle h2 a:hover{
+    color: chocolate;
+}
+.midle p{
+    display: block;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 0rem 0.5rem;
+}
+.midle a.more{
+    width: 120px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 0.8rem 1rem;
+    background-color: chocolate;
+    color: white;
+}
+.midle a.more:hover{
+    background-color:white;
+    color: chocolate;
+}
+.image-area:hover img{
+    opacity: 0.8;
+}
+.image-area:hover .overlay-content{
+    opacity: 1;
+    background-color: rgba(18, 16, 16, 0.6);
+}
+.image-area:hover .midle{
+    display: block;
+    box-sizing: border-box;
+    padding: 3rem 3rem;
+    /* background-color: black(0.8); */
+    
+}
+.midle .border-left-bottom{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 35%;
+    height: 45%;
+    border-left: 2px solid white;
+    border-bottom:2px solid white;
+}
+.midle .border-right-top{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 35%;
+    height: 45%;
+    transition:border 0.3s ease-in;
+    border-top: 2px solid white;
+    border-right:2px solid white;
+}
+

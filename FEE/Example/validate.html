@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<form action="https://google.com" onsubmit="return submitForm();">
+    <div class="container form-control d-flex w-100 mt-3 tbold">
+        <div class="d-flex flex-column w-50 mr-3">
+            <div class="h3">Personal Info</div>
+            <div class="d-flex ">
+                <div class="d-flex flex-column w-50 mr-2">
+                    <label for="f_name">Frist Name </label>
+                    <input class="form-control" id="f_name" name="" type="text" placeholder="First Name">
+                    <span class="text-danger" id="f_name_error"></span>
+                </div>
+                <div class="d-flex flex-column w-50 ml-2">
+                    <label for="l_name">Last Name</label>
+                    <input class="form-control" id="l_name" type="text" placeholder="Last Name">
+                    <span class="text-danger" id="l_name_error"></span>
+                </div>
+            </div>
+            <div class="d-flex mt-3">
+                <div class="d-flex flex-column w-50 mr-2">
+                    <label for="email_name">Email</label>
+                    <input class="form-control" id="email_name" type="text" placeholder="Email">
+                    <span class="text-danger" id="email_name_error"></span>
+                </div>
+                <div class="d-flex flex-column w-50 ml-2">
+                    <label for="phone">Phone</label>
+                    <input class="form-control" id="phone" type="text" placeholder="Phone">
+                    <span class="text-danger" id="phone_error"></span>
+                </div>
+            </div>
+            <div class="d-flex flex-column w-90 mt-3">
+                <label for="address">Address</label>
+                <input class="form-control" id="address" type="text" placeholder="Phone">
+                <span class="text-danger" id="address_error"></span>
+            </div>
+            <div class="d-flex mt-3 w-90">
+                <div class="d-flex flex-column w-50 mr-2">
+                    <label for="city">City</label>
+                    <input class="form-control" id="city" type="text" placeholder="Email">
+                    <span class="text-danger" id="city_error"></span>
+                </div>
+                <div class="d-flex flex-column ml-2 mr-2 w-30">
+                    <label for="state">State</label>
+                    <select class="form-control h-100" id="state" id="">
+                        <option value="" disabled selected>Please choose.</option>
+                        <option value="true">Active</option>
+                        <option value="false">Inactive</option>
+                    </select>
+                    <span class="text-danger" id="state_error"></span>
+                </div>
+                <div class="d-flex flex-column ml-2 w-25">
+                    <label for="z_code">Zip Code</label>
+                    <input class="form-control" id="z_code" type="text" placeholder="Phone">
+                    <span class="text-danger" id="z_code_error"></span>
+                </div>
+            </div>
+            <div class="d-flex mt-3 w-90 mb-3">
+                <div class="form-check d-flex  align-items-center">
+                    <label class="form-check-label">
+                        <input class="form-check-input position-static " id="check" type="checkbox"
+                            value="checkedValue" aria-label="Text for screen reader">
+                        <span class="text-danger" id="check_error"></span>
+                    </label>
+                </div>
+                <label for="check">Check me out</label>
+            </div>
+            <input class="btn btn-info w-25 mb-3" type="submit" id="btnSignIn" value="Sign in">
+        </div>
+        <div class="w-50 ml-3">
+            <div class="h3">Personal Info</div>
+            <div class="d-flex flex-column w-90">
+                <label for="p_info">Name on Card</label>
+                <input class="form-control" id="p_info" type="text" placeholder="Last Name">
+                <span class="text-danger" id="p_info_error"></span>
+            </div>
+            <div class="d-flex flex-column w-90 mt-3">
+                <label for="cre_num">CreditCard Number</label>
+                <input class="form-control" id="cre_num" type="text" placeholder="Last Name">
+                <span class="text-danger" id="cre_num_error"></span>
+            </div>
+            <div class="d-flex mt-3 w-90">
+                <div class="d-flex flex-column w-50 mr-2">
+                    <label for="exp_month">Exp Month</label>
+                    <input class="form-control" id="exp_month" type="text" placeholder="07">
+                    <span class="text-danger" id="exp_month_error"></span>
+                </div>
+                <div class="d-flex flex-column ml-2 mr-2 w-30">
+                    <label for="exp_year">Exp Year</label>
+                    <input class="form-control" id="exp_year" type="text" placeholder="2018">
+                    <span class="text-danger" id="exp_year_error"></span>
+                </div>
+                <div class="d-flex flex-column ml-2 w-25">
+                    <label for="cvv">CVV</label>
+                    <input class="form-control" id="cvv" type="text" placeholder="352">
+                    <span class="text-danger" id="cvv_error"></span>
+                </div>
+            </div>
+            <div class="mt-3 w-90">Accepted Cards </div>
+        </div>
+    </div>
+</form>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.js"></script>
+    <script>
+       
+        function submitForm() {
+            var resultCheck = true;
+            var resultCheckFName = checkFirstName();
+            if (!resultCheckFName) { resultCheck = false;}  
+            var resultCheckLName = checkLastName();
+            if (!resultCheckLName) { resultCheck = false;}
+            var resultCheckAddress = checkAddress();
+            if (!resultCheckAddress) { resultCheck = false;}
+            var resultCheckPhone = checkPhone();
+            if (!resultCheckPhone) { resultCheck = false;}
+            var resultCheckEmail = checkEmail();
+            if (!resultCheckEmail) { resultCheck = false;}
+            var resultCheckExpYear = checkExpYear();
+            if (!resultCheckExpYear) { resultCheck = false;}
+            var resultCheckState = checkState();
+            if (!resultCheckState) { resultCheck = false;}
+            var resultCheckCheckMe = checkCheckMe();
+            if (!resultCheckCheckMe) { resultCheck = false;}
+            return resultCheck;
+        }
+        function checkLastName() {
+            var txt = $("#l_name");
+            var error = $("#l_name_error");
+            error.html("");
+            txt.removeClass("is-valid").removeClass("is-invalid");
+            var val = txt.val();
+            var regex = /^[a-z]+$/i;
+            if(!regex.test(val)) {
+                error.html("Sai Loại Kí Tự");
+                txt.addClass("is-invalid");
+                return false;
+            } else {
+                txt.addClass("is-valid");
+            }
+            return true;
+        }
+        function checkFirstName() {
+            var txt = $("#f_name");
+            var error = $("#f_name_error");
+            error.html("");
+            txt.removeClass("is-valid").removeClass("is-invalid");
+            var val = txt.val();
+            var regex = /^[a-z]+([ ]{1}[a-z]+)*$/i; // ABCD EFD XYZ MNB
+            if(!regex.test(val)) {
+                error.html("Sai Loại Kí Tự");
+                txt.addClass("is-invalid");
+                return false;
+            } else {
+                txt.addClass("is-valid");
+            }
+            return true;
+        }
+        function checkAddress() {
+            var txt = $("#address");
+            var error = $("#address_error");
+            error.html("");
+            txt.removeClass("is-valid").removeClass("is-invalid");
+            var val = txt.val();
+            var regex = /^[a-z]+([ ]{1}[a-z]+)*$/i;
+            if(!regex.test(val)) {
+                error.html("Sai Loại Kí Tự");
+                txt.addClass("is-invalid");
+                return false;
+            } else {
+                txt.addClass("is-valid");
+            }
+            return true;
+        }
+        /* Chỉ cho phép nhập số, 10~11 kí tự, đầu số phải là 033, 088, 099*/
+        function checkPhone() {
+            var txt = $("#phone");
+            var error = $("#phone_error");
+            error.html("");
+            txt.removeClass("is-valid").removeClass("is-invalid");
+            var val = txt.val();
+            var regex = /^0(33|88|99)[0-9]{7,8}$/i;
+            if(!regex.test(val)) {
+                error.html("Sai Loại Kí Tự");
+                txt.addClass("is-invalid");
+                return false;
+            } else {
+                txt.addClass("is-valid");
+            }
+            return true;
+        }
+        function checkEmail() {
+            var txt = $("#email_name");
+            var error = $("#email_name_error");
+            error.html("");
+            txt.removeClass("is-valid").removeClass("is-invalid");
+            var val = txt.val();
+            // abcd123@abcd.zyz
+            var regex = /^[a-z]+[0-9]*@([a-z0-9]+[.])+([a-z]{2,})$/i;
+            // var regex = /^[a-z]+[0-9]*@fsoft.com.vn$/i;
+            if(!regex.test(val)) {
+                error.html("Sai Loại Kí Tự");
+                txt.addClass("is-invalid");
+                return false;
+            } else {
+                txt.addClass("is-valid");
+            }
+            return true;
+        }
+        function checkExpYear() {
+            var txt = $("#exp_year");
+            var error = $("#exp_year_error");
+            error.html("");
+            txt.removeClass("is-valid").removeClass("is-invalid");
+            var val = txt.val();
+            var regex = /^[0-9]{4}$/i;
+            // if(!regex.test(val) || parseInt(val) <= 2000) {
+            if(parseInt(val) <= 2000 || !regex.test(val)) {
+                error.html("Exp Year phải 4 số và lớn hơn 2000");
+                txt.addClass("is-invalid");
+                return false;
+            } else {
+                txt.addClass("is-valid");
+            }
+            return true;
+        }
+        function checkState() {
+            var txt = $("#state");
+            var error = $("#state_error");
+            error.html("");
+            txt.removeClass("is-valid").removeClass("is-invalid");
+            var val = txt.val();
+            if(!val) {
+                error.html("Chọn State");
+                txt.addClass("is-invalid");
+                return false;
+            } else {
+                txt.addClass("is-valid");
+            }
+            return true;
+        }
+        function checkCheckMe() {
+            var txt = $("#check");
+            var error = $("#check_error");
+            error.html("");
+            txt.removeClass("is-valid").removeClass("is-invalid");
+            var val = txt.prop("checked");
+            if(!val) {
+                error.html("Chọn Check Me");
+                txt.addClass("is-invalid");
+                return false;
+            } else {
+                txt.addClass("is-valid");
+            }
+            return true;
+        }
+    </script>
+
+</body>
+</html>

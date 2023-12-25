@@ -1,0 +1,16 @@
+#tasks {
+  width: 80%;
+}
+
+#tasks-form {
+  margin-top: 20px;
+}
+
+#tasks-list {
+  margin: 0;
+  padding: 0;
+}
+
+.list-group-item {
+  margin-top: 10px;
+}

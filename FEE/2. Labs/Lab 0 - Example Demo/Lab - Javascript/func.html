@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Functions</title>
+</head>
+<body>
+    <script>
+        //Khai báo hàm
+        /*Hàm tính tổng hai số:
+            - Input: 2 số (giả sử 2 biến là a và b)
+            - Output: giá trị tổng của 2 số đó
+        */
+        //Hàm trả về kết quả
+        function addTwoNumber(a, b){
+            return (a+b);
+        }
+        //Hàm không trả về kết quả
+        function addTwonumber2(a, b){
+            document.write('Kết quả:'+(a+b));
+        }
+        //Hàm không có tên
+        var res = function(a,b){
+            document.write("Kết quả của hàm:"+ (a+b));
+        }
+        //Hàm Closure 
+        function sumTwoNumber(a){
+            console.log("a = "+a);
+            return function (b){
+                console.log("b = "+b);
+                return (a+b);
+            }
+        }
+
+        // Gọi hàm và truyền giá trị vào cho hàm
+        var result = addTwoNumber(5,8);
+        document.write("Kết quả:"+result);
+        document.write("<br>");
+        //Gọi hàm không trả về kết quả
+        addTwonumber2(20,5);
+        document.write("<br>");
+        //Gọi hàm không tên
+        res(4,6);
+        document.write("<br>");
+        //Gọi hàm Closure
+        document.write("Closure - Tổng hai số:"+sumTwoNumber(10)(15));
+    </script>
+</body>
+</html>

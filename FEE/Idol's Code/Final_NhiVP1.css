@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    background: #dfdfdf !important;
+}
+.btn-seat{
+    /* background: #0f6647; */
+    border: 1px solid black !important;
+    color: white !important;
+    width: 65px;
+
+}
+td{
+    justify-content: center;
+}
+#ghe{
+    border: 1px black;
+    border-radius: 5px;
+    background-color: #dfdfdf;
+}
+.seatAreaBg{
+    background-color: #ffa500;
+}
+.input{
+    display: flex;
+    flex-direction: column;
+}

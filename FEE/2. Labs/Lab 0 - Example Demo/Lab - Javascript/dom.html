@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Wellcome to HTML DOM</h2>
+    <p id="intro">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Veritatis error quo nam expedita aspernatur, deleniti, doloremque alias architecto maiores 
+        reprehenderit animi explicabo sit ex? Excepturi quam quisquam maiores aperiam voluptates.</p>
+    
+    <h2>Result</h2>
+    <p class="result"></p>
+    <img id="ima" src="images/color-fruit.jpeg" alt="" width="200" height="150">
+
+    <script>
+        //Lay gia tri tu phan tu chua id
+        var intro = document.getElementById("intro");
+        //Gan gia tri cho phan tu chua class
+        document.getElementsByClassName("result")[0].innerHTML = "<b>Update values for Element By Class Name from Element Id:</b>"+intro.innerHTML;
+        //Thay doi gia tri thuoc tinh src cho phan tu image
+        document.getElementById('ima').src = "images/pom-laptop.png";
+        //hoac su sung phuong thuc
+        var img = document.getElementById('ima');
+        img.setAttribute('src',"images/pom-laptop.png")
+    
+    </script>
+</body>
+</html>
+

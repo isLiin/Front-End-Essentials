@@ -1,0 +1,77 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --color-0: #FFFFFF;
+    --color-1: #e0e0e0;
+    --color-2: #848484;
+}
+
+#main {
+    margin: 15vh auto;
+    max-width: 1400px;
+    padding: 10px;
+    width: 100%;
+    height: auto;
+    background: rgba(255, 255, 255, 0.18);
+    border-radius: 6px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.357);
+    backdrop-filter: blur(5.7px);
+    -webkit-backdrop-filter: blur(5.7px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    display: grid;
+    gap: 30px;
+    grid-template-columns: calc(65% - 30px) auto;
+}
+
+
+#myForm{
+    display: grid;
+    grid-template-rows: 50px auto;
+    gap: 10px;
+}
+
+#main #form-result{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+#form-list-cars-tbody {
+    height: calc(50px * 5);
+    overflow-y: scroll;
+}
+#form-list-cars-tbody .form-list-cars-img {
+    width: 90px;
+    height: 50px;
+}
+
+#form-list-cars-tbody .form-list-cars-img img {
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    mix-blend-mode: darken;
+    width: 100%;
+    height: 100%;
+}
+
+#myForm #form-list-cars .form-list-cars-header{
+    display: grid;
+    grid-template-columns: 40% auto;
+}
+
+#myForm #form-list-cars .form-list-cars-header .group-dropdown-menu {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 10px;
+}
+
+#form-list-cars-tbody {
+    width: 100%;
+    height: 100%;
+}
+.form-list-cars-item:hover{
+    background: var(--color-1);
+    cursor: pointer;
+}

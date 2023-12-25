@@ -1,0 +1,266 @@
+/* Bai 1 */
+.bai1 {
+    margin: 50px auto;
+    width: 1200px;
+    height: 1500px;
+    display: grid;
+    grid-template-rows: 2fr 1fr 2fr 6fr 1fr;
+
+}
+
+.row {
+    background-color: rgb(161, 159, 159);
+    margin-top: 15px;
+}
+
+.row4 {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 20px;
+    background-color: white;
+
+}
+
+.sub-row {
+    background-color: rgb(161, 159, 159);
+    margin: 10px 0;
+}
+
+/* Bai2 */
+
+.bai2 {
+    margin: 50px auto;
+    width: 1200px;
+    height: 1300px;
+    display: grid;
+    grid-template-rows: 2fr 8fr 1.5fr 8fr;
+    background-color: hsl(165.88deg 13.39% 75.1%);
+}
+
+.row-b2 {
+    /* margin-top: 15px; */
+    width: 80%;
+    margin-left: 10%;
+    background-color: hsl(167.6deg 59.02% 40.2%);
+}
+
+.img {
+    width: 100%;
+    margin-left: 0%;
+    background-color: hsl(165.88deg 13.39% 75.1%);
+}
+
+.row-b2-1 {
+    height: 60%;
+    margin-top: 2.5%;
+}
+
+.row-b2-3 {
+    margin: 10px auto;
+}
+
+.row-b2-4 {
+    background-color: hsl(165.88deg 13.39% 75.1%);
+    display: flex;
+    justify-content: space-between;
+}
+
+.row-b2-column {
+    width: 30%;
+    height: 70%;
+}
+
+.column-img {
+    margin: 10px 0;
+}
+
+.desc {
+    background-color: hsl(167.6deg 59.02% 40.2%);
+    height: 20%;
+}
+
+/* Bai 3 */
+
+.bai3 {
+    margin: 50px auto;
+    width: 1600px;
+    height: 1000px;
+    display: grid;
+    grid-template-rows: 1.5fr 1fr 6fr 1fr 6fr 1.5fr;
+    grid-gap: 7px;
+}
+
+.section,
+.sub-section3 {
+    background-color: #ff7f50;
+}
+
+.section2 {
+    display: grid;
+    grid-template-columns: 6.08fr 3.5fr;
+    grid-gap: 7px;
+    background-color: white;
+}
+
+.sub-section2,
+.section4 {
+    background-color: #8a2be2;
+}
+
+.section3 {
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr 3.5fr;
+    background-color: white;
+    grid-gap: 7px;
+}
+
+.extra {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    /* grid-template-rows: auto auto auto auto; */
+    background-color: white;
+    grid-gap: 7px;
+}
+
+.extra>div:nth-child(even) {
+    background-color: #7fff01;
+}
+
+.extra>div:nth-child(odd) {
+    background-color: #02f5f5;
+}
+
+.section5 {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    background-color: white;
+    grid-gap: 7px;
+}
+
+.section5 div {
+    background-color: #ff7f50;
+}
+
+.section6 {
+    background-color: #a5292a;
+}
+
+/* Bai 4 */
+
+.bai4 {
+    display: grid;
+    width: 100%;
+    max-width: 1800px;
+    height: 1500px;
+    margin: auto;
+}
+
+.grid-item1 {}
+
+
+@media screen and (max-width: 400px) {
+    .bai4 {
+        grid-template-rows: 1fr 2fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: auto;
+    }
+}
+
+@media screen and (min-width: 401px) {
+    .bai4 {
+        grid-template-columns: auto auto;
+        grid-template-rows: 1fr 2fr 1fr 1fr;
+    }
+
+    .grid-item1,
+    .grid-item2 {
+        /* background-color: #7fff01; */
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+}
+
+@media screen and (min-width: 961px) {
+    .bai4 {
+        grid-template-columns: auto auto auto;
+        grid-template-rows: 2fr 3fr 1fr 3fr;
+    }
+
+    .grid-item1,
+    .grid-item2,
+    .grid-item3 {
+        /* background-color: #7fff01; */
+        grid-column-start: 1;
+        grid-column-end: 4;
+    }
+
+    .grid-item4 {
+        order: 2;
+    }
+
+    .grid-item6 {
+        order: 3;
+    }
+
+    .grid-item5 {
+        order: 4;
+    }
+
+    .grid-item3 {
+        order: 5;
+    }
+
+    .grid-item2 {
+        order: 6;
+        border: 1px solid black;
+    }
+}
+
+/* bai 5 */
+
+.bai5 {
+    background-color: #01ecb9;
+    margin: 50px auto;
+    width: 1200px;
+    height: 600px;padding-top: 50px;
+}
+
+.row1 {
+    font-size: 100px;
+    color: rgb(132, 131, 131);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+.row2 {
+    display: grid;
+    grid-template-columns: 250px 250px 250px 250px;
+    /* grid-template-columns: auto auto auto auto; */
+    grid-template-rows: 320px;
+    grid-gap: 20px;
+    padding: 50px 80px;
+}
+
+.column {
+    background-color: #03bf96;
+    padding: 25px;
+    color: white;
+    font-size: 45px;
+}
+
+.top {
+
+    height: 70%;
+    background-color: #02816a;
+    font-size: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.botton{
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

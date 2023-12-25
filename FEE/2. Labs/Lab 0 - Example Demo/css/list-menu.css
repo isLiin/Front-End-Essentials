@@ -1,0 +1,31 @@
+.wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+ul.menu{
+    display: flex;
+    width: 90%;
+    height: 50px;
+    /* background-color: aqua; */
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+ul.menu li{
+    flex: 1;
+    display: contents;
+    background-color: blue;
+}
+ul.menu li a{
+    color: white; 
+    text-decoration: none; 
+    background: rgb(238, 13, 13); 
+    padding:1rem 0.5rem; 
+    display: inline-block; 
+    width: 100%; 
+    text-align: center;
+}
+ul.menu a:hover { 
+    background: rgba(238, 13, 13, 0.75); 
+}

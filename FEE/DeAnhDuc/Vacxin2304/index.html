@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="tucode.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="css/all.css">
+    <!-- Font Awesome JS -->
+    <script src="js/all.js"></script>
+    <script src="js/jquery-3.6.4.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <h2>Thông tin cá nhân</h2>
+            <form id="info" onsubmit="return false">
+                <div class="row">
+                    <div class="col-6">
+                        <label for="fullName" class="form-label">Họ và tên</label>
+                        <input type="text" class="form-control" id="fullName">
+                        <small class="invalid-feedback"></small>
+                    </div>
+                    <div class="col-3">
+                        <label for="birthDate" class="form-label">Ngày sinh</label>
+                        <input type="date" class="form-control" id="birthDate">
+                        <small class="invalid-feedback"></small>
+                    </div>
+                    <div class="col-3">
+                        <label for="gender" class="form-label">Giới tính</label>
+                        <select class="form-control" id="gender">
+                            <option value="0" disabled selected>--Chọn giới tính--</option>
+                            <option value="Nam">Nam</option>
+                            <option value="Nu">Nữ</option>
+
+                        </select>
+                        <small class="invalid-feedback"></small>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-9">
+                        <label for="address" class="form-label">Địa chỉ thường trú</label>
+                        <input type="text" class="form-control" id="address">
+                        <small class="invalid-feedback"></small>
+                    </div>
+                    <div class="col-3">
+                        <label for="cccd" class="form-label">CCCD</label>
+                        <input type="number" class="form-control" id="cccd">
+                        <small class="invalid-feedback"></small>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="row">
+            <form id="vacxin" class="col-12 m-0 mt-3" onsubmit="return false">
+                <h2>Thông tin tiêm vacxin</h2>
+                <div class="d-flex justify-content-between">
+                    <div class="col-9 m-0 pl-0">
+                        <label for="loaiVacxin" class="form-label">Bạn đã tiêm vacxin nào</label>
+                        <div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="noneCheck"
+                                    class="loaiVacxin" value="0" checked>
+                                <label class="form-check-label" for="inlineRadio1">None</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                    class="loaiVacxin" value="Plizer">
+                                <label class="form-check-label" for="inlineRadio2">Plizer</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                    class="loaiVacxin" value="AstraZeneca">
+                                <label class="form-check-label" for="inlineRadio2">AstraZeneca</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                    class="loaiVacxin" value="Vero Cell">
+                                <label class="form-check-label" for="inlineRadio2">Vero Cell</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                    class="loaiVacxin" value="Sputrik V">
+                                <label class="form-check-label" for="inlineRadio2">Sputrik V</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3 m-0 pr-0">
+                        <label for="soLuong" class="form-label">Số lượng mũi tiêm</label>
+                        <input type="number" class="form-control" id="soLuong" value=0>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4" id="block1">
+                        <label for="mui1" class="form-label">Ngày tiêm mũi 1</label>
+                        <input type="date" class="form-control" id="mui1">
+                        <small class="invalid-feedback"></small>
+                    </div>
+                    <div class="col-4" id="block2">
+                        <label for="mui2" class="form-label">Ngày tiêm mũi 2</label>
+                        <input type="date" class="form-control" id="mui2">
+                        <small class="invalid-feedback"></small>
+                    </div>
+                    <div class="col-4" id="block3">
+                        <label for="mui3" class="form-label">Ngày tiêm mũi 3</label>
+                        <input type="date" class="form-control" id="mui3">
+                        <small class="invalid-feedback"></small>
+                    </div>
+                </div>
+                <div class="row pl-3">
+                    <button class="btn btn-primary" id="saveBtn"><i class="fas fa-plus"></i> Luu thong tin</button>
+                </div>
+            </form>
+        </div>
+
+
+        <div class="row pl-2 pr-2">
+            <div class="col-12 head mt-4 mb-2">
+                <!-- <div class="col-12"> -->
+                <!-- <div> -->
+                <h2>Danh sách tiêm chủng Vacxin</h2>
+                <!-- </div> -->
+                <div id="danhSach" class="col-6"></div>
+                <!-- </div> -->
+            </div>
+            <table class="table" id="result">
+                <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>Họ và tên</th>
+                        <th>Giới tính</th>
+                        <th>Ngày sinh</th>
+                        <th>CCCD/CMND</th>
+                        <th>Vacxin</th>
+                        <th>Ngày tiêm</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="kqua">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+    <!-- <script src="validate.js"></script> -->
+
+</body>
+
+</html>

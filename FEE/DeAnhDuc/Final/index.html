@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="tucode.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.css">
+    <script src="js/all.js"></script>
+    <script src="js/jquery-3.6.4.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container-fluid">
+
+        <div class="row bg-primary p-3">Quiz Manager</div>
+        <div class="row">
+            <form onsubmit="return false" class="col-4" id="formQues">
+                <h5>New question</h5>
+                <!-- <hr>
+                <div>
+                    <label for="question" class="form-label">Question</label>
+                    <input type="text" class="form-control" id="question">
+                    <small class="invalid-feedback"></small>
+                </div> -->
+                <hr>
+                <div>
+                    <div class="d-flex justify-content-between">
+                        <label for="question" class="form-label">Question</label>
+                        <button class="btn btn-light"><i class="fas fa-close" style="color: red;"></i></button>
+                    </div>
+                    <input type="text" class="form-control" id="question">
+                    <small class="invalid-feedback"></small>
+
+                </div>
+                <div class="form-check form-check-inline mt-2">
+                    <input class="form-check-input" type="radio" name="type" id="inlineRadio1" value="Single Choice"
+                        checked>Single Choice
+                    <input class="form-check-input ml-3" type="radio" name="type" id="inlineRadio2"
+                        value="Multip Choice">Multip Choice
+                    <!-- <label class="form-check-label" for="inlineRadio1">1</label> -->
+                </div>
+                <div class="d-flex justify-content-end mt-3">
+                    <button class="btn btn-primary" id="addAnsBtn"><i class="fas fa-plus"></i> Add Answer</button>
+                </div>
+                <hr>
+                <div id="addAnswer">
+                    <div class="answer">
+                        <div class="d-flex justify-content-between">
+                            <label for="answer" class="form-label">Answer A</label>
+                            <button id="deleteAns" class="btn btn-light"><i class="fas fa-close" style="color: red;"></i></button>
+                        </div>
+                        <input type="text" class="form-control answer" id="answer" style="height: 80px;">
+                        <small class="invalid-feedback"></small>
+                        <input type="radio" name="checkAnswer" id="check"> Is correct answer
+                        <small class="invalid-feedback"></small>
+                    </div>
+                    <div class="answer">
+                        <div class="d-flex justify-content-between">
+                            <label for="answer" class="form-label">Answer B</label>
+                            <button  id="deleteAns" class="btn btn-light"><i class="fas fa-close" style="color: red;"></i></button>
+                        </div>
+                        <input type="text" class="form-control answer" id="answer" style="height: 80px;">
+                        <small class="invalid-feedback"></small>
+                        <input type="radio" name="checkAnswer" id="check"> Is correct answer
+                        <small class="invalid-feedback"></small>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-end mt-3">
+                    <button class="btn btn-primary" id="addBtn">Add Question and Answer</button>
+                    <button class="btn btn-outline-primary" id="cancelBtn">Cancel</button>
+                </div>
+            </form>
+            <table id="tableLon" class="table col-8" style="border-left: 1px solid black;">
+                <thead>
+                    <tr>
+                        <th style="width: 10%;">No</th>
+                        <th style="width: 20%;">Type</th>
+                        <th style="width: 60%;">Question</th>
+                        <th></th>
+
+                    </tr>
+                </thead>
+                <tbody id="bodyTable">
+                    <!-- <tr>
+                        <td rowspan="2"></td>
+                        <td rowspan="2"></td>
+                        <td>s</td>
+                        <td style="width: 10%;"> <button class="btn btn-light" id="deleteRow"><i class="fas fa-close"
+                                    style="color: red;"></i></button></td>
+                    </tr> -->
+                    <!-- <tr>
+                        <td>3</td>
+                    </tr> -->
+
+                </tbody>
+            </table>
+        </div>
+
+
+    </div>
+
+    <script src="main1.js"></script>
+    <!-- <script src="main.js"></script> -->
+
+    <!-- <script src="validate.js"></script> -->
+</body>
+
+</html>

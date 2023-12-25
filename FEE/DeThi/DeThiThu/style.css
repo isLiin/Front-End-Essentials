@@ -1,0 +1,58 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.form_top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.form_top .table_input {
+  width: 69%;
+}
+
+.form_top .table_input table {
+  width: 100%;
+}
+
+.form_top .table_input table button {
+  color: white;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+}
+
+.form_top .table_input table td {
+  width: 8.5%;
+}
+
+.form_top .table_input table input {
+  width: 100%;
+}
+
+.form_top .form_input {
+  width: 30%;
+}
+
+.form_top .form_input .form_group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.form_top .form_input .form_group label {
+  width: 40%;
+}
+
+.form_top .form_input .form_group input {
+  width: 60%;
+}
+/*# sourceMappingURL=style.css.map */

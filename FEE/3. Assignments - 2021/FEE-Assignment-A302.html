@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="FEE-Assignment-A302.css">
+    <link rel="stylesheet" href="bootstrap-4.3.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="fontawesome/css/all.css">
+    <script src="js/all.js"></script>
+    <script src="js/jquery-3.6.4.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <form class="row" id="info">
+                <div class="left col-6">
+                    <h2>Personal Info</h2>
+                    <div class="row">
+                        <div class="col-6">
+                            <label for="firstName" class="form-label">First Name</label>
+                            <input type="text" class="form-control" id="firstName">
+                            <small class="invalid-feedback"></small>
+                        </div>
+                        <div class="col-6">
+                            <label for="lastName" class="form-label">Last Name</label>
+                            <input type="text" class="form-control" id="lastName">
+                            <small class="invalid-feedback"></small>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="text" class="form-control" id="email">
+                            <small class="invalid-feedback"></small>
+                        </div>
+                        <div class="col-6">
+                            <label for="phone" class="form-label">Phone</label>
+                            <input type="number" class="form-control" id="phone">
+                            <small class="invalid-feedback"></small>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <label for="address" class="form-label">Address</label>
+                            <input type="text" class="form-control" id="address" placeholder="1234 Main St">
+                            <small class="invalid-feedback"></small>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-6">
+                            <label for="city" class="form-label">City</label>
+                            <input type="text" class="form-control" id="city">
+                            <small class="invalid-feedback"></small>
+                        </div>
+                        <div class="col-4">
+                            <label for="inputState" class="form-label">State</label>
+                            <select id="state" class="form-select form-control">
+                                <option selected>Choose...</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+
+                            </select>
+                            <small class="invalid-feedback"></small>
+                        </div>
+                        <div class="col-2">
+                            <label for="zip" class="form-label">Zip</label>
+                            <input type="number" class="form-control" id="zip">
+                            <small class="invalid-feedback"></small>
+                        </div>
+                    </div>
+                </div>
+                <div class="right col-6">
+                    <h2>Personal Info</h2>
+                    <div class="row">
+                        <div class="col-12">
+                            <label for="cardName" class="form-label">Name on card</label>
+                            <input type="text" class="form-control" id="cardName">
+                            <small class="invalid-feedback"></small>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <label for="cardNum" class="form-label">Credit card number</label>
+                            <input type="number" class="form-control" id="cardNum">
+                            <small class="invalid-feedback"></small>
+                        </div>
+                    </div>
+                    <div class="row">
+
+                        <div class="col-4">
+                            <label for="expMonth" class="form-label">Exp Month</label>
+                            <input type="number" class="form-control" id="expMonth">
+                            <small class="invalid-feedback"></small>
+                        </div>
+                        <div class="col-4">
+                            <label for="expYear" class="form-label">Exp Year</label>
+                            <input type="number" class="form-control" id="expYear">
+                            <small class="invalid-feedback"></small>
+                        </div>
+                        <div class="col-4">
+                            <label for="cvv" class="form-label">CVV</label>
+                            <input type="number" class="form-control" id="cvv">
+                            <small class="invalid-feedback"></small>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <label for="inputAddress" class="form-label">Accepted Cards</label>
+                            <div class="d-flex justify-content-lg-start size">
+                                <a class="mr-2" href=""> <i class="fa-brands fa-cc-visa"
+                                        style="color: #00007E; height: 50px;"></i></a>
+                                <a class="mr-2" href=""><i class="fa-brands fa-cc-mastercard"
+                                        style="color: #FF0000; height: 50px;"></i></a>
+                                <a href=""> <i class="fa-brands fa-cc-discover"
+                                        style="color: #FFA500; height: 50px;"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+        <div class="row mt-2">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="checkMe">
+                <label class="form-check-label" for="checkMe">
+                    <span class="font-weight-bold">Check me out</span>
+                </label>
+                <small class="invalid-feedback"></small>
+            </div>
+        </div>
+        <div class="row mt-2"><button class="btn btn-primary" id="signIn">Sign in</button></div>
+
+        <table class="table" id="result">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Address</th>
+                    <th>City</th>
+                    <th>State</th>
+                    <th>Zip Code</th>
+                    <th>Name on Card</th>
+                    <th>Credit card number</th>
+                    <th>Exp Month</th>
+                    <th>Exp Year</th>
+                    <th>CVV</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><button class="btn btn-danger" id="deleteBtn">Delete</button></td>
+                </tr> -->
+            </tbody>
+        </table>
+    </div>
+    <script src="FEE-Assignment-A302.js"></script>
+    <!-- <script src="validate.js"></script> -->
+</body>
+
+</html>

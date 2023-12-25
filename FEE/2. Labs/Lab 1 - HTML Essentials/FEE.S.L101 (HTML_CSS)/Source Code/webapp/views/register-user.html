@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Register User</title>
+    <link href="../css/register-user.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="label-register">
+            <p>USER DETAIL</p>
+        </div>
+        <p id="error"></p>
+        <div class="div-register">
+            <form action="#" method="post" name="frm-register">
+                <table id="tbl-register">
+                    <tr>
+                        <td>First Name <span>*</span></td>
+                        <td>
+                            <input type="text" name="firstName" id="firstName" placeholder="Enter first name" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Last Name <span>*</span></td>
+                        <td>
+                            <input type="text" name="lastName" class="lastName" id="lastName"
+                                placeholder="Enter last name" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Email <span>*</span></td>
+                        <td>
+                            <input type="email" name="email" id="email" placeholder="Enter email" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>User Name <span>*</span></td>
+                        <td><input type="text" name="userName" id="userName" placeholder="Enter user name" /></td>
+                    </tr>
+                    <tr>
+                        <td>Password <span>*</span></td>
+                        <td><input type="password" name="password" id="password" placeholder="Enter password" /></td>
+                    </tr>
+
+                    <tr>
+                        <td>Confirm Password <span>*</span></td>
+                        <td><input type="password" name="confirmPassword" id="confirmPassword"
+                                placeholder="Enter password again" /></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <button type="button" onclick="validateRegister()" name="register">
+                                Register
+                            </button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <hr />
+        <p class="label-result">User List</p>
+        <div class="div-result">
+            <table class="tbl-result" id="tbl-result" border="1">
+                <thead>
+                </thead>
+
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="../js/register-user.js"></script>
+</body>
+
+</html>

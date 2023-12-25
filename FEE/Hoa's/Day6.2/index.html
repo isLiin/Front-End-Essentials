@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To Do List</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../fontawesome-free-6.4.0-web/fontawesome-free-6.4.0-web/css/all.min.css">
+
+</head>
+
+<body>
+  <section class="vh-100">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col col-lg-12 col-xl-12">
+          <div class="card rounded-3">
+            <div class="card-body p-4" style="background-color: #eee;">
+
+              <h4 class="text-center my-3 pb-3 fw-bold">To Do App</h4>
+
+              <form class="row row-cols-lg-auto g-3 justify-content-center mb-4 pb-2 h-10">
+                <div class="col-10" id="edit_ip">
+                  <div class="form-outline">
+                    <input type="text" id="ipText" class="form-control" style="border: 2px solid #c5e5d6;" />
+                  </div>
+                </div>
+
+                <div class="col-1" id="add">
+                  <button id="btn_add" type="button" class="btn btn-outline-primary w-100">Add</button>
+                </div>
+
+                <div class="col-1 d-none" id="update">
+                  <button id="save_update" type="button" class="btn btn-outline-warning w-100">Save</button>
+                </div>
+              </form>
+
+              <table class="table mb-4">
+                <thead>
+                  <tr>
+                    <th scope="col" style="border-bottom: 0px;">Todo item</th>
+                  </tr>
+                </thead>
+                <tbody id="tbody">
+                 
+                </tbody>
+              </table>
+              <div class="btn w-100">
+                <button id="clear" type="button" class="btn btn-outline-success">Clear All</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+<script src="./main.js"></script>
+
+</html>

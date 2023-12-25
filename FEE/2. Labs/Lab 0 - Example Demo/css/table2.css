@@ -1,0 +1,43 @@
+
+.wrapper {
+  position: relative;
+}
+.table-scroller {
+  margin-left: 141px;
+  overflow-x: scroll;
+  overflow-y: visible;
+  padding-bottom: 5px;
+  width: 300px;
+}
+.mytable {
+  border: none;
+  border-right: solid 1px #DDEFEF;
+  border-collapse: separate;
+  border-spacing: 0;
+  font: normal 13px Arial, sans-serif;
+}
+.mytable .table-sticky-col {
+  border-left: solid 1px #DDEFEF;
+  border-right: solid 1px #DDEFEF;
+  left: 0;
+  position: absolute;
+  top: auto;
+  width: 120px;
+}
+
+.mytable thead th {
+  background-color: #DDEFEF;
+  border: none;
+  color: #336B6B;
+  padding: 10px;
+  text-align: left;
+  text-shadow: 1px 1px 1px #fff;
+  white-space: nowrap;
+}
+.mytable tbody td {
+  border-bottom: solid 1px #DDEFEF;
+  color: #333;
+  padding: 10px;
+  text-shadow: 1px 1px 1px #fff;
+  white-space: nowrap;
+}

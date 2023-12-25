@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="style6-2b.css">
+  <link rel="stylesheet" href="/2. BootStrap4/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/3. Fontawesome/css/all.min.css">
+
+  <title>To Do List</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 header" style="display: flex; align-items: center; justify-content: center;">
+        <font face="Comic sans MS" size="13" color="black">
+          <h1>To Do List</h1>
+        </font>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <div class="container mt-2">
+    <label id="lblsuccess" class="text-success">
+    </label>
+
+    <form id="addForm">
+      <div class="row mb-5">
+        <div class="col-6 left">
+          <input type="text" onkeyup="toggleButton(this, 'submit')" class="form-control form-control-custom"
+            id="item" />
+        </div>
+
+        <div class="col-1 mr-3">
+          <input type="submit" class="btn btn-outline-primary button" id="submit" value="Add Item" required />
+          <div class="invalid-feedback"></div>
+
+        </div>
+
+
+        <div class="col-1 mr-3">
+          <input type="button" class="btn btn-outline-primary button" id="sort" value="Sort" />
+        </div>
+
+
+        <div class="col-1 mr-4">
+          <input type="submit" class="btn btn-outline-primary button" id="clear" value="Clear All" />
+        </div>
+
+        <div class="col-1">
+          <input type="search" class="btn btn-outline-primary seachButton" id="search" placeholder="Search" />
+        </div>
+      </div>
+    </form>
+
+    <form id="addForm">
+      <ul class="list-group" id="items"></ul>
+    </form>
+  </div>
+
+  <!-- Nhúng link Js -->
+  <script src="main6-2b.js"></script>
+
+</body>
+
+</html>

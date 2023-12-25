@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6.3</title>
+    <link rel="stylesheet" href="style6-3b.css">
+    <link rel="stylesheet" href="/FEE_DAY1/css/bootstrap.min.css" />
+    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+   
+</head>
+
+<body>
+    <div class="container">
+        <!-- menu header -->
+        <div class="row header d-flex justify-content-center align-items-center">
+            <span class="our mr-2">our</span><span class="store">Store</span>
+        </div>
+
+        <!-- tag filter -->
+        <div class="row myBtnContainer d-flex justify-content-center align-items-center mt-3 mb-3">
+            <button class="btn active mr-3" onclick="filterSelection('all')">ALL</button>
+            <button class="btn mr-3" onclick="filterSelection('cake')">CAKES</button>
+            <button class="btn mr-3" onclick="filterSelection('cupCake')">CUPCAKES</button>
+            <button class="btn mr-3" onclick="filterSelection('sweet')">SWEETS</button>
+            <button class="btn mr-3" onclick="filterSelection('doughnut')">DOUGHNUTS</button>
+        </div>
+
+        <!--Search menu -->
+        <div class="row d-flex justify-content-center mb-3">
+            <div class="form-group search">
+                <div class="search-group d-flex justify-content-center align-items-center ">
+                    <i class="fa-solid fa-magnifying-glass icon d-flex justify-content-center align-items-center "></i>
+                    <input type="text" class="form-control" placeholder="Search" id="searchInput">
+                </div>
+               
+
+            </div>
+        </div>
+
+        <!--Gallery Grid -->
+        <div class="row">
+
+            <div class="column sweet mr-4 mb-4">
+                <div class="content">
+                    <img src="/FEE_DAY6_JS/6-3_FilterCakeWithJs/img6-3b/1.jpg" alt="sweet" style="width:350px" height="250px">
+                    <div class="desc d-flex justify-content-between mt-3 pl-4 pr-4">
+                        <h5><b>Sweet Items</b></h5>
+                        <p class="card-text">$5</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column cupCake mr-4 mb-4">
+                <div class="content">
+                    <img src="/FEE_DAY6_JS/6-3_FilterCakeWithJs/img6-3b/2.jpg" alt="cupCake" style="width:350px" height="250px">
+                    <div class="desc d-flex justify-content-between mt-3 pl-4 pr-4">
+                        <h5><b>Cupcake Items</b></h5>
+                        <p class="card-text">$5</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="column cake mr-4 mb-4">
+                <div class="content">
+                    <img src="/FEE_DAY6_JS/6-3_FilterCakeWithJs/img6-3b/3.jpg" alt="cake" style="width:350px" height="250px">
+                    <div class="desc d-flex justify-content-between mt-3 pl-4 pr-4">
+                        <h5><b>Cake Items</b></h5>
+                        <p class="card-text">$5</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="column doughnut mr-4">
+                <div class="content">
+                    <img src="/FEE_DAY6_JS/6-3_FilterCakeWithJs/img6-3b/4.jpg" alt="cake" style="width:350px" height="250px">
+                    <div class="desc d-flex justify-content-between mt-3 pl-4 pr-4">
+                        <h5><b>Doughnut Items</b></h5>
+                        <p class="card-text">$5</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="column sweet mr-4">
+                <div class="content">
+                    <img src="/FEE_DAY6_JS/6-3_FilterCakeWithJs/img6-3b/5.jpg" alt="sweet" style="width:350px" height="250px">
+                    <div class="desc d-flex justify-content-between mt-3 pl-4 pr-4">
+                        <h5><b>Sweet Items</b></h5>
+                        <p class="card-text">$5</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="column cupCake mr-4">
+                <div class="content">
+                    <img src="/FEE_DAY6_JS/6-3_FilterCakeWithJs/img6-3b/6.jpg" alt="cupCake" style="width:350px" height="250px">
+                    <div class="desc d-flex justify-content-between mt-3 pl-4 pr-4">
+                        <h5><b>CupCake Items</b></h5>
+                        <p class="card-text">$5</p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <script src="main6-3b.js"></script>
+
+</body>
+</html>
+

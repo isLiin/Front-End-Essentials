@@ -1,0 +1,20 @@
+/* .droplet{
+    background: seagreen;
+    border-radius: 5px 50%;
+    height: 100px;
+    margin: 150px auto;
+    transform-origin: left top;
+    transition: transform 3s;
+    width: 100px;
+} */
+.droplet{
+    background: mediumaquamarine;
+    border-radius: 2% 50%;
+    height: 100px;
+    margin: 100px;
+    transition: all 3s ease-in-out;
+    width: 100px;
+}
+.droplet:hover{
+    transform: rotate(360deg);
+}

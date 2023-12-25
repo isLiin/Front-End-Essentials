@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <select onChange="getSelectListText(this);">
+        <option value="html">HTML</option>
+        <option value="css">CSS</option>
+        <option value="js">JavaScript</option>
+    </select>
+    <p id="result"></p>
+
+    <script> 
+        var result = document.querySelector('#result');   
+        function getSelectListText(selelectList) {
+            let slValue = selelectList.value;
+            let slText = selelectList.options[selelectList.selectedIndex].text;    
+            result.innerText = `You selected value: ${slValue} with Text: ${slText}`
+        }
+    </script>
+</body>
+</html>

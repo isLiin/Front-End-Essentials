@@ -1,0 +1,33 @@
+.pos-fix{
+    width: 100px;
+    height: 100px;
+    background-color: aqua;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+}
+.elm{
+    position: relative;
+    margin: 0 auto;
+    width: 90%;
+    height: 300px;
+    background-color: gray;
+}
+.elm1, .elm2, .elm3{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+}
+.elm1{
+    background-color: bisque;
+    top: 25%;
+    left: -50px;
+}
+.elm2{
+    background-color: blueviolet;
+}
+.elm3{
+    background-color: red;
+    right: -50px;
+    top: 25%;
+}

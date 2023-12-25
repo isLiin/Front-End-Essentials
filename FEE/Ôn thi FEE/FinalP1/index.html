@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.css">
+    <script src="js/all.js"></script>
+    <script src="js/jquery-3.6.4.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row pt-3 pl-3 bg-primary" style="height: 50px;">Quiz Manager</div>
+        <div class="row">
+            <form onsubmit="return false" id="formInput" class="col-4" style="border-right: 1px solid black;">
+                <h4>New Question</h4>
+                <hr>
+                <div class="mb-3">
+                    <label for="question" class="form-label">Question</label>
+                    <input type="text" class="form-control" id="question">
+                    <small class="invalid-feedback"></small>
+                </div>
+                <div class="form-check form-check-inline ">
+                    <input class="form-check-input" type="radio" name="choice" id="single" value="Single Choice"
+                        checked>Single Choice
+                    <input class="form-check-input ml-2" type="radio" name="choice" id="multip"
+                        value="Multip Choice">Multip Choice
+                    <small class="invalid-feedback"></small>
+                </div>
+                <div class="d-flex justify-content-end">
+                    <button class="btn btn-primary" id="addAnswerBtn"><i class="fa fa-plus"></i> Add Answer</button>
+                </div>
+                <hr>
+                <div id="multipAnswer">
+                    <div class="answer">
+                        <div class="d-flex justify-content-between">
+                            <div class="mt-2">Answer A</div>
+                            <button id="deleteAnswerBtn" class="btn btn-light"><i style="color: red;"
+                                    class="fas fa-close"></i></button>
+                        </div>
+                        <input style="height: 100px;" type="text" class="form-control" id="answerQuestion">
+                        <small class="invalid-feedback"></small>
+                        <input type="radio" name="choiceAnswer" value="1">Is correct answer
+                        <!-- <small class="invalid-feedback choiceInvalid"></small> -->
+                    </div>
+                    <div class="answer">
+                        <div class="d-flex justify-content-between">
+                            <div class="mt-2">Answer B</div>
+                            <button id="deleteAnswerBtn" class="btn btn-light"><i style="color: red;"
+                                    class="fas fa-close"></i></button>
+                        </div>
+                        <input style="height: 100px;" type="text" class="form-control" id="answerQuestion">
+                        <small class="invalid-feedback"></small>
+                        <input type="radio" name="choiceAnswer" value="2">Is correct answer
+                        <!-- <small class="invalid-feedback choiceInvalid"></small> -->
+                    </div>
+                </div>
+                        <small class="invalid-feedback" id="choiceInvalid"></small>
+
+                <div class="d-flex justify-content-end">
+                    
+                    <button class="btn btn-primary" id="addQABtn">Add Question and Answer</button>
+                    <button class="btn btn-primary ml-2" id="cancelBtn">Cancel</button>
+                </div>
+            </form>
+            <div class="col-8">
+                <table id="result" class="table">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Type</th>
+                            <th>Question</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>

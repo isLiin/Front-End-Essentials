@@ -1,0 +1,94 @@
+* {
+    font-size: 12px;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+label{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.phoneHead,.phoneTail,.phoneBox{
+    padding-left: 0 !important;
+    padding-right: 0 ;
+}
+
+body{
+    padding: 0px;
+    background-color: #17a2b8 !important;
+    height: 720px;
+    max-width: 1400px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.main {
+    background-color: #eae5e5;
+    border: 1px solid #000020;
+    height: 450px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.left {
+    border-right: 1px solid gray;
+}
+.right {
+    height: 400px;
+}
+
+.list {
+    height: 350px;
+    overflow: auto;
+}
+
+small{
+    display: none;
+    color: red;
+}
+
+table{
+    height: 400px;
+}
+
+tr:nth-child(even) {
+    background-color: hsl(0, 2%, 76%);
+}
+
+.deleteBtn {
+    background-color: #bd2130 !important;
+}
+.chuatiem {
+    color: #bd2130;
+}
+.mui1{
+    color: #ffc107;
+}
+
+.mui2{
+    color: #28a745
+}
+
+#register{
+    background-color: #0062cc !important;
+}
+
+#resetbtn{
+    background-color: #545b62 !important;
+}
+
+.item {
+    height: 70px;
+}
+
+input{
+    border: #000020 solid 1px !important;
+}
+
+.btn-outline-normal {
+    border: 1px lightgray solid !important;
+}

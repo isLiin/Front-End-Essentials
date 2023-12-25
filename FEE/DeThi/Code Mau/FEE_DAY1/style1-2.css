@@ -1,0 +1,171 @@
+.container{
+    height: 900px;
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+}
+.nav{
+    background-color: blue;
+}
+.header{
+    background-color: rgb(101, 156, 232);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.feature1{
+    background-color: rgb(209, 164, 52);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.feature2{
+    background-color: rgb(163, 81, 222);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.feature3{
+    background-color: rgb(183, 84, 54);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.signup{
+    background-color: #7cbce7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footer{
+    background-color: #efeae6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* Mobile Styles */
+@media only screen and (max-width: 400px) {
+    .container {
+        display: flex;
+    }
+   .nav{
+    flex: 1;
+    order: 1;
+   }
+   .footer {
+    flex: 4;
+    order: 3;
+   }
+   .header{
+    flex: 2;
+    order: 2;
+   }
+   .body {
+    flex: 8;
+    order: 4;
+    display: flex;
+    flex-direction: column;
+   }
+   .signup{
+    flex: 2;
+    order: 1;
+   }
+   .feature1{
+    flex: 2;
+    order: 2;
+   }
+   .feature2{
+    flex: 2;
+    order: 3;
+   }
+   .feature3{
+    flex: 2;
+    order: 4;
+   } 
+}
+/* Tablet Styles */
+@media only screen and (min-width: 401px) and (max-width: 960px) {
+    .container {
+        display: flex;
+    }
+    .nav{
+        flex: 1;
+        order: 1;
+    }
+    .footer {
+        flex: 4;
+        order: 3;
+    }
+    .header{
+        flex: 2;
+        order: 2;
+    }
+    .body {
+        flex: 4;
+        order: 4;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas: 
+        "a b"
+        "c d";
+        
+    }
+    .signup{
+
+        grid-area: a;
+    }
+    .feature1{
+        grid-area: b;
+    }
+    .feature2{
+        grid-area: c;
+    }
+    .feature3{
+        grid-area: d;
+    } 
+}
+/* Desktop Styles */
+@media only screen and (min-width: 961px) {
+    .container {
+        display: flex;
+    }
+    .nav{
+        flex: 1;
+        order: 1;
+    }
+    .footer {
+        flex: 4;
+        order: 4;
+    }
+    .header{
+        flex: 2;
+        order: 2;
+    }
+    .body {
+        flex: 4;
+        order: 3;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-areas: 
+        "b c d"
+        "b c d"
+        "a a a"
+        
+    }
+    .signup{
+
+        grid-area: a;
+    }
+    .feature1{
+        grid-area: b;
+    }
+    .feature2{
+        grid-area: c;
+    }
+    .feature3{
+        grid-area: d;
+    } 
+}
+

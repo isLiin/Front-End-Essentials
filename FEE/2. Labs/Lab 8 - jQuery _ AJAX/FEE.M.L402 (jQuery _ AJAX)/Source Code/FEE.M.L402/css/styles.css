@@ -1,0 +1,58 @@
+#weather-app {
+  width: 400px;
+  margin: 50px auto;
+}
+
+#loading-weather {
+  display: none;
+}
+
+.text-lg {
+  font-size: 2em;
+  margin-right: 5px;
+}
+
+.img-lg {
+  width: 70px;
+  height: 70px;
+}
+
+hr {
+  border-top: 1px solid #00d4b4;
+}
+
+.weather-detail-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.item {
+  display: inline-block;
+}
+
+.icon {
+  display: inline-block;
+
+}
+
+.icon .icon-lg {
+  font-size: 2.2em;
+}
+
+.toggle-units {
+  font-weight: bold;
+  color: #456;
+  text-decoration: none;
+  cursor: pointer;
+  cursor: hand;
+}
+
+.no-select {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* IE/Edge */
+  user-select: none;           /* non-prefixed version, currently
+                                  not supported by any browser */
+}

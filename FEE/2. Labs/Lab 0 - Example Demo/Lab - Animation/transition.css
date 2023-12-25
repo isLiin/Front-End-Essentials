@@ -1,0 +1,26 @@
+.wrapper{
+	margin: 0 auto;
+	width: 900px;
+	height: auto;
+	background-color: aquamarine;
+	padding: 5px 3px;
+}
+.box{
+	width: 100px;
+	height: 100px;
+	margin: 5px 0;	
+	background-color: brown;
+	transition-duration: 0.5s;
+}
+.wrapper:hover .box1{
+	transition-property: width, background-color;
+	width: 100%;
+	background-color: chocolate;
+	transition-timing-function: ease-in-out;
+}
+.wrapper:hover .box2{
+	transition-property: border-radius, background-color;
+	border-radius: 50%;
+	background-color: blueviolet;
+	transition-timing-function: ease-in;
+}

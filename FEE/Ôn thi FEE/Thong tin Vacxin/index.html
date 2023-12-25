@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.css">
+    <script src="js/all.js"></script>
+    <script src="js/jquery-3.6.4.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="row">
+            <h2 class="col-12">Thong tin ca nhan</h2>
+            <form id="formInput" class="col-12">
+                <div class="row">
+                    <div class="col-6">
+                        <label for="fullName" class="form-label">Ho va ten</label>
+                        <input type="text" class="form-control" id="fullName">
+                        <small class="invalid-feedback"></small>
+
+                    </div>
+                    <div class="col-3">
+                        <label for="birthday" class="form-label">Ngay sinh</label>
+                        <input type="date" class="form-control" id="birthday">
+                        <small class="invalid-feedback"></small>
+
+                    </div>
+                    <div class="col-3">
+                        <label for="gender" class="form-label">Gioi tinh</label>
+                        <select name="gender" id="gender" class="form-control">
+                            <option selected disabled>--Chon gioi tinh--</option>
+                            <option value="Nam">Nam</option>
+                            <option value="Nu">Nu</option>
+                            <option value="Khac">Khac</option>
+                        </select>
+                        <small class="invalid-feedback"></small>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-9">
+                        <label for="address" class="form-label">Dia chi thuong tru</label>
+                        <input type="text" class="form-control" id="address">
+                        <small class="invalid-feedback"></small>
+
+                    </div>
+                    <div class="col-3">
+                        <label for="cccd" class="form-label">CCCD</label>
+                        <input type="number" class="form-control" id="cccd">
+                        <small class="invalid-feedback"></small>
+
+                    </div>
+                </div>
+
+                <h2 class="col-12 mt-3">Thong tin tiem vacxin</h2>
+                <div class="col-12 pl-0 d-flex justify-content-between">
+                    <div class="col-9">
+                        <label for="vacxin" class="form-label">Ban da tiem vacxin nao</label>
+                        <div class="row">
+                            <div class="form-check form-check-inline pl-3">
+                                <input class="form-check-input col-auto" type="radio" name="vacxin" value="Chua tiem"
+                                    id="1" checked>None
+                                <input class="form-check-input col-auto" type="radio" name="vacxin" value="Plize"
+                                    id="2">Plize
+                                <input class="form-check-input col-auto" type="radio" name="vacxin" value="AstraZeneca"
+                                    id="3">AstraZeneca
+                                <input class="form-check-input col-auto" type="radio" name="vacxin" value="Vero Cell"
+                                    id="4">Vero
+                                Cell
+                                <input class="form-check-input col-auto" type="radio" name="vacxin" value="Sputril V"
+                                    id="5">Sputril V
+                                <small class="invalid-feedback"></small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3 pr-0">
+                        <label for="soMui" class="form-label">So luong mui tiem</label>
+                        <input type="number" class="form-control" id="soMui" value="0">
+                        <small class="invalid-feedback"></small>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-4" id="mui1Form">
+                            <label for="mui1" class="form-label">Ngay tiem mui 1</label>
+                            <input type="date" class="form-control" id="mui1">
+                            <small class="invalid-feedback"></small>
+                        </div>
+                        <div class="col-4" id="mui2Form">
+                            <label for="mui2" class="form-label">Ngay tiem mui 1</label>
+                            <input type="date" class="form-control" id="mui2">
+                            <small class="invalid-feedback"></small>
+                        </div>
+                        <div class="col-4" id="mui3Form">
+                            <label for="mui3" class="form-label">Ngay tiem mui 1</label>
+                            <input type="date" class="form-control" id="mui3">
+                            <small class="invalid-feedback"></small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 mt-3 mb-3">
+                    <button id="saveBtn" class="btn btn-primary"><i class="fas fa-plus"></i>Luu thong tin</button>
+                </div>
+            </form>
+        </div>
+        <div class="row">
+            <div class="col-12 d-flex justify-content-between">
+                <h2>Danh sach tiem chung Vacxin</h2>
+                <div class="pt-2" id="danhSach"></div>
+            </div>
+            <table class="col-12 table" id="result">
+                <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>Ho va ten</th>
+                        <th>Gioi tinh</th>
+                        <th>Ngay sinh</th>
+                        <th>CCCD/CMND</th>
+                        <th>Vacxin</th>
+                        <th>Ngay tiem</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="bodyTable">
+                    <tr id="">
+                        <td rowspan=""></td>
+                        <td rowspan=""></td>
+                        <td rowspan=""></td>
+                        <td rowspan=""></td>
+                        <td rowspan=""></td>
+                        <td rowspan=""></td>
+                        <td></td>
+                        <td rowspan=""><button id="deleteBtn" class="border-0"><i class="far fa-trash-alt"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>

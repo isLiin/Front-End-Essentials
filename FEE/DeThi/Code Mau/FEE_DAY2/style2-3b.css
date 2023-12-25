@@ -1,0 +1,32 @@
+.a {
+  margin-top: 150px;
+}
+
+.b {
+  margin-top: 5px;
+}
+
+.c {
+  margin-top: -15px;
+}
+
+.left {
+  background-color: aqua;
+  width: 150px;
+  height: 50px;
+  border: 1px solid rgb(22, 22, 22);
+  margin: 15px;
+}
+
+.bott {
+  background-color: aqua;
+  width: 150px;
+  height: 50px;
+  border: 1px solid rgb(22, 22, 22);
+  margin-top: 0px;
+}
+
+.dau1 {
+  font-size: 150px;
+  margin-top: -250px;
+}

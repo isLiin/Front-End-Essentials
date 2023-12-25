@@ -1,0 +1,59 @@
+.loadingdiv{
+    margin: 0 auto;
+    width: 200px;
+    height: 100px;
+    margin-top: 50px;
+}
+.loadingdiv span{
+    display: inline-block;
+    vertical-align: middle;
+    width: 15px;
+    height: 15px;
+    background: #174C4F;
+    border-radius: 50%;
+    box-shadow:1px 1px 1px #444444;
+    /* CSS 3 Animation - từng thành phần */
+    animation-name: loading;
+    animation-duration: 0.9s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    /* Rút gọn trong thuộc tính animation */  
+    /* animation: loading 0.9s infinite alternate;  */
+ }
+/* Thay đổi màu sắc của item 2 */
+ .loadingdiv span:nth-of-type(2) {
+    background: #207178;
+    animation-delay: 0.2s;
+    animation-delay: 0.2s;
+}
+/* Thay đổi màu sắc của item 3 */
+.loadingdiv span:nth-of-type(3) {
+    background: #FF9666;
+    animation-delay: 0.4s;
+    animation-delay: 0.4s;
+}
+/* Thay đổi màu sắc của item 4 */
+.loadingdiv span:nth-of-type(4) {
+    background: #FFE184;
+    animation-delay: 0.6s;
+    animation-delay: 0.6s;
+}
+/* Thay đổi màu sắc của item 5 */
+.loadingdiv span:nth-of-type(5) {
+    background: #F5E9BE;
+    animation-delay: 0.8s;
+    animation-delay: 0.8s;
+}
+/* Thiết lập các giá trị hiệu ứng cho @keyframe có tên là loading */
+@keyframes loading {
+    from {
+        width: 15px;
+        height: 15px;
+        transform: translateZ(0);
+    }
+    to {
+        width: 25px;
+        height: 25px;
+        transform: translateZ(-25px);
+    }
+}

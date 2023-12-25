@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do List</title>
+    <style>
+        ul#taskList {
+		  margin: 0;
+		  padding: 0;
+		  width: 200px;
+		  list-style-type: square;
+		}
+
+		/* Style the list items */
+		ul#taskList li {
+		  	cursor: pointer;
+		  	padding: 0;
+		  	position: relative;
+		  	padding: 0.5rem 0.8rem;		  	
+		  	background: gray;
+		}
+		/* Style the close button */
+		.close {
+			cursor: pointer;
+		  	position: absolute;
+		  	right: 0;
+		  	top: 0;
+		  	padding: 0.5rem 0.8rem;
+		}
+		.close:hover {
+		  	background-color: #f44336;
+		  	color: white;
+		}
+    </style>
+</head>
+<body>
+    <h2>Enter Your Task and Click Add Task Button</h2>
+    <form method="">
+        <input type="text" id="list-name" name="list-value">
+        <button id="btnAddTask">Add Task</button>
+    </form>
+    <h2>To do List</h2>
+    <ul id="taskList">
+    </ul>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){           
+            $("#btnAddTask").click(function(evt){
+                evt.preventDefault();
+                // lay gia tri tu input
+                var task_value = $("#list-name").val();
+                // alert("Input Value:"+task_value);
+                if (task_value) {//true
+                    // tao li va span icon x
+                    $("ul#taskList").append('<li class="newItem">'+ task_value +'<span class="close"> x </span></li>');
+                } else {//false
+                    alert("Please type the Task name ...");
+                }
+                // close icon click
+                $("span.close").click(function(){
+                    // $(this).parent().hide(500);
+                    $(this).parent().remove('.newItem');
+                });
+            });
+            // click vao icon close thi xoa/hide/an li
+     
+        });
+
+
+
+    </script>
+</body>
+</html>

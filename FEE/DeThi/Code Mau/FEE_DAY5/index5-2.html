@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Thông tin</title>
+</head>
+<body>
+    <h1>Nhập thông tin</h1>
+    
+    <form id="personForm">
+        <label for="fullName">Họ và tên:</label>
+        <input type="text" id="fullName" required><br><br>
+        
+        <label for="birthdate">Ngày sinh:</label>
+        <input type="date" id="birthdate" required><br><br>
+        
+        <label for="gender">Giới tính:</label>
+        <select id="gender" required>
+            <option value="male">Nam</option>
+            <option value="female">Nữ</option>
+            <option value="other">Khác</option>
+        </select><br><br>
+        
+        <input type="submit" value="Submit">
+    </form>
+
+    <h2>Thông tin người đã nhập:</h2>
+    <p id="output"></p>
+
+    <script src="main5-2.js"></script>
+</body>
+</html>

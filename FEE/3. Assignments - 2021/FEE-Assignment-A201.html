@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="FEE-Assignment-A201.css">
+    <link rel="stylesheet" href="bootstrap-4.3.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="fontawesome/css/all.css">
+</head>
+
+<body>
+    <div>
+
+        <!-- Bai 1 -->
+        <div class="bai1">
+            <div class="container bai1">
+                <div class="row">
+                    <div class="col-8 bg-success">1 of 2</div>
+                    <div class="col-4 bg-warning">2 of 2</div>
+                </div>
+                <div class="row">
+                    <div class="col-2 bg-warning">1 of 4</div>
+                    <div class="col-2 bg-success">2 of 4</div>
+                    <div class="col-2 bg-warning">3 of 4</div>
+                    <div class="col-6 bg-success">4 of 4</div>
+                </div>
+                <div class="row">
+                    <div class="col-4 bg-warning">1 of 4</div>
+                    <div class="col-6 bg-success">2 of 4</div>
+                    <div class="col-1 bg-warning">3 of 4</div>
+                    <div class="col-1 bg-success">4 of 4</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bai 2 -->
+        <div class="bai2 mt-5">
+            <div class="container">
+                <form action="">
+                    <div class="row">
+
+                        <!-- Left -->
+                        <div class="col-10 left">
+                            <div class="row">
+                                <div class="col-9 left">
+                                    <h3 class="font-weight-bold">Specific</h3>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="form-group col-4">
+                                            <label for="id1">First name contains</label>
+                                            <input class="form-control" type="text" placeholder="First Name">
+                                        </div>
+                                        <div class="form-group col-4">
+                                            <label for="id2">Last name contains</label>
+                                            <input class="form-control" type="text" placeholder="Last name">
+                                        </div>
+                                        <div class="form-group col-4">
+                                            <label for="id2">Email</label>
+                                            <input class="form-control" type="text" placeholder="E-mail">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <!-- <div class="row"> -->
+                                        <div class="form-group col-4">
+                                            <label for="id1">Correspondence</label>
+                                            <select class="custom-select" id="">
+                                                <option value="">A</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-4">
+                                            <label for="id1">Correspondence</label>
+                                            <select class="custom-select" id="">
+                                                <option value="">A</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-4">
+                                            <label for="id2">Email</label>
+                                            <input class="form-control" type="text" placeholder="E-mail">
+                                        </div>
+                                        <!-- </div> -->
+                                    </div>
+                                </div>
+                                <div class="right col-3">
+                                    <h3 class="font-weight-bold">Related</h3>
+                                    <hr>
+                                    <div class="form-group">
+                                        <label for="id1">Team</label>
+                                        <select class="custom-select" id="" required>
+                                            <option selected>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row d-flex flex-column">
+                                <div class="col-12">
+                                    <h3 class="font-weight-bold mb-0">Permissions</h3>
+                                    <hr class="mt-0">
+                                    <div class="row">
+                                        <div class="col-3 form-group">
+                                            <label for="id1">Group</label>
+                                            <select class="custom-select" id="" required>
+                                                <option selected>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+
+                                            </select>
+                                        </div>
+                                        <div class="col-6 form-group">
+                                            <label for="id2">Permission</label>
+                                            <select class="custom-select" id="" required>
+                                                <option selected>Yes</option>
+                                                <option>No</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- <div class="col-3">
+                            <h3 class="font-weight-bold">Attribute</h3>
+                            <hr>
+                        </div> -->
+                        <!-- Right -->
+                        <div class="col-2 right font-weight-bold">
+                            <h3 class="font-weight-bold">Attribute</h3>
+                            <hr>
+                            <div class="active mb-3">
+                                <h6 class="font-weight-bold">Active</h6>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input" id="radio1" name="optradio"
+                                        value="doesn't" checked>
+                                    <label class="form-check-label" for="radio1">Doesn't matter</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input" id="radio2" value="yes"
+                                        name="optradio">
+                                    <label class="form-check-label" for="radio2">Yes</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input" id="radio3" value="no" name="optradio">
+                                    <label class="form-check-label" for="radio3">No</label>
+                                </div>
+                            </div>
+                            <div class="online mb-3">
+                                <h6 class="font-weight-bold">Online Status</h6>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input" id="radio1" name="optradio1"
+                                        value="doesn't" checked>
+                                    <label class="form-check-label" for="radio4">Doesn't matter</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input" id="radio2" value="yes"
+                                        name="optradio1">
+                                    <label class="form-check-label" for="radio5">Yes</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input" id="radio3" value="no"
+                                        name="optradio1">
+                                    <label class="form-check-label" for="radio6">No</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input" id="radio3" value="Offline"
+                                        name="optradio1">
+                                    <label class="form-check-label" for="radio7">Offline</label>
+                                </div>
+                            </div>
+                            <div class="superuser mb-3">
+                                <h6 class="font-weight-bold">Superuser Status</h6>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input" id="radio1" name="optradio2"
+                                        value="doesn't" checked>
+                                    <label class="form-check-label" for="radio8">Doesn't matter</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input" id="radio2" value="yes"
+                                        name="optradio2">
+                                    <label class="form-check-label" for="radio9">Yes</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input" id="radio3" value="no"
+                                        name="optradio2">
+                                    <label class="form-check-label" for="radio10">No</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <h6 class="col-10">Reset filter</h6>
+                        <div class="two-button col-2">
+                            <button type="button" class="btn btn-light">Cancel</button>
+                            <button type="button" class="btn btn-danger">Search</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- Bai 3 -->
+        <div class="bai3 mt-5">
+            <div class="container">
+                <div class="header pt-4 pb-4 bg-primary">
+                    <div class="col-12 d-flex justify-content-between">
+                        <h2>Manager Employee</h2>
+                        <div class="two-buttons">
+                            <button id="editBtn" class="btn btn-danger"><i class="fa-solid fa-pen"> Delete</i></button>
+                            <button id="deleteBtn" class="btn btn-success ml-3"><i class="fa-solid fa-trash">Add New
+                                    Employee</i></button>
+                        </div>
+                    </div>
+                </div>
+                <table class="table pl-4">
+                    <thead>
+                        <tr>
+                            <th><input type="checkbox"></th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Address</th>
+                            <th>Phone</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>Nguyen Thi Diem</td>
+                            <td>Diem@gmail.com</td>
+                            <td>Quang Nam</td>
+                            <td>0902666812</td>
+                            <td><button id="editBtn" class="mr-3"><i class="fa-solid fa-pen"></i></button><button
+                                    id="deleteBtn"><i class="fa-solid fa-trash"></i></button></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>Nguyen Thi Diem</td>
+                            <td>Diem@gmail.com</td>
+                            <td>Quang Nam</td>
+                            <td>0902666812</td>
+                            <td><button id="editBtn" class="mr-3"><i class="fa-solid fa-pen"></i></button><button
+                                    id="deleteBtn"><i class="fa-solid fa-trash"></i></button></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>Nguyen Thi Diem</td>
+                            <td>Diem@gmail.com</td>
+                            <td>Quang Nam</td>
+                            <td>0902666812</td>
+                            <td><button id="editBtn" class="mr-3"><i class="fa-solid fa-pen"></i></button><button
+                                    id="deleteBtn"><i class="fa-solid fa-trash"></i></button></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>Nguyen Thi Diem</td>
+                            <td>Diem@gmail.com</td>
+                            <td>Quang Nam</td>
+                            <td>0902666812</td>
+                            <td><button id="editBtn" class="mr-3"><i class="fa-solid fa-pen"></i></button><button
+                                    id="deleteBtn"><i class="fa-solid fa-trash"></i></button></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>Nguyen Thi Diem</td>
+                            <td>Diem@gmail.com</td>
+                            <td>Quang Nam</td>
+                            <td>0902666812</td>
+                            <td><button id="editBtn" class="mr-3"><i class="fa-solid fa-pen"></i></button><button
+                                    id="deleteBtn"><i class="fa-solid fa-trash"></i></button></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="footer d-flex justify-content-between mt-3">
+                    <div>Showing 5 out of 25 entities</div>
+                    <div>
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item">
+                                <a class="page-link" href="#" tabindex="-1">Previous</a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item active"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link" href="#">4</a></li>
+                            <li class="page-item"><a class="page-link" href="#">5</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">Next</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Bai 4 -->
+        <div class="bai4 mt-5">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="row m-auto"><h2>OUR TEAM</h2></div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni dolor facilis reprehenderit nam
+                        voluptates a ut consequatur consequuntur quidem porro odit, ipsa, sunt repellendus hic itaque
+                        assumenda iure tenetur. Expedita.</p>
+                    <div class="row">
+                        <div class="card col-3">
+
+                            <img class="card-img-top" src="Ảnh màn hình 2023-07-07 lúc 20.33.45.png" alt="">
+                            <div class="card-body">
+                                <h5 class="card-title">Diem Nguyen</h5>
+                                <h6>SOFTWARE DEVELOPER</h6>
+                                <p class="card-
+                        text">Some quick example text to build on the card title and make up the bulk of the card's
+                                    content.</p>
+                            </div>
+
+                            <div class="card-footer m-auto">
+                                <a href="#" class="card-link"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="#" class="card-link"><i class="fa-brands fa-facebook-f"></i></a>
+                                <a href="#" class="card-link"><i class="fa-brands fa-google-plus-g"></i></a>
+
+                                <a href="#" class="card-link"><i class="fa-regular fa-envelope"></i></a>
+
+                            </div>
+                        </div>
+                        <div class="card col-3">
+
+                            <img class="card-img-top" src="Ảnh màn hình 2023-07-07 lúc 20.33.45.png" alt="">
+                            <div class="card-body">
+                                <h5 class="card-title">Diem Nguyen</h5>
+                                <h6>SOFTWARE DEVELOPER</h6>
+                                <p class="card-
+                        text">Some quick example text to build on the card title and make up the bulk of the card's
+                                    content.</p>
+                            </div>
+
+                            <div class="card-footer m-auto">
+                                <a href="#" class="card-link"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="#" class="card-link"><i class="fa-brands fa-facebook-f"></i></a>
+                                <a href="#" class="card-link"><i class="fa-brands fa-google-plus-g"></i></a>
+
+                                <a href="#" class="card-link"><i class="fa-regular fa-envelope"></i></a>
+
+                            </div>
+                        </div>
+                        <div class="card col-3">
+
+                            <img class="card-img-top" src="Ảnh màn hình 2023-07-07 lúc 20.33.45.png" alt="">
+                            <div class="card-body">
+                                <h5 class="card-title">Diem Nguyen</h5>
+                                <h6>SOFTWARE DEVELOPER</h6>
+                                <p class="card-
+                        text">Some quick example text to build on the card title and make up the bulk of the card's
+                                    content.</p>
+                            </div>
+
+                            <div class="card-footer m-auto">
+                                <a href="#" class="card-link"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="#" class="card-link"><i class="fa-brands fa-facebook-f"></i></a>
+                                <a href="#" class="card-link"><i class="fa-brands fa-google-plus-g"></i></a>
+
+                                <a href="#" class="card-link"><i class="fa-regular fa-envelope"></i></a>
+
+                            </div>
+                        </div>
+                        <div class="card col-3">
+
+                            <img class="card-img-top" src="Ảnh màn hình 2023-07-07 lúc 20.33.45.png" alt="">
+                            <div class="card-body">
+                                <h5 class="card-title">Diem Nguyen</h5>
+                                <h6>SOFTWARE DEVELOPER</h6>
+                                <p class="card-
+                        text">Some quick example text to build on the card title and make up the bulk of the card's
+                                    content.</p>
+                            </div>
+
+                            <div class="card-footer m-auto">
+                                <a href="#" class="card-link"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="#" class="card-link"><i class="fa-brands fa-facebook-f"></i></a>
+                                <a href="#" class="card-link"><i class="fa-brands fa-google-plus-g"></i></a>
+
+                                <a href="#" class="card-link"><i class="fa-regular fa-envelope"></i></a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+    </div>
+</body>
+
+</html>

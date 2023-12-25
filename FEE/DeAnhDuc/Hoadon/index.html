@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="js/jquery-3.6.4.min.js"></script>
+    <script src="https://kit.fontawesome.com/3df7c1031c.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <form class="col-12 container" name="form1">
+    <div class="col-12 row" id="form-field" >
+        
+    <div class="col-5">
+        <h2 class="col-12">THÔNG TIN HÓA ĐƠN</h2>
+        <div class="col-12 row inputRow">
+            <div class="col-6">
+                <label for="fullName">Họ và Tên</label>
+                <input type="text" name="fullName" id="fullName" class="form-control" placeholder="" aria-describedby="helpId" value="nguyen">
+                <small id="fullNameE" class="errorText">Help text</small>
+            </div>
+            <div class="col-6">
+                <label for="cccd">CCCD</label>
+                <input type="text" name="cccd" id="cccd" class="form-control" placeholder="" aria-describedby="helpId" maxlength="9" value="983144123">
+                <small id="cccdE" class="errorText">Help text</small>
+            </div>
+        </div>
+        <div class="col-12 row inputRow">
+            <div class="col-6">
+                <label for="billDate">Ngày xuất hóa đơn</label>
+                <input type="date" name="billDate" id="billDate" class="form-control" placeholder="dd/mm/yyyy" aria-describedby="helpId" value="21/06/1990">
+                <small id="billDateE" class="errorText">Help text</small>
+            </div>
+            <div class="col-6">
+                <label for="address">Địa chỉ</label>
+                <input type="text" name="address" id="address" class="form-control" placeholder="" aria-describedby="helpId" value="nguyen">
+                <small id="addressE" class="errorText">Help text</small>
+            </div>
+        </div>
+        <div class="col-12 row inputRow">
+            <div class="col-12">
+            <label for="note">Ghi chú</label>
+            <input type="text" name="note" id="note" class="form-control col-12" placeholder="" aria-describedby="helpId" value="nguyen">
+            <small id="noteE" class="errorText">Help text</small>
+        </div>
+        </div>
+        <div class="col-12 row inputRow">
+            <div class="col-12 buttonDiv">
+                <button id="createBill" name="createBill" class="btn btn">Tạo hóa đơn</button>
+            </div>   
+        </div>
+    </div>
+    <div class="col-7 row" id="form-field2">
+        <h2 class="col-12">CHI TIẾT HÓA ĐƠN</h2>
+        <div class="col-12" id="tableDiv">
+            <div class="col-12">
+            <table id="billTable" class="col-12" name="billTable">
+                <tr>
+                    <th>#</th>
+                    <th>Tên hàng hóa</th>
+                    <th>Số lượng</th>
+                    <th>Đơn giá</th>
+                    <th></th>
+                </tr>
+                <tr id = "tbrow1">
+                    <td>1</td>
+                    <td>
+                        <input type="text" name="hangHoa1" id="hangHoa1" class="form2 input2 hhname form-control col-12" placeholder="" aria-describedby="helpId" value="nguyen">
+                        <small id="hangHoa1E" class="errorText">Yêu cầu nhập tên hàng hóa</small>
+                    </td>
+                    <td>
+                        <input type="number" name="soLuong1" id="soLuong1" class="form2 input2 number form-control col-12" placeholder="" aria-describedby="helpId" value="6">
+                        <small id="soLuong1E" class="errorText">Số lượng không hợp lệ</small>
+                    </td>
+                    <td>
+                        <input type="number" name="donGia1" id="donGia1" class="form2 input2 number form-control col-12" placeholder="" aria-describedby="helpId" value="9">
+                        <small id="donGia1E" class="errorText">Đơn giá không hợp lệ</small>
+                    </td>
+                    <td>
+                        <button id="btn1" class="fa fa-trash" disabled></button>
+                    </td>
+                </tr>
+                <tr id = "tbrow2">
+                    <td>2</td>
+                    <td>
+                        <input type="text" name="hangHoa2" id="hangHoa2" class="form2 input2 hhname form-control col-12" placeholder="" aria-describedby="helpId" value="Nam">
+                        <small id="hangHoa2E" class="errorText">Yêu cầu nhập tên hàng hóa</small>
+                    </td>
+                    <td>
+                        <input type="number" name="soLuong2" id="soLuong2" class="form2 input2 number form-control col-12" placeholder="" aria-describedby="helpId" value="10">
+                        <small id="soLuong2E" class="errorText">Số lượng không hợp lệ</small>
+                    </td>
+                    <td>
+                        <input type="number" name="donGia2" id="donGia2" class="form2 input2 number form-control col-12" placeholder="" aria-describedby="helpId" value ="5">
+                        <small id="donGia2E" class="errorText">Đơn giá không hợp lệ</small>
+                    </td>
+                    <td>
+                        <button id="btn2" class="fa fa-trash"></button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+            <div id="buttonDiv2" class="col-12 row buttonDiv">
+                <button id="editInfo" name="editInfo" class="form2 btn">Sửa thông tin hóa đơn</button>
+                <button id="addInfo" name="addInfo" class="form2 btn">Thêm row</button>
+                <button id="submitButton" class="form2 btn btn-primary">Xuất hóa đơn</button>
+            </div>
+        </div>
+      </div>
+    </div>
+    </form>
+    <hr>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Tên</th>
+                <th>CMND</th>
+                <th>Ngày xuất</th>
+                <th>Tên hàng hóa</th>
+                <th>Số lượng</th>
+                <th>Đơn giá</th>
+                <th>Thành tiền</th>
+                <th>Tổng tiền</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody id="resultTable">
+        </tbody>
+        <tfoot>
+            <tr>
+                <td class="hidden"></td>
+                <td class="hidden"></td>
+                <td class="hidden"></td>
+                <td class="hidden"></td>
+                <td>Tổng số lượng:</td>
+                <td id = "quantity"></td>
+                <td colspan="2">Tổng số tiền:</td>
+                <td id = "totalCost"></td>
+                <td class="hidden"></td>
+            </tr>
+        </tfoot>
+    </table>
+    <script src="js/main.js"></script>
+</body>
+</html>

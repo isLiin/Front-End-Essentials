@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul.list{
+            padding: 0;
+            list-style-position: outside;
+        }
+        ul.list li {       
+            padding: 0.5em 0;
+            width: 100%;
+            list-style-type: none;
+        }
+        ul.list li a{
+            text-decoration: none;
+            width: 99.5%;
+            display: inline-block;
+            color:black;
+        }
+        ul.list li  a:link, a:visited {
+            color:black;
+        }
+        ul.list li::before {
+            content: "\203A";
+            color:black;
+        }
+        ul.list li:hover::before{
+            color: chocolate;
+        }
+        ul.list li:hover a{
+            color: chocolate;
+            box-sizing: border-box;
+            border-left: 5px solid chocolate;
+            padding-left: 2px;
+        }       
+
+    </style>
+</head>
+<body>
+    
+    <ul class="list">
+        <li> <a href="#">Here's an example of the list</a> </li>
+        <li> <a href="#">Here's an example of the list</a> </li>
+        <li> <a href="#">Here's an example of the list</a> </li>
+        <li> <a href="#">Here's an example of the list</a> </li>
+    </ul>
+
+    <ol>
+        <li> ... </li>
+        <li> ... </li>
+    </ol>
+
+    <ul>
+        <li> ... </li>
+        <li> ... </li>
+    </ul>
+    
+</body>
+</html>

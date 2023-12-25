@@ -1,0 +1,50 @@
+.container {
+  background-color: yellow;
+  width: auto;
+  height: 400px;
+  display: flex;
+}
+
+.left {
+  width: 23%;
+  margin: 10px 10px;
+}
+
+.center {
+    
+  width: 23%;
+  margin: 10px 10px;
+}
+
+.right {
+  width: 50%;
+  margin: 10px 10px;
+}
+
+.name_email {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.name_email input {
+  height: 25px;
+}
+
+.subject input {
+  height: 25px;
+  margin-bottom: 10px;
+}
+
+.mess input {
+  width: 98%;
+  height: 54px;
+  margin-bottom: 20px;
+}
+
+button {
+  background-color: rgb(56, 54, 54);
+  color: aliceblue;
+  height: 50px;
+  border: none;
+}

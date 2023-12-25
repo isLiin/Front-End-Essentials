@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap-4.0.0/dist/css/bootstrap.css">
+</head>
+
+<body>
+    <div class="counter-ascii">
+        <h2>Characters counter</h2>
+        <form action="">
+            <textarea name="count" id="message" cols="30" rows="5"></textarea>
+            <p id="charactersLeft"></p>
+            <p id="lastKey"></p>
+        </form>
+    </div>
+
+</body>
+<script>
+    var el;
+    function charCount(e) {
+        var textEntered, charDisplay, counter, lastKey;
+        textEntered = document.getElementById('message').value;
+        charDisplay = document.getElementById('charactersLeft');
+        counter = (180 - (textEntered.length));
+        charDisplay.textContent = counter + '/180 Characters';
+        lastKey = document.getElementById('lastKey');
+        lastKey.textContent = 'Last key in ASCII code: ' + e.keyCode;
+    }
+    el = document.getElementById('message');
+    el.addEventListener('keypress', charCount, false); 
+</script>
+
+</html>

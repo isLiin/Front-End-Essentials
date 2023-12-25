@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="/bootstrap-4.0.0-dist/css/bootstrap.min.css">
+    <script src="/code.jquery.com_jquery-3.7.0.min.js"></script>
+    <link rel="stylesheet" href="/fontawesome-free-6.4.0-web/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h3>Thong tin ca nhan</h3>
+            </div>
+            <div class="form-group col-6">
+                <label for="">Ho va Ten</label>
+                <input id="name" class="form-control" type="text">
+                <span class="" id="saiTen"></span>
+            </div>
+            <div class="form-group col-3">
+                <label for="">Ngay sinh</label>
+                <input id="date" class="form-control" type="date">
+                <span class="" id="saiNgay"></span>
+            </div>
+            <div class="form-group col-3">
+                <label for="">Gioi tinh</label>
+                <select id="sex" class="form-control" name="" id="">
+                    <option value="" selected>--Chon gioi tinh</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Orther">Orther</option>
+                </select>
+                <span class="" id="saiGioiTinh"></span>
+            </div>
+            <div class="form-group col-9">
+                <label for="">Dia chi luu tru</label>
+                <input id="address" class="form-control" type="text">
+                <span class="" id="saiDiaChi"></span>
+            </div>
+            <div class="form-group col-3">
+                <label for="">So CCCD/CMND</label>
+                <input id="cmnd" class="form-control" type="text">
+                <span class="" id="saiCmnd"></span>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-9">
+                <div class="row">
+                <div class="col-12">
+                    <h3>Thong tin tiem Vacxin</h3>
+                </div>
+                <div class="col-12">
+                    <p>Ban da tiem vacxin nao?</p>
+                </div>
+                <div class="col-12">
+                    <input id="radio1" class="mr-2" type="radio" name="vacxin" value="" checked>None
+                    <input id="radio" class="mr-2 ml-3" type="radio" name="vacxin" value="Pfizer">Pfizer
+                    <input id="radio" class="mr-2 ml-3" type="radio" name="vacxin" value="AstraZeneca">AstraZeneca
+                    <input id="radio" class="mr-2 ml-3" type="radio" name="vacxin" value="Vero Cell">Vero Cell
+                    <input id="radio" class="mr-2 ml-3" type="radio" name="vacxin" value="Sputnick V">Sputnick V
+                </div>
+            </div>
+            <div class="row mt-5" id="muiTiem">
+                <div class="form-group col-4" id="ngay1">
+                    <label for="">Ngay tiem mui 1</label>
+                    <input id="date1" class="form-control soNgay" type="date">
+                    <span class="" id=""></span>
+                </div>
+                <div class="form-group col-4" id="ngay2">
+                    <label for="">Ngay tiem mui 2</label>
+                    <input id="date2" class="form-control soNgay" type="date">
+                    <span class="" id=""></span>
+                </div>
+                <div class="form-group col-4" id="ngay3">
+                    <label for="">Ngay tiem mui 3</label>
+                    <input id="date3" class="form-control soNgay" type="date">
+                    <span class="" id=""></span>
+                </div>
+                
+            </div>
+                <div class="col-12">
+                    <button id="luuThongTin" class="btn btn-success mt-3"><i class="fas fa-plus"></i> Luu Thong
+                        Tin</button>
+                </div>
+                
+            </div>
+            <div class="col-3 tiem">
+                <div class="form-group col-12">
+                    <label for="">So luong mui tiem</label>
+                    <input id="soLuong" class="form-control" type="number" disabled="disabled" placeholder="0">
+                    <span class="" id="saiTen"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-12 bang">
+                <h3>Danh sach tiem chung Vacxin</h3>
+                <p id="soNguoi">Danh sach nay co 0 nguoi</p>
+            </div>
+            <div class="col-12">
+                <table class="table">
+                    <thead class="bg-success">
+                        <tr>
+                            <th scope="col">STT</th>
+                            <th scope="col">Ho va ten</th>
+                            <th scope="col">Gioi tinh</th>
+                            <th scope="col">Ngay sinh</th>
+                            <th scope="col">CCCD/CMND</th>
+                            <th scope="col">Vacxin</th>
+                            <th scope="col">Ngay tiem</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody">
+                        <tr>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>

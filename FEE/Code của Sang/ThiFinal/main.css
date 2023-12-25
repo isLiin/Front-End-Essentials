@@ -1,0 +1,10 @@
+.bang{
+    display: flex;
+    justify-content: space-between;
+}
+#muiTiem{
+    display: none;
+}
+span{
+    color: red;
+}

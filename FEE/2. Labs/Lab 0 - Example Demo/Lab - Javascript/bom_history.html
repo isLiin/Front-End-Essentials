@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOM-History</title>
+</head>
+<body>
+
+    <button type="button" onclick="getBack();">The previous URL</button>
+    <button type="button" onclick="goForward();">Go Forward URL</button>
+    <script>
+        console.log("So luong page da truy cap:"+window.history.length);
+
+        function getBack(){
+            window.history.back();
+        }
+        function goForward(){
+            window.history.forward();
+        }
+    </script>
+</body>
+</html>

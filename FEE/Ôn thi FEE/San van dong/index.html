@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="tucode.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.css">
+    <script src="js/all.js"></script>
+    <script src="js/jquery-3.6.4.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <form id="formInput" class="col-5">
+                <h2>Dang ky mua ve</h2>
+                <div class="mb-3">
+                    <label for="fullName" class="form-label">Ho va ten</label>
+                    <input type="text" class="form-control" id="fullName" placeholder="Nhap ho va ten">
+                    <small class="invalid-feedback"></small>
+                </div>
+                <div class="row g-3">
+                    <div class="col">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="text" class="form-control" id="email" placeholder="Nhap email">
+                        <small class="invalid-feedback"></small>
+                    </div>
+                    <div class="col">
+                        <label for="phone" class="form-label">SDT</label>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text bg-dark text-light">(+84)</span>
+                            <input type="text" class="form-control" placeholder="Phone" id="phone">
+                            <small class="invalid-feedback"></small>
+                        </div>
+                    </div>
+                </div>
+                <div class="row g-3">
+                    <div class="col-4">
+                        <div class="input-group">
+                            <div class="input-group-text pl-4">
+                                <input class="form-check-input mt-0" type="checkbox" id="mui1Check">Mui 1
+                            </div>
+                            <input type="date" id="mui1Date">
+                            <small class="invalid-feedback error"></small>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="input-group">
+                            <div class="input-group-text pl-4">
+                                <input class="form-check-input mt-0" type="checkbox" id="mui2Check">Mui 2
+                            </div>
+                            <input type="date" id="mui2Date">
+                            <small class="invalid-feedback error"></small>
+                        </div>
+                    </div>
+                </div>
+                <div class="row ml-4 mt-2">
+                    <input class="form-check-input" type="checkbox" value="" id="accept">
+                    <!-- <small class="invalid-feedback"></small> -->
+
+                    <label class="form-check-label" for="accept">
+                        Dong y tuan thu quy dinh 5K
+                    </label>
+                    <small class="invalid-feedback"></small>
+
+                </div>
+                <div class="row ml-4 mt-2">
+                    <input class="form-check-input" type="checkbox" value="" id="khaiBao">
+                    <!-- <small class="invalid-feedback"></small> -->
+                    <label class="form-check-label" for="khaiBao">
+                        Khai bao Y te khi den San van dong
+                    </label>
+                    <small class="invalid-feedback"></small>
+
+                </div>
+                <div class="row ml-1 mt-2">
+                    <button type="button" class="btn btn-success" id="saveBtn">Dong y mua ve</button>
+                    <button type="button" class="btn btn-success ml-2" id="resetBtn">Nhap lai</button>
+                </div>
+            </form>
+            <div class="col-7">
+                <h2>Danh sach dang ky mua ve</h2>
+                <table class="table" id="result">
+                    <thead>
+                        <tr>
+                            <th>##</th>
+                            <th>Ho va ten</th>
+                            <th>SDT</th>
+                            <th>Email</th>
+                            <th>Tiem chung</th>
+                            <th>Trang thai</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row mt-md-5">
+            <div class="col-5"></div>
+            <div class="col-7">
+                <div class="row">
+                    <div class="col-4">So ghe ngoi dang ky: <span id="soGhe"></span></div>
+                    <div class="col-4">So ghe du dieu kien mua ve: <span id="dieuKien"></span></div>
+                    <div class="col-4">So ghe khong du dieu kien mua ve: <span id="kDieuKien"></span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>

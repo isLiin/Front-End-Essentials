@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/style.css" rel="stylesheet" type="text/css" />
+  <link href="bootstrap-4.3.1-dist/css/bootstrap.css" rel="stylesheet" type="text/css" />
+  <link href="css/all.css" rel="stylesheet" type="text/css" />
+  <script src="js/jquery-3.6.4.min.js"></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="row">
+    <div class="col-8 leftBody">
+      <form>
+        <div class="col-12 row searchField">
+          <div class="col-4 title">
+            <h3>[A].Danh sách xe</h3>
+          </div>
+          <div class="col-3">
+            <select id="carType" name="carType" class="form-select">
+              <option value="0" selected>--- Chọn loại xe ---</option>
+              <option value="4">4 chỗ</option>
+              <option value="7">7 chỗ</option>
+            </select>
+            <small id="carTypeE"> Invalid input</small>
+          </div>
+          <div class="col-4">
+            <select id="carStatus" name="carStatus" class="form-select">
+              <option value="0" selected>---Chọn Tình Trạng Xe</option>
+              <option value="1">Có sẵn</option>
+              <option value="2">Đang thuê</option>
+            </select>
+            <small id="carStatusE"> Invalid input</small>
+          </div>
+          <button id="searchCar" class="btn btn-success col-1">Tìm xe</button>
+        </div>
+      </form>
+      <hr>
+      <table class="col-12">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Hình xe</th>
+            <th>Hãng xe</th>
+            <th>Loại xe</th>
+            <th>Giá xe/Ngày</th>
+            <th>Tình trạng</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="carTable"></tbody>
+      </table>
+    </div>
+    <div class="col-4 rightBody">
+      <form>
+        <div class="col-12" id="form2">
+          <div class="col-12 row">
+            <h3>[B]. Thông tin xe được chọn</h3>
+            <div class="col-5">
+              <label for="carName" class="form-label">Hãng xe</label>
+              <input type="text" class="form-control" id="carName" name="carName" disabled>
+              <small id="carNameE"> Invalid input</small>
+            </div>
+            <div class="col-3">
+              <label for="carType1" class="form-label">Loại xe</label>
+              <input type="text" class="form-control" id="carType1" name="carType1" disabled>
+              <small id="carType1E"> Invalid input</small>
+            </div>
+            <div class="col-4">
+              <label for="carPrice" class="form-label">Giá xe/Ngày</label>
+              <input type="text" class="form-control" id="carPrice" name="carPrice" disabled>
+              <small id="carPriceE"> Invalid input</small>
+            </div>
+          </div>
+        </div>
+        <div class="col-12" id="form2">
+          <div class="col-12 row">
+            <h3>[C]. Thông tin thuê xe</h3>
+            <div class="col-6">
+              <label for="fullName" class="form-label">Họ và tên</label>
+              <input type="text" class="form-control" id="fullName" name="fullName">
+              <small id="fullNameE"> Invalid input</small>
+            </div>
+            <div class="col-6">
+              <label for="phone" class="form-label">Điện thoại</label>
+              <input type="number" class="form-control" id="phone" name="phone" maxLength="9">
+              <small id="phoneE"> Invalid input</small>
+            </div>
+            <div class="col-12">
+              <label for="address" class="form-label">Địa chỉ</label>
+              <input type="text" class="form-control" id="address" name="address">
+              <small id="addressE"> Invalid input</small>
+            </div>
+            <div class="col-6">
+              <label for="rentDate" class="form-label">Ngày nhận xe</label>
+              <input type="date" class="form-control" id="rentDate" name="rentDate">
+              <small id="rentDateE"> Invalid input</small>
+            </div>
+            <div class="col-6">
+              <label for="returnDate" class="form-label">Ngày trả xe</label>
+              <input type="date" class="form-control" id="returnDate" name="returnDate">
+              <small id="returnDateE"> Invalid input</small>
+            </div>
+            <div class="col-3">
+              <input type="checkbox" class="form-check-input" name="self" id="self" value="tự lái">Tự lái
+              <small id="selfE" class="error">*please check</small>
+            </div>
+            <div class="col-9">
+              <input type="checkbox" class="form-check-input" name="hire" id="hire" value="Có thuê tài xê">Có thuê tài
+              xê
+              <small id="hireE" class="error">*please check</small>
+            </div>
+            <div id="traThem" class="col-12 hidden">
+              <h5>Trả thêm phí</h5>
+              <p>+ 500,000 VNĐ/Ngày - Đối với xe 4 chỗ</p>
+              <p>+ 550,000 VNĐ/Ngày - Đối với xe 7 chỗ</p>
+            </div>
+          </div>
+          <button class="btn btn-success col-2" id="register">Đặt xe</button>
+        </div>
+      </form>
+    </div>
+    <div class="col-12 bottom">
+      <table class="col-12">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Ho và tên</th>
+            <th>Số điện thoại</th>
+            <th>Hãng xe</th>
+            <th>Loại xe</th>
+            <th>Giá xe/Ngày</th>
+            <th>Ngày nhận xe</th>
+            <th>Ngày trả xe</th>
+            <th>Số ngày thuê</th>
+            <th>Hình thức</th>
+            <th>Tiền thuê xe</th>
+          </tr>
+        </thead>
+        <tbody id="result">
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

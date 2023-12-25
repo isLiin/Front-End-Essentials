@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.write("Starting Loop" + "<br />");
+        for(var count = 0; count < 10; count++) {
+            document.write("Current Count : " + count );
+            document.write("<br />");
+        }         
+        document.write("Loop stopped!");
+        
+        //Khai báo đối tượng Person chưa các thuộc tính: fname, lname và age
+        var Person = {fname:"John", lname:"Doe", age:25}; 
+        //duyệt các thuộc tính của Object
+        var personProperty ;
+        for (personProperty in Person) {
+            document.write("<br>");
+            document.write("Thuộc tính của Object:"+personProperty);
+            document.write("<br>");
+            document.write("Giá trị của thuộc tính:"+personProperty+ " là:" + Person[personProperty]);
+        }
+
+        document.write("<br>");
+        var cars = ['BMW', 'Volvo', 'Mini'];
+        var x;
+        for (x of cars) {
+            document.write(x + "<br >");
+        }
+
+        var objString = 'Learn JavaScript';
+        for (var value of objString) {
+            console.log(value);
+        }
+
+
+    </script>
+</body>
+</html>

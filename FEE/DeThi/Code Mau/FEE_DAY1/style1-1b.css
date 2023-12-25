@@ -1,0 +1,118 @@
+.tong {
+    width: 100%;
+    height: 900px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Thêm thuộc tính này */
+    align-items: center;
+    background-color: cadetblue;
+  }
+  
+.hang1{
+    flex: 1 ;
+    width: 80%;
+    background-color: green;
+    margin: auto;
+    margin-top: 30px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    line-height: 50px;
+
+ 
+}
+.hang2{
+    flex: 7 ;
+    width: 100%;
+    background-color: dimgray;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    background-color: gray;
+    position:static;
+
+
+}
+.hang3{
+    flex: 1.5 ;
+    width: 80%;
+    background-color: green;
+    margin: auto;
+    margin-bottom: 10px;
+    justify-content: center;
+    align-items: center;
+    line-height: 60px;
+    text-align: center;
+  
+}
+.hang4{
+    flex: 5 ;
+    width: 80%;
+    /* background-color: dimgray; */
+    margin-bottom: 10px;
+    margin: auto;
+    justify-content: space-between;
+    display: flex;
+    
+}
+.hang5{
+    flex: 2.5 ;
+    width: 80%;
+    /* background-color: aquamarine; */
+    margin-top: 10px;
+    margin-bottom: 50px;
+    justify-content: space-between;
+    display: flex;
+  
+}
+.cuc1{
+    width: 32%;
+    height: 100%;
+    background-color: gray;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+.cuc2{
+    width: 32%;
+    height: 100%;
+    background-color: gray;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+.cuc3{
+    width: 32%;
+    height: 100%;
+    background-color: gray;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.con1{
+    width: 32%;
+    height: 100%;
+    background-color: green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.con2{
+    width: 32%;
+    height: 100%;
+    background-color: green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.con3{
+    width: 32%;
+    height: 100%;
+    background-color: green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}

@@ -1,0 +1,15 @@
+.input-block * {
+  display: inline-block;
+}
+.label {
+  width: 150px;
+}
+.input {
+  width: 300px;
+  height: 20px;
+  margin-top: 15px;
+}
+.error {
+  color: red;
+  width: 400px;
+}

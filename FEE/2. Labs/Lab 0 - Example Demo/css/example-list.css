@@ -1,0 +1,24 @@
+ul.list{
+    background-color: aqua;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+ul.list li a{
+    /* background-color: red; */
+    display: inline-block;
+    width: 96.5%;
+    padding: 0.3rem 0.3rem;
+    text-decoration: none;
+    color: black;
+}
+ul.list a:hover{
+    color: red;
+}
+ul.list li::before{
+    content: "\203A";
+    color: black;
+}
+ul.list li:hover::before{
+    color: red;
+}

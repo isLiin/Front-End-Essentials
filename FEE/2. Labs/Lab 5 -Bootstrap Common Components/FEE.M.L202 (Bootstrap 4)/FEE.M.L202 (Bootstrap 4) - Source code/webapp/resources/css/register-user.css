@@ -1,0 +1,167 @@
+/*Set font for whole page */
+body {
+	font-family: Segoe UI;	
+    font-size: 13px;
+}
+/*style for element has name as "label-register" */	
+.label-register, .label-login {
+	width: 100%;
+	color: #000;
+	font-size: 18px;
+	font-weight: 1000;
+	text-align: center;
+    border: 0px solid;
+}
+
+/*style for "p" element*/
+.label-register p, .label-login p{
+    height: 30px;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+/* style for div with class "center" */
+.wrapper {
+	width: 90%;
+	margin: auto;
+}
+
+/* style for div with class "div-register"*/
+.div-register, table#tbl-register, .div-login, table#tbl-login {
+    width: 100%;
+	margin: 0px auto;
+    
+}
+
+/*padding for cells of table with id "tbl-register" */
+table#tbl-register, th, td, table#tbl-login {
+	padding: 5px;
+}
+
+/*use pseudo class to align odd td to right*/
+table#tbl-register td:nth-child(odd), table#tbl-login td:nth-child(odd){
+	text-align:right;
+    width: 25%;
+}
+
+/*style for input with type: text, password or email */
+input[type=text], input[type=password], input[type=email] {
+	width: 100%;
+	padding: 6px 10px;
+	display: inline-block;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+	border-radius: 5;
+}
+
+/*style for button register*/
+button {
+	background-color: #0073e6;
+	border: 0;
+	color: white;
+	padding: 10px 20px;
+	cursor:pointer;
+    border-radius: 3px;
+}
+
+/*style for element has name as "label-result" */	
+.label-result {
+	text-align: left;
+	font-weight: 1000;
+}
+
+/* style for div with class "div-result"*/
+.div-result {
+	width: 100%;
+	margin: 0px auto;
+}
+
+
+/*make single border for table*/
+table.tbl-result {
+	border-collapse : collapse;
+    width: 100%;
+    table-layout: auto;
+}
+
+/*set background color for table header*/
+table.tbl-result thead {
+	background-color: #ccc;
+}
+
+/*style for th and td of table-result*/
+table.tbl-result th, table.tbl-result td {
+	padding: 5x;
+	text-align: center;
+}
+
+/*style for span tag*/
+span {
+	color: red;
+}
+
+/*style for div error*/
+#error {
+	text-align: center;
+	color: red;
+}
+
+#success {
+	text-align: center;
+	color: blue;
+}
+
+#index {
+	margin: 0;
+	padding: 0;	
+}
+
+.header {
+	height: 50px;
+	background-color: #222;
+	margin: 0;
+	padding-left: 50px;
+	padding-right: 50px;
+}
+
+#label-index {
+	color: #ccc;
+	line-height: 50px;
+	font-size: 20px;
+	text-decoration: none;
+}
+
+#label-index:hover {
+	color: white;
+}
+
+#log-out {
+	font-size: 20px;
+	color: #ccc;
+	float: right;
+	line-height: 50px;
+	text-decoration: none;
+}
+
+#log-out:hover {
+	color: white;
+}
+
+#user-login {
+	float: right;
+	font-size: 20px;
+	color: #1ab2ff;
+	line-height: 50px;
+	margin-right: 10px;
+}
+
+#link-register, #link-login {
+	text-decoration: none;
+	margin-left: 20px;
+	color:blue;
+}
+
+#link-register:hover, #link-login:hover {
+	color: green;
+}
+

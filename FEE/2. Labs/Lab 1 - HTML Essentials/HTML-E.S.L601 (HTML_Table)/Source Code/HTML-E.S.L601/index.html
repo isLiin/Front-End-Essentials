@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>School timetable</title>
+    <style>
+      html {
+        font-family: sans-serif;
+      }
+
+      table {
+        border-collapse: collapse;
+        border: 2px solid rgb(200, 200, 200);
+        letter-spacing: 1px;
+        font-size: 0.8rem;
+      }
+
+      td,
+      th {
+        border: 1px solid rgb(190, 190, 190);
+        padding: 10px 20px;
+      }
+
+      td {
+        text-align: center;
+      }
+
+      caption {
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Fresher School timetable</h1>
+    <table>
+      <!-- Add caption -->
+      <caption>
+        Fresher Timetable
+      </caption>
+      <!-- Highlight Monday column -->
+      <colgroup>
+        <col span="1" />
+        <col style="border: 2px solid green;" />
+      </colgroup>
+      <thead>
+        <tr>
+          <td></td> <!--  Add empty cell -->
+          <th scope="col">Mon</th>
+          <th scope="col">Tues</th>
+          <th scope="col">Wed</th>
+          <th scope="col">Thurs</th>
+          <th scope="col">Fri</th>
+          <th scope="col">Sat</th>
+          <th scope="col">Sun</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th rowspan="2">Morning</th> <!--  Add heading -->
+          <td rowspan="2">HTML</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td colspan="2">CSS</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td>HTML</td>
+          <td>&nbsp;</td>
+          <td>CSS</td>
+          <td>JavaScript</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <th rowspan="2">Afternoon</th> <!--  Add heading -->
+          <td>&nbsp;</td>
+          <td>JavaScript</td>
+          <td>&nbsp;</td>
+          <td>JavaScript</td>
+          <td rowspan="2">CSS</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td colspan="3">HTML</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

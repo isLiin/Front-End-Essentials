@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Link liên kết thư viện Font Awesome 5  icon-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <!-- Link liên kết thư viện icon -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <title>Fianal</title>
+    <!-- Liên kết css -->
+    <link rel="stylesheet" href="final.css">
+</head>
+
+<body>
+
+    <div class="container-fluid ">
+        <form action="" id="form">
+            <!-- Hàng thứ nhất -->
+            <div class="row">
+                <!-- phần bên trái -->
+                <div class="col-8">
+                    <!-- hàng thứ 1 -->
+                    <div class="row">
+                        <div class="col-12  text-success ">
+                            <H3>THÔNG TIN KHÁCH HÀNG</span></H3>
+                        </div>
+                    </div>
+                </div>
+                <!-- phần bên phải -->
+                <div class="col-4">
+                    <!-- hàng thứ 1 -->
+                    <div class="row">
+                        <div class="col-12  text-success ">
+                            <H3>THÔNG TIN HÀNH TRÌNH</span></H3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Hàng thứ 2 -->
+            <div class="row">
+                <div class="col-5">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Họ và tên</label>
+                            <input type="text" class="form-control" id="name" placeholder="Nhập họ và tên">
+                            <div class="invalid-feedback"></div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-3">
+                    <form>
+                        <div class="form-group">
+                            <label for="sdt">Số điện thoại</label>
+                            <input type="text" class="form-control" id="sdt" placeholder="Nhập số điện thoại">
+                            <div class="invalid-feedback"></div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-2">
+                    <div class="form-group">
+                        <label for="taudi">Tàu đi</label>
+                        <select class="form-control" id="taudi" name="sellist1">
+                            <option selected disabled>---Chọn tàu---</option>
+                            <option value="SE1">SE1</option>
+                            <option value="SE2">SE2</option>
+
+                        </select>
+                        <div class="invalid-feedback"></div>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <label for="ngaydi">Ngay đi</label>
+                    <input type="date" class="form-control" id="ngaydi" maxlength="10">
+                    <div class="invalid-feedback"></div>
+                </div>
+            </div>
+            <!-- hàng thứ 3 -->
+            <div class="row">
+                <div class="col-5">
+                    <form>
+                        <div class="form-group">
+                            <label for="address">Địa chỉ</label>
+                            <input type="text" class="form-control" id="address" placeholder="Nhập địa chỉ">
+                            <div class="invalid-feedback"></div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-3">
+                    <form>
+                        <div class="form-group">
+                            <label for="cmnd">CMND/CCCD</label>
+                            <input type="text" class="form-control" id="cmnd" placeholder="Nhập số CMND/CCCD ">
+                            <div class="invalid-feedback"></div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-2">
+                    <div class="form-group">
+                        <label for="giodi">Giờ đi</label>
+                        <select class="form-control" id="giodi" name="sellist1">
+                            <option selected disabled>---Chọn giờ---</option>
+                            <!-- <option value="1">1:00</option>
+                            <option value="2">15:30</option> -->
+                            <!-- thêm mới dữ liệu -->
+
+                        </select>
+                        <div class="invalid-feedback"></div>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <form>
+                        <div class="form-group">
+                            <label for="slve">Số lượng vé</label>
+                            <input type="text" class="form-control" id="slve" placeholder="0">
+                            <div class="invalid-feedback"></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- hàng thứ 4 -->
+            <div class="row">
+                <div class="col-12">
+                    <button type="button" class=" btn btn-success border-cus" id="submit">Lưu thông tin</button>
+                </div>
+            </div>
+
+        </form>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12  text-success ">
+                    <H3>DANH SÁCH KHÁCH HÀNG ĐĂNG KÝ MUA VÉ TÀU</span></H3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="row">
+                        <div class="col-2">Chọn tàu</div>
+                        <div class="col-10">
+                            <div class="form-group">
+                                <!-- <label for="taudi">Tàu đi</label> -->
+                                <select class="form-control" id="taudi" name="sellist1">
+                                    <option selected>---Chọn tàu---</option>
+                                    <option value="1">SE1</option>
+                                    <option value="2">SE2</option>
+
+                                </select>
+                                <div class="invalid-feedback"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-5">
+                    <div class="row">
+                        <div class="col-2">Chọn ngày</div>
+                        <div class="col-10">
+                            <!-- <label for="ngaydi">Ngay đi</label> -->
+                            <input type="date" class="form-control" id="ngaydi" maxlength="10">
+                            <div class="invalid-feedback"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-1">
+                    <div class="row">
+                        <div class="col-12">
+                            <button type="button" class="btn   text-success   justify-content-end m-r gi"
+                                style="width: 157px;display: inline-flex;">
+                                <span class="material-icons">
+                                    search
+                                </span>
+                                Tìm kiếm
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row text-center  bg-success color: white">
+            <table border="1" style="width: 100% ">
+                <thead style="color: white; font-weight: bold;">
+                    <tr style="border-color: white !important;">
+                        <td rowspan="2">STT</td>
+                        <td colspan="3">Thông tin Khách hàng</td>
+                        <td colspan="4">Thông tin hành trình tàu</td>
+                        <td rowspan="2">Action</td>
+                    </tr>
+                    <tr style="border-color: white !important; font-weight: bold;">
+                        <td>Họ và tên</td>
+                        <td>CMND/CCCD</td>
+                        <td>Điện thoại</td>
+                        <td>Tàu đi</td>
+                        <td>Ngày đi</td>
+                        <td>Giờ đi</td>
+                        <td>Sl vé</td>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Liên kết js -->
+    <script src="finalvalidate.js"></script>
+    <script src="final.js"></script>
+</body>
+
+</html>

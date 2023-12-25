@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+
+    <p class="info">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, accusamus blanditiis temporibus quam deserunt, mollitia numquam sapiente animi nam, fuga reiciendis tempore vero vel necessitatibus tempora soluta voluptatibus minus iure.
+    </p>
+    <button id="btn-hide">Click Me to hide</button>
+    <button id="btn-show">Click Me to show</button>
+    <button id="btn-toggle">Click Me to Show/Hide</button>
+
+    <script>
+        $(document).ready(function(){
+            $('.info').hide(); //an
+            //click vao nut show
+            $('#btn-show').on('click',function(){
+                $('.info').show(3000); //show text
+            });
+            //click button hide
+            $('#btn-hide').on('click',function(){
+                $('.info').hide(1000); //hide text
+            });
+            //click button toggler
+            $('#btn-toggle').on('click',function(){
+                $('.info').toggle(1000); //hide text
+            });
+        });
+    </script>
+</body>
+</html>

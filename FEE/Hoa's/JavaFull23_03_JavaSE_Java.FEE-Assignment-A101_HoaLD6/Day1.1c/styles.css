@@ -1,0 +1,115 @@
+html{
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-size: 10px;
+}
+:root{
+    --main-color: #FF7F50;
+    --second-color:#FF6347;
+    --bar-color:#8A2BE2;
+    --box-color:#03F5F5;
+    --footer-color: #A52A2A;
+    --descript-color:#7FFF00;
+    --gap:5px;
+}
+
+
+.main-container{
+    width: 100%;
+    background-color: #DDDDDE;
+    margin: 0 auto;
+}
+
+.container{
+    width: 1024px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--gap);
+}
+.menu{
+    width: 100%;
+    height: 50px;
+    background-color: var(--second-color);
+}
+
+.navigation{
+    display: flex;
+    width: 100%;
+    height: 30px;
+    column-gap: var(--gap);
+}
+.navigation .nav-side-left{
+    background-color: var(--bar-color);
+    width: 70%;
+}
+.navigation .nav-side-right{
+    background-color: var(--bar-color);
+    width: 30%;
+}
+.main-content{
+    width: 100%;
+    height: 250px;
+    display: flex;
+    column-gap: var(--gap);
+}
+.main-content .content-left{
+    display: flex;
+    justify-content: space-between;
+    column-gap: var(--gap);
+    width: 70%;
+    height: 100%;
+}
+
+.content-left .left-content-box{
+    width: 100%;
+    background-color: var(--main-color);
+}
+
+.main-content .content-right{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    row-gap: var(--gap);
+    width: 30%;
+    height: 100%;
+}
+
+.content-right .side-content{
+    display: flex;
+    height: 100%;
+    column-gap: 5px;
+    color: black;
+}
+.mini-box{
+    width: 30%;
+    background-color: var(--box-color);
+}
+.descrip-box{
+    width: 70%;
+    background-color: var(--descript-color);
+}
+
+.tab-bar{
+    width: 100%;
+    height: 30px;
+    background-color: var(--bar-color);
+}
+
+.frame-box-content{
+    width: 100%;
+    height: 250px;
+    display: flex;
+    column-gap: 5px;
+}
+.frame-box-content .box-content{
+    background-color: var(--main-color);
+    width: 100%;
+}
+
+.footer{
+    width: 100%;
+    height: 30px;
+    background-color: var(--footer-color);
+}

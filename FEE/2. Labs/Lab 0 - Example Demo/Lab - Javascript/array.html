@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var fruits = ["Banana", "Orange", "Apple", "Mango"];
+        fruits.forEach(
+            item => document.write(item+" ")
+        );
+
+        document.write("<br>");
+        for (var index = 0; index < fruits.length; index++) {
+            document.write(fruits[index]+"<br>");            
+        }
+
+        document.write("<br>");
+        var numbers = [5,3,10,7,20,55,13];
+        var sum = 0, chan = 0, le = 0;
+        numbers.forEach(
+            num => {
+                if (num % 2 == 0) {
+                    chan++;
+                } else {
+                    le++;
+                }
+                sum += num;
+            }
+        );
+        document.write("Tổng giá trị trong mảng:"+sum);
+        document.write("<br>Số lượng phần tử có giá trị chẵn trong mảng:"+chan);
+        document.write("<br>Số lượng phần tử có giá trị trong mảng:"+le);
+        document.write("Giá trị thoản mãn:"+numbers.find(item => item > 10));
+        document.write("<br>");
+        //Sắp xếp mảng
+        numbers.sort((a,b) => (a - b));
+        document.write("Mảng đã sắp xếp:"+ numbers);
+        document.write("<br>");
+        //Nối thêm giá trị ở mảng khác vào mảng đã có
+        var otherArrayNumbers = [10,15,3,9];
+        var newNumbers = numbers.concat(otherArrayNumbers);
+        document.write("Mảng cũ sau khi được nối thêm:"+newNumbers);
+        document.write("<br>");
+        //Lấy phần tử ở đầu mảng
+        document.write("Phần tử ở đầu mảng:"+newNumbers.shift());
+        document.write("<br>");
+        //Lấy phần tử ở cuối mảng
+        document.write("Phần tử ở cuối mảng:"+newNumbers.pop());
+        document.write("<br>");
+        //Thêm phần tử ở vị trí bất kỳ mà ko xóa phần tử đã có
+        var addingArrayNumber = [100, 150, 50];
+        addingArrayNumber.forEach(element => {
+            newNumbers.splice(2,0,element);
+        });
+        document.write("Mảng chứa giá trị mới:"+newNumbers);
+        document.write("<br>");
+    </script>
+</body>
+</html>

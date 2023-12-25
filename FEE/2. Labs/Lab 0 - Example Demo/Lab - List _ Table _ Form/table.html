@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            border-collapse: collapse;
+            border-radius: 1em 1rem 0 0;
+            overflow: hidden;
+        }
+        table, td, th{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        thead, tfoot{
+            background-color: aquamarine;
+            font-weight: bold;
+        }
+        td, th {
+            text-align: left;
+            padding: 8px;
+        }
+        td.td-center{
+            text-align: center;
+        }
+        td.total{
+            text-align: right;
+        }
+        tbody tr:hover{
+            background-color: darkgrey;
+        }
+    </style>
+</head>
+<body>
+
+<table>
+    <thead>
+        <tr>
+            <th>Product ID</th>
+            <th>Product name</th>
+            <th>Product Quality</th>
+            <th>Product Quatity</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="td-center">1</td>
+            <td>Name 1</td>
+            <td class="td-center">Good</td>
+            <td class="td-center">100</td>
+        </tr>
+        <tr>
+            <td class="td-center">2</td>
+            <td>Name 2</td>
+            <td class="td-center">110</td>
+            <td class="td-center">100</td>
+        </tr>
+        <tr>
+            <td class="td-center">3</td>
+            <td>Name 3</td>
+            <td class="td-center">Good</td>
+            <td class="td-center">100</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="3" class="total">Total:</td>
+            <td class="td-center">310</td>
+        </tr>
+    </tfoot>
+</table>
+
+</body>
+</html>

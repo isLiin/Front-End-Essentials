@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./all.css">
+    <link rel="stylesheet" href="./bootstrap.css">
+    <script src="./fontawesome.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container-fluid w-75">
+        <div class="row my-2">
+            <div class="col-12 d-flex justify-content-center">
+                <button type="button" class="btn btn-outline-dark mx-4" onclick="show(arr)">ALL</button>
+                <button type="button" class="btn btn-outline-dark mx-4" onclick="filterCake()">CAKES</button>
+                <button type="button" class="btn btn-outline-dark mx-4" onclick="filterCupCake()">CUPCAKES</button>
+                <button type="button" class="btn btn-outline-dark mx-4" onclick="filterSweets()">SWEETS</button>
+                <button type="button" class="btn btn-outline-dark mx-4" onclick="filterDoughnuts()">DOUGHNUTS</button>
+            </div>
+        </div>
+        <div class="row my-4">
+            <div class="col-12 d-flex justify-content-center">
+                <form class="w-50">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <button type="button" class="btn btn-outline searchArea" id="search-btn">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                        <input type="text" class="form-control" placeholder="item...." id="search-item">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row px-4 row-cols-md-3" id="total">
+        </div>
+    </div>
+    <script src="./main.js"></script>
+</body>
+
+</html>

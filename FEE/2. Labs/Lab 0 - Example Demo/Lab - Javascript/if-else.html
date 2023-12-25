@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        /* 
+            Kiểm tra xem hôm nay (Hiện tại) là thứ mấy - Dùng hàm Date()
+            và hiển thị ra thông điệp tương ứng với các ngày
+        */
+        var toDay = new Date();
+        //Dùng hàm getDay() để lấy giá trị ngày trong tuần (0-6)
+        switch (toDay.getDay()) {
+            case 0:
+                document.write("Hôm nay là Chủ nhật ... Chúc các bạn cuối tuần vui vẻ");
+                break;
+            case 1:
+                document.write("Hôm nay là Thứ 2 ... Thứ 2 là ngày đầu tuần, Bé hứa cố gắng và chăm ngoan");
+                break;
+            case 2:
+                document.write("Hôm nay là Thứ 3 ... ");
+                break;
+            case 3:
+                document.write("Hôm nay là Thứ 4 ... ");
+                break;
+            case 4:
+                document.write("Hôm nay là Thứ 5 ... ");
+                break;
+            case 5:
+                document.write("Hôm nay là Thứ 6 ... ");
+                break;
+            default:
+                document.write("Chỉ có thể là thứ 7 ... Hôm nay là ngày cuối tuần");
+                break;
+        }
+    </script>
+</body>
+</html>

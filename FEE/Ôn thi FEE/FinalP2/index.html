@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.css">
+    <script src="js/all.js"></script>
+    <script src="js/jquery-3.6.4.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-6">
+                <div class="col-12"><a href="#" style="color: #0071c2;">Home</a><small class="ml-2">/</small><a
+                        class="ml-2" href="#">Dang Nang
+                        Hotels</a><small class="ml-2">/</small><a class="ml-2" href="#">The Nalod Da Nang</a></div>
+                <div class="col-12 mt-3 d-flex justify-content-between">
+                    <h3>The Nalod Da Nang</h3>
+                    <div style="color: #ffa726;" class="mt-2"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                </div>
+                <div class="col-12">
+                    <p><i class="fas fa-map-marked-alt"></i> 192 Vo Nguyen Giap, My Phuoc, Son Tra, Da Nang, Viet Nam
+                    </p>
+                    <div class="col-12 p-0">
+                        <div class="col-12" style="height: 250px; background-color: rgba(169,169,169,0.7);"></div>
+                        <div class="col-12 p-0 m-0 d-flex mt-2">
+                            <div
+                                style="height: 120px;width: 165px; background-color: rgba(169,169,169,0.7); margin-right: 5px;">
+                            </div>
+                            <div
+                                style="height: 120px;width: 165px; background-color: rgba(169,169,169,0.7); margin-right: 5px;">
+                            </div>
+                            <div
+                                style="height: 120px;width: 165px; background-color: rgba(169,169,169,0.7); margin-right: 5px;">
+                            </div>
+                            <div
+                                style="height: 120px;width: 165px; background-color: rgba(169,169,169,0.7); margin-right: 5px;">
+                            </div>
+                            <div style="height: 120px;width: 165px; background-color: rgba(169,169,169,0.7);"></div>
+                        </div>
+                        <p class="mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum perspiciatis
+                            quisquam iusto
+                            nesciunt harum itaque eligendi, fugit quia quae amet laborum possimus. Reprehenderit esse
+                            minus ducimus! Modi vitae dolor voluptates!</p>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-6">
+                <form id="bookingForm" onsubmit="return false">
+                    <h2>Thong tin Booking</h2>
+                    <div class="row g-3">
+                        <!-- <div class="col-4">
+                            <label for="fromDate" class="col-form-label"><i class="fas fa-calendar-alt"></i>
+                                Ngay Check-in</label>
+                            <div class="font-weight-bold">Sat, Dec 26, 2020</div>
+                            <div>Tu 2:00 PM</div>
+                        </div>
+                        <div class="col-4">
+                            <label for="fromDate" class="col-form-label"><i class="fas fa-calendar-alt"></i>
+                                Ngay Check-out</label>
+                            <div class="font-weight-bold">Mon, Dec 28, 2020</div>
+                            <div>Tu 12:00 PM</div>
+                        </div> -->
+                        <div class="col-4">
+                            <label style="color: #0071c2;" for="fromDate" class="col-form-label font-weight-bold"><i
+                                    class="fas fa-calendar-alt"></i>
+                                Ngay Check-in</label>
+                            <input type="date" class="form-control changeDate" id="fromDate" value="2023-01-01">
+                            <div><small>Den </small><input id="toTime" type="time" class="border-0"></div>
+                        </div>
+                        <div class="col-4">
+                            <label style="color: #0071c2;" for="toDate" class="col-form-label font-weight-bold"><i
+                                    class="fas fa-calendar-alt"></i>
+                                Ngay Check-out</label>
+                            <input type="date" class="form-control changeDate" id="toDate" value="2023-01-03">
+                            <div><small>Den </small><input id="toTime" type="time" class="border-0"></div>
+                        </div>
+                        <div class="col-4">
+                            <label for="soNgay" class="col-form-label">So ngay luu tru</label>
+                            <div id="soNgay" style="color: #ffa726;" class="font-weight-bold">02</div>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-4">
+                            <label for="loaiPhong" class="col-form-label font-weight-bold">Chon loai phong</label>
+                            <select id="loaiPhong" class="form-control">
+                                <option selected disabled>--Chon loai phong-</option>
+                                <option value="Superior Ocean Twin">Superior Ocean Twin</option>
+                                <option value="Superior Ocean Double">Superior Ocean Double</option>
+                                <option value="Deluxe Ocean Twin">Deluxe Ocean Twin</option>
+                            </select>
+                        </div>
+                        <div class="col-4 form-inline">
+                            <label for="nguoiLon" class="col-form-label font-weight-bold">Nguoi lon</label>
+
+                            <div><button id="truNguoiLon" class="diffAdd">-</button>
+                                <input type="number" class="form-control text-center changeNumber" id="nguoiLon"
+                                    value=0>
+                                <button id="congNguoiLon" class="diffAdd">+</button>
+                            </div>
+                        </div>
+                        <div class="col-4 form-inline">
+                            <label for="treEm" class="col-form-label font-weight-bold">Tre em</label>
+
+                            <div><button id="truTreEm" class="diffAdd">-</button>
+                                <input type="number" class="form-control text-center changeNumber" id="treEm" value=0>
+                                <button id="congTreEm" class="diffAdd">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="doTuoi" class="mt-2">
+                        <!-- <select>
+                            <option selected disabled>-Do tuoi tre em-</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+
+                        </select> -->
+
+                    </div>
+                    <table class="table" id="result">
+                        <thead>
+                            <tr>
+                                <th>Loai phong</th>
+                                <th>Nguoi lon</th>
+                                <th>Tre em</th>
+                                <th>Tien phong</th>
+                            </tr>
+                        </thead>
+                        <tbody id="bodyTable">
+                            <tr>
+                                <th></th>
+                                <th id="soNguoiLon"></th>
+                                <th id="soTreEm"></th>
+                                <th id="tienPhong"></th>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div id="canhBao"></div>
+                    <button style="background-color: #ffa726;" class="btn mt-2 font-weight-bold">Dat cho</button>
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>

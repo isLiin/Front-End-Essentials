@@ -1,0 +1,9 @@
+.container{
+    max-width: 1500px;
+}
+.hidden{
+    border-left: 0;
+    border-bottom: 0;
+
+}
+

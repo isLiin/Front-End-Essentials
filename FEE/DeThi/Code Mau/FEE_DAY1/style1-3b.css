@@ -1,0 +1,58 @@
+.news,
+.right {
+  display: flex;
+  justify-content: space-between;
+}
+
+.news1 {
+  font-size: 3vmin;
+  font-weight: bold;
+  display: flex;
+  align-content: center;
+}
+.news2 {
+  font-size: 1.8vmin;
+  font-weight: 300;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+
+.left,
+.center,
+.right {
+  width: 35%;
+}
+
+.img {
+  background-image: url("1.jpg");
+  background-size: cover;
+  background-position: top;
+  width: 100%;
+  height: 90%;
+  margin-top: 8px;
+}
+
+.img2 {
+  background-image: url("2.jpg");
+  background-size: cover;
+  background-position: top;
+  width: 100%;
+  height: 300px;
+  margin-bottom: 15px;
+  padding-top: 25px;
+}
+
+.contents {
+  font-weight: bold;
+}
+
+span {
+  color: rgb(123, 124, 124);
+}
+
+.a,
+.b,
+.c {
+  border-bottom: 0.1px solid rgba(0, 0, 0, 0.1);
+}

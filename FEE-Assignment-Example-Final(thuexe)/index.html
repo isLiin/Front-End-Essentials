@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3.1 - FEE-Assignment-A301</title>
+  <link rel="stylesheet" href="../Common/fontAwesome/brands.min.css" />
+  <link rel="stylesheet" href="../Common/fontAwesome/regular.min.css" />
+  <link rel="stylesheet" href="../Common/fontAwesome/all.min.css" />
+  <link rel="stylesheet" href="../Common/boostrap/bootstrap.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div id="main">
+    <div id="myForm">
+      <!--  -->
+      <div id="form-list-cars">
+        <div class="form-list-cars-header mb-0">
+          <h4 class="mb-0 text-capitalize">[A]. Danh sách xe</h4>
+          <div class="form-group group-dropdown-menu float-right">
+            <select class="form-control dropdown-menu-model"></select>
+            <select class="form-control dropdown-menu-status"></select>
+            <div class="dropdown-menu-btn">
+              <button class="btn btn-primary" id="btn-search">Tim xe</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="form-list-cars-body">
+        <table class="table">
+          <thead>
+            <tr class="form-list-cars-header text-capitalize font-weight-bold">
+              <td>#</td>
+              <td>Hình xe</td>
+              <td>hãng xe</td>
+              <td>loại xe</td>
+              <td>giá xe/ngày</td>
+              <td>tình trạng</td>
+              <td></td>
+            </tr>
+          </thead>
+          <tbody id="form-list-cars-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+    <!--  -->
+    <div id="form-info-car">
+      <div class="form-info-car">
+        <div class="form-info-car-header mb-0">
+          <h4 class="mb-0 text-capitalize">[B]. Thống tin xe được chọn</h4>
+        </div>
+        <div class="for form-info-car-body d-flex justify-content-between">
+          <div class="form-group" style="width: 30%;">
+            <label for="form-info-car-brand" class="text-capitalize">hãng xe</label>
+            <input type="text" class="form-control" id="form-info-car-brand" disabled />
+          </div>
+          <div class="form-group" style="width: 30%;">
+            <label for="form-info-car-model" class="text-capitalize">loại xe</label>
+            <input type="text" class="form-control" id="form-info-car-model" disabled />
+          </div>
+          <div class="form-group" style="width: 30%;">
+            <label for="form-info-car-price" class="text-capitalize">giá xe/ngày</label>
+            <input type="text" class="form-control" id="form-info-car-price" disabled />
+          </div>
+        </div>
+      </div>
+      <!--  -->
+      <div class="form-info-car">
+        <div class="form-info-car-header mb-0">
+          <h4 class="mb-0 text-capitalize">[C]. Thống tin thuê xe</h4>
+        </div>
+        <div class="for form-info-car-body d-flex justify-content-between flex-wrap">
+          <div class="form-group" style="width: 48%;">
+            <label for="form-info-car-brand" class="text-capitalize">họ và tên</label>
+            <input type="text" class="form-control" id="form-info-car-fullName" />
+          </div>
+          <div class="form-group" style="width: 48%;">
+            <label for="form-info-car-model" class="text-capitalize">số điện thoại</label>
+            <input type="text" class="form-control" id="form-info-car-phone" />
+          </div>
+          <div class="form-group" style="width: 100%;">
+            <label for="form-info-car-price" class="text-capitalize">địa chỉ</label>
+            <input type="text" class="form-control" id="form-info-car-address" />
+          </div>
+          <div class="form-group" style="width: 48%;">
+            <label for="form-info-car-brand" class="text-capitalize">ngày nhận xe</label>
+            <input type="date" class="form-control" id="form-info-car-dateStart" />
+          </div>
+          <div class="form-group" style="width: 48%;">
+            <label for="form-info-car-model" class="text-capitalize">ngày trả xe</label>
+            <input type="date" class="form-control" id="form-info-car-dateEnd" />
+          </div>
+          <div class="form-group d-flex" style="width: 100%;">
+            <div class="form-group">
+              <input type="radio" name="form-info-car-rented" class="custom-checkbox" id="form-info-car-radio-1" checked/>
+              <label for="form-info-car-radio-1" class="text-capitalize">tự lái</label>
+            </div>
+            <div class="form-group ml-3">
+              <input type="radio" name="form-info-car-rented" class="custom-checkbox" id="form-info-car-radio-2" />
+              <label for="form-info-car-radio-2" class="text-capitalize">có thuê tài xế</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--  -->
+      <div class="form-submit">
+        <button id="btn-submit" class="btn btn-primary">Đặt xe</button>
+      </div>
+    </div>
+    <!--  -->
+    <div id="form-result">
+      <div class="form-info-car-header mb-0">
+        <h4 class="mb-0 text-capitalize">[D]. Thống tin Đặt xe</h4>
+      </div>
+      <table class="table">
+        <thead class="bg-dark text-white">
+          <tr>
+            <td>#</td>
+            <td>họ và tên</td>
+            <td>số điện thoại</td>
+            <td>hãng xe</td>
+            <td>loại xe</td>
+            <td>giá xe/ngày</td>
+            <td>ngày nhận xe</td>
+            <td>ngày trả xe</td>
+            <td>số ngày thuê</td>
+            <td>hình thức</td>
+            <td>tiền thuê xe</td>
+          </tr>
+        </thead>
+        <tbody id="form-list-order-cars-tbody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Thống tin xe được chọn</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div id="form-modal">
+            <div class="for form-modal-car-body d-flex justify-content-between flex-wrap">
+              <div class="form-group" style="width: 30%;">
+                <label for="form-modal-car-brand" class="text-capitalize">hãng xe</label>
+                <input type="text" class="form-control text-capitalize" id="form-modal-car-brand" disabled />
+              </div>
+              <div class="form-group" style="width: 30%;">
+                <label for="form-modal-car-model" class="text-capitalize">loại xe</label>
+                <input type="text" class="form-control text-capitalize" id="form-modal-car-model" disabled />
+              </div>
+              <div class="form-group" style="width: 30%;">
+                <label for="form-modal-car-price" class="text-capitalize">giá xe/ngày</label>
+                <input type="text" class="form-control text-capitalize" id="form-modal-car-price" disabled />
+              </div>
+              <div class="form-group" style="width: 100%;">
+                <label for="form-modal-car-price" class="text-capitalize">Phương thức thuê</label>
+                <input type="text" class="form-control text-capitalize" id="form-modal-car-rented" disabled />
+              </div>
+              <div class="form-group" style="width: 48%;">
+                <label for="form-modal-car-brand" class="text-capitalize">họ và tên</label>
+                <input type="text" class="form-control text-capitalize" id="form-modal-car-fullName" disabled />
+              </div>
+              <div class="form-group" style="width: 48%;">
+                <label for="form-modal-car-model" class="text-capitalize">số điện thoại</label>
+                <input type="text" class="form-control text-capitalize" id="form-modal-car-phone" disabled />
+              </div>
+              <div class="form-group" style="width: 100%;">
+                <label for="form-modal-car-price" class="text-capitalize">địa chỉ</label>
+                <input type="text" class="form-control text-capitalize" id="form-modal-car-address" disabled />
+              </div>
+              <div class="form-group" style="width: 48%;">
+                <label for="form-modal-car-brand" class="text-capitalize">ngày nhận xe</label>
+                <input type="date" class="form-control" id="form-modal-car-dateStart" disabled />
+              </div>
+              <div class="form-group" style="width: 48%;">
+                <label for="form-modal-car-model" class="text-capitalize">ngày trả xe</label>
+                <input type="date" class="form-control" id="form-modal-car-dateEnd" />
+              </div>
+              <div class="form-group" style="width: 100%;">
+                <label for="form-modal-car-price" class="text-capitalize">số ngày thuê</label>
+                <input type="number" class="form-control text-capitalize" id="form-modal-car-numberDay" disabled />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="../Common/fontAwesome/brands.min.js"></script>
+<script src="../Common/fontAwesome/regular.min.js"></script>
+<script src="../Common/fontAwesome/all.min.js"></script>
+<script src="../Common/jquery/popper.min.js"></script>
+<script src="../Common/jquery/jquery.min.js"></script>
+<script src="../Common/jquery/bootstrap.bundle.min.js"></script>
+<script src="./data.js"></script>
+<script src="./validation.js"></script>
+<script src="./script.js"></script>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOM-Navigator</title>
+</head>
+<body>
+    <script>
+        console.log("User Agent:"+window.navigator.userAgent);
+        console.log("User vendor:"+window.navigator.vendor);
+        console.log("User Language:"+window.navigator.language);
+        console.log("App Name: " + window.navigator.appName);
+	    console.log("App Version: " + window.navigator.appVersion);
+        console.log("App Code Name: " + window.navigator.appCodeName);
+        console.log("Platform: " + window.navigator.platform);
+        console.log("Java Enabled or Not:"+window.navigator.javaEnabled());
+        console.log("Cookies Are Enabled or Not:"+window.navigator.cookieEnabled);
+        
+        console.log("The Battery Status:");
+        navigator.getBattery().then(function(battery) {
+            battery.onchargingchange = chargingChange();
+            function chargingChange() {
+                console.log("IsCharging",  battery.charging);
+                console.log("Percentage",battery.level);        
+                console.log("charging Time", battery.chargingTime);
+                console.log("DisCharging Time", battery.dischargingTime);
+            }
+        });
+
+        console.log("The Plugins installed:" + window.navigator.plugins.length);
+        for(var i = 0; i < window.navigator.plugins.length; i++) {
+            console.log(navigator.plugins[i].name + ' - ' +navigator.plugins[i].filename + ' - ' +  navigator.plugins[i].description);
+        }
+       
+    </script>
+</body>
+</html>
+

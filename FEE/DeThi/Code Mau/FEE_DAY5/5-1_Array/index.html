@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Operations</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="/2. BootStrap4/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-5 mt-5 left">
+        <div class="menu">
+          <!-- <h1>Menu</h1> -->
+          <div class="submenu">
+            <button type="button" class="btn btn-primary" onclick="displayEvenNumbers()">Display Even Numbers</button>
+            <button type="button" class="btn btn-primary" onclick="displayOddNumbers()">Display Odd Numbers</button>
+            <button type="button" class="btn btn-primary" onclick="displayNumbersInRange()">Display Numbers in
+              Range</button>
+            <button onclick="sortArray('selection')" type="button" class="btn btn-primary">Selection Sort</button>
+            <button onclick="sortArray('insertion')" type="button" class="btn btn-primary">Insertion Sort</button>
+            <button onclick="sortArray('merge')" type="button" class="btn btn-primary">Merge Sort</button>
+            <button onclick="sortArray('quick')" type="button" class="btn btn-primary">Quick Sort</button>
+            <button onclick="sortArray('stooge')" type="button" class="btn btn-primary">Stooge Sort</button>
+          </div>
+          <button type="button" class="btn btn-danger" onclick="resetArray() ">Reset</button>
+        </div>
+
+      </div>
+      <div class="col-7 mt-5">
+        <div class="content">
+          <div class="origin">
+            Original array: = [2, 7, 5, 10, 15, 20, 8, 11]
+          </div>
+          <img class="monitor" src="img.jpg" alt="" height="500px" />
+          <div class="col-12 result">
+            <h2>Results</h2>
+            <div id="result"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Vùng nhúng link js -->
+      <script src="main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jquery</title>
+	<style type="text/css">
+		ul#taskList {
+		  margin: 0;
+		  padding: 0;
+		  width: 200px;
+		  list-style-type: square;
+		}
+
+		/* Style the list items */
+		ul#taskList li {
+		  	cursor: pointer;
+		  	padding: 0;
+		  	position: relative;
+		  	padding: 0.5rem 0.8rem;		  	
+		  	background: gray;
+		}
+		/* Style the close button */
+		.close {
+			cursor: pointer;
+		  	position: absolute;
+		  	right: 0;
+		  	top: 0;
+		  	padding: 0.5rem 0.8rem;
+		}
+		.close:hover {
+		  	background-color: #f44336;
+		  	color: white;
+		}
+	</style>
+</head>
+<body>
+
+<h2>Lorem ipsum dolor sit amet</h2>
+
+<p id="intro">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+
+<p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+
+<ul>
+	<li>List Item 1</li>
+	<li>List Item 2</li>
+	<li>List Item 3</li>
+	<li>List Item 4</li>
+	<li>List Item 5</li>
+</ul>
+
+<button id="click">Click me</button>
+
+<form>
+	<br>
+	<input type="text" name="list-name" id="list-name">
+	<button id="addTask">Add Task</button> 
+</form>
+
+<h2>To do List</h2>
+<ul id="taskList">
+	<li>Item list 1 <span class="close">x</span></li>
+	<li>Item list 2 <span class="close">x</span></li>
+</ul>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script>
+	$(document).ready(function(){
+		// click event
+		$("#intro").click(function(){
+			// Hide element
+			$(this).hide(1000);
+		});
+
+		$("#click").click(function(){
+			//toggle -- hide/show
+			$("#intro").toggle(1000);
+			// Change CSS property
+			$("#intro").css({
+				'color':'yellow',
+				'background':'gray',
+				'padding':'1rem 0.5rem'
+			});
+			// add Css class to element
+			$("ul li").addClass('list').css({
+				'color':'red',
+				'list-style-type':'square'
+			}).fadeToggle(1000);
+			// Remove class
+			$("p.text").removeClass('text').addClass('otherText').css({
+				'color':'green',
+				'font-style':'italic'
+			}).fadeIn(1000);
+		});
+
+		// Keep page when click submit
+		$('form').submit(function(evt){
+			evt.preventDefault();
+		}); // end submit
+
+		// Adding new item when click on the button Add Task
+		$("#addTask").click(function(){
+			// get value from input form
+			var list_name = $("#list-name").val();
+			if (list_name) {
+				$("#taskList").append('<li>'+list_name+'<span class="close">x</span></li>');
+			}else{
+				alert("Please give the Value to List");
+			}
+		});
+
+		// Click on a close button to hide the current list item
+		$(document).on('click','span.close',function(){
+			$(this).parent().hide(500);
+		});
+	
+		
+		
+	
+	});
+</script>
+</body>
+</html>

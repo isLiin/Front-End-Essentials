@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript change Event for Checkboxes</title>
+</head>
+
+<body>
+
+    <label for="status">Web Technology:</label>
+    <input type="checkbox" value="html" name="webTech"> HTML
+    <input type="checkbox" value="css" name="webTech"> CSS
+    <input type="checkbox" value="js" name="webTech"> JavaScript
+    <br>
+    <button id="btn-show">Show Web Technology</button>
+
+    <p id="result"></p>
+
+    <script>
+        var result = document.querySelector('#result');        
+        var btn = document.getElementById('btn-show');  
+             
+        btn.addEventListener('click', function (e) {
+            //  select the selected checkboxes 
+            let cbWeb = document.querySelectorAll('input[name="webTech"]:checked');
+            // array to store checkbox value
+            let arrCheckboxValue = [];
+            cbWeb.forEach(cbItem => {
+                // console.log(cbItem.value);
+                arrCheckboxValue.push(cbItem.value);
+            });
+            result.innerText = arrCheckboxValue.length > 0 ? `You selected ${arrCheckboxValue}` : `You haven't selected any item`
+        });
+    </script>
+</body>
+
+</html>

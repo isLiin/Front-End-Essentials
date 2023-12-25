@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        .newClass{
+            background-color: brown;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <p id="intro">Chao mung cac ban den voi jQuery</p>
+
+    <p id="result"></p>
+    <p id="result2"></p>
+
+    <button class="btn">Click Me</button>
+
+    <script>
+        $(document).ready(function(){
+            // alert("Jquery!!!");
+            var kq = $('#intro').text();
+            $("#result").append("Ket qua:"+kq);
+            $("p").before("<b>This new Text</b>");
+            $("p").css('color','red');
+            $("#result").css({
+                'color':'blue',
+                'font-size':20
+            });
+            
+            //lang nghe su kien
+            $('.btn').on('click',function(){
+                // alert("xxxyyyy");
+                $("p#result").addClass('newClass');
+            });
+
+        });
+    </script>
+</body>
+</html>

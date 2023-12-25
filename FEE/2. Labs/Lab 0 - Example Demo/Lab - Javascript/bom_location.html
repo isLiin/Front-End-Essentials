@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOM - Location</title>
+</head>
+<body>
+    <button type="button" onclick="getURL();">Get Page URL</button>
+    <button type="button" onclick="loadNewPage();">Load New Page</button>
+    <button type="button" onclick="replaceNewPage();">Replace New Page</button>
+    <button type="button" onclick="forceReload();">Reload Page</button>
+
+    <script>
+        function getURL() {
+            // Prints complete URL
+            console.log("The URL of this page: "+window.location.href);            
+            // Prints protocol like http: or https:
+            console.log("The URL protocol"+window.location.protocol);             
+            // Prints hostname with port like localhost or localhost:3000
+            console.log("The Hostname with port:"+window.location.host);                
+            // Prints hostname like localhost or www.example.com
+            console.log("The Hostname:"+window.location.hostname);            
+            // Prints port number like 3000
+            console.log("The port number:"+window.location.port);                
+            // Prints pathname like /products/search.php
+            console.log("The pathname:"+window.location.pathname);             
+            // Prints query string like ?q=ipad
+            console.log("The Query string with paramater:"+window.location.search);            
+            // Prints fragment identifier like #featured
+            console.log("The fragment identifier:"+window.location.hash);
+        }
+        function loadNewPage(){
+            window.location.assign("https://www.w3schools.com/js/js_window_location.asp");
+        }
+        function replaceNewPage(){
+            window.location.replace("https://developer.mozilla.org/en-US/docs/Web/API/Window/location");
+        }
+        function forceReload() {
+            window.location.reload(true);
+        }
+    </script>
+         
+        
+</body>
+</html>

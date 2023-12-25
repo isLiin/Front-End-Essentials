@@ -1,0 +1,47 @@
+body {
+    padding: 2em;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+form {
+    margin-bottom: 2em;
+}
+
+.table {
+    margin-bottom: 2em;
+}
+
+.btn {
+    margin-right: 1em;
+}
+
+.error {
+    color: red;
+    font-size: 0.875em;
+}
+
+label{
+    color: red;
+}
+
+.error-text {
+    color: red;
+}
+
+.column-9 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+  }

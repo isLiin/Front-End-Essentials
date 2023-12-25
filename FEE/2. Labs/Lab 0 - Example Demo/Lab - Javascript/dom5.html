@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adding new File</title>
+</head>
+<body>
+    <form enctype="multipart/form-data" action="" method="post">
+        <p>Upload file(s)</p>
+        <div id="files">
+            <p id="file-0"><input type="file" name="uploaded_file[]" /></p>
+        </div>
+        <input type="button" value="Add File" onclick="addFile();" />
+    </form>
+
+    <script>
+        /*
+            Input: ID phần tử cha (Parent ID), thẻ HTML cần thêm, ID phần tử HTML cần thêm, và nội dung cần thêm vào thẻ
+            Output: Phần tử mới được thêm vào phần tử cha với nội dung đi kèm
+        */
+        function addElement(parentId, elementTag, elementId, html) {
+            var p = document.getElementById(parentId);
+            var newElement = document.createElement(elementTag);
+            newElement.setAttribute('id', elementId);
+            newElement.innerHTML = html;
+            p.appendChild(newElement);
+        }
+
+        function removeElement(elementId) {
+            // Removes an element from the document
+            var element = document.getElementById(elementId);
+            element.parentNode.removeChild(element);
+        }
+
+        var fileId = 0; 
+        //Add File - Hàm lắng nghe sự kiện
+        function addFile() {
+            fileId++; // Tăng ID của phần tử lên một cách tự động để đảm báo tính duy nhất của ID cho phần tử mới   
+            var elementId = 'file-'+fileId;         
+            var removeLink = '<a href="" onclick="removeElement('+elementId+');">Remove File</a>';
+            var html = '<input type="file" name="uploaded_files[]"/>'+removeLink;
+            console.log(elementId);
+            addElement('files', 'p', elementId, html);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+.area{
+    margin: 0 auto;
+    width: 300px;
+    position: relative;
+}
+.area ul{
+    margin: 0;
+    list-style-type: none;
+    padding: 0;
+}
+.area ul li{
+    padding: 0.5rem 0.2rem;
+    background-color: brown;
+    border: 1px solid gray;
+}
+.area ul li a{
+    display: block;
+    text-decoration: none;
+    color: aliceblue;
+}
+#newItemButton{
+    position: absolute;
+    right: 0;
+    margin: 0.3rem 0;
+    padding: 0.5rem;
+    background-color: brown;
+    color: white;
+    border: none;
+}
+#btn-submit{
+    float: left;
+    width: 25%;
+    padding: 0.4rem 0;
+    background-color: brown;
+    color: white;
+    border: none;
+}
+#itemData{
+    float: left;
+    width: 72%;
+    margin-right: 0.3rem;
+    padding: 0.3rem 0;
+}
+#newItemForm{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    padding: 0.3rem 0rem;
+}
+li.newItem{
+    background-color: burlywood !important;
+}

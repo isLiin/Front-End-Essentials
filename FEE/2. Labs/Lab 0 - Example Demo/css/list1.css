@@ -1,0 +1,97 @@
+.wrapper{
+    margin: 0 auto;
+    width: 900px;
+    height: auto;
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: space-between;
+}
+.column-50{
+    width: 49%;
+    height: 100%;
+}
+.column-50 ol {
+    counter-reset: li; /* Thiet lap item count tang dan */
+    list-style: none; 
+    font-size: 15px;
+    padding: 0;
+    text-shadow: 0 1px 0 rgba(255,255,255,.5);
+  }
+.column-50 ol ol {
+    margin: 0 0 0 2em;
+  }
+.rounded-list a{
+    position: relative;
+    display: block;
+    padding: .4em .4em .4em 3em;
+    margin: 1em 0;
+    left: 0;
+    background: #ddd;
+    color: #444;
+    text-decoration: none;
+    border-radius: .5em;
+}
+.rounded-list a:hover{
+    color: red;
+}
+.rounded-list a:hover:before{
+    color: red;
+}
+.rounded-list a:before{
+    content: counter(li);
+    counter-increment: li;
+    position: absolute;
+    left: -0.5em;
+    top: 50%;
+    margin-top: -1.3em;
+    background: #87ceeb;
+    height: 2em;
+    width: 2em;
+    line-height: 2em;
+    border: .3em solid #fff;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 4em;
+}
+
+.rectangle-list a{
+    position: relative;
+    display: block;
+    padding: .4em .4em .4em .8em;
+    margin: .5em 0 .5em 2.5em;
+    background: #ddd;
+    color: #444;
+    text-decoration: none;
+  }
+  .rectangle-list a:hover{
+    background: #eee;
+  }
+
+  .rectangle-list a:before{
+    content: counter(li);
+    counter-increment: li;
+    position: absolute;
+    left: -2.5em;
+    top: 50%;
+    margin-top: -1em;
+    background: #fa8072;
+    height: 2em;
+    width: 2em;
+    line-height: 2em;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .rectangle-list a:after{
+    position: absolute;
+    content: '';
+    border: .5em solid transparent;
+    left: -1em;
+    top: 50%;
+    margin-top: -.5em;
+  }
+
+  .rectangle-list a:hover:after{
+    left: -.5em;
+    border-left-color: #fa8072;
+  }

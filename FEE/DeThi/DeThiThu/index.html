@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./bootstrap-5.3.0-dist/bootstrap-5.3.0-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./fontawesome-free-6.4.0-web/fontawesome-free-6.4.0-web/css/all.min.css">
+</head>
+
+<body>
+    <div class="container-fluid" style="margin-top: 100px">
+        <div class="form_top col-12">
+            <div class="table_input">
+                <h4>DANH SÁCH HÀNG HÓA</h4>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Mã Sản Phẩm</th>
+                            <th>Tên Sản Phẩm</th>
+                            <th>Số Lượng Tồn Kho</th>
+                            <th>Đơn Giá</th>
+                            <th>Mô Tả</th>
+                            <th><button id="btn-addGoods"
+                                    style="background-color: #2ba345; width: 100%; height: 35px;">Thêm Hàng Hóa</button>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody">
+
+                    </tbody>
+                    <tbody>
+                        <tr class="d-none" id="row-order">
+                            <td><input id="input-Masp" type="text" class="form-control"><span class="text-danger"
+                                    id="sp-masanpham"></span></td>
+                            <td><input id="input-Tensp" type="text" class="form-control"><span class="text-danger"
+                                    id="sp-tensanpham"></span></td>
+                            <td><input id="input-Soluong" type="text" class="form-control"><span class="text-danger"
+                                    id="sp-soluong"></span></td>
+                            <td><input id="input-Dongia" type="text" class="form-control"><span class="text-danger"
+                                    id="sp-dongia"></span></td>
+                            <td><input id="input-Mota" type="text" class="form-control"><span class="text-danger"
+                                    id="sp-mota"></span></td>
+                            <td>
+                                <div class="btn_input">
+                                    <button id="btn-add"
+                                        style="background-color: #0d79ff; width: 50%; height: 35px;">Thêm</button>
+                                    <button id="btn-delete"
+                                        style="background-color: #d9354a; width: 40%; height: 35px;">Hủy</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="form_input invisible" id="dathang">
+                <h4>THÔNG TIN ĐẶT HÀNG</h4>
+                <form>
+                    <div class="form_group">
+                        <label>Mã Sản Phẩm</label>
+                        <input id="pay-msp" type="text" class="form-control" disabled>
+                    </div>
+                    <div class="form_group">
+                        <label>Tên Sản Phẩm</label>
+                        <input id="pay-tsp" type="text" class="form-control" disabled>
+                    </div>
+                    <div class="form_group">
+                        <label>Số Lượng</label>
+                        <input id="ip-slpay" type="text" class="form-control" disabled>
+                    </div>
+                    <div class="form_group">
+                        <label></label>
+                        <button id="btn-pay" type="button" class="btn btn-primary" style="margin-right: 10px;">Mua Hàng</button>
+                        <button id="btn-cancelpay" type="button" class="btn btn-primary">Hủy</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="form_bottom">
+            <h2 style="text-align: center;">LỊCH SỬ MUA HÀNG</h2>
+            <div class="search" style="text-align: right;">
+                <input id="ip-search" type="text" style="border: 1px solid #dee2e6; height: 35px;">
+                <button id="btn-search" style="background-color: #0d79ff; width: 100px; color: white;
+                                height: 30px; 
+                                border-radius: 5px;
+                                border: none;
+                                height: 35px;
+                                ">Tìm kiếm</button>
+            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Mã Sản Phẩm</th>
+                        <th scope="col">Tên Sản Phẩm</th>
+                        <th scope="col">Số Lượng</th>
+                        <th scope="col">Thành Tiền</th>
+                    </tr>
+                </thead>
+                <tbody id="dataAll">
+
+                </tbody>
+            </table>
+            <div class="d-flex justify-content-end w-25">
+                <div>
+                    <h1>TỔNG THU: </h1>
+                </div>
+                <div>
+                    <h1 id="tongtien"></h1>
+                </div>
+    
+            </div>
+        </div>
+    </div>
+    <script src="./jquery.js"></script>
+    <script src="./cdnjs.cloudflare.com_ajax_libs_jquery-validate_1.19.5_jquery.validate.min.js"></script>
+    <script src="./main.js"></script>
+</body>
+</html>

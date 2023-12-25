@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery - Shopping</title>
+</head>
+<body>
+
+	<form>
+		<table>
+			<tr>
+				<td class="product-name">Product Item</td>
+				<td class="product-price">1234</td>
+				<td class="plus-btn">
+					<button>+</button>
+				</td>
+				<td>
+					<input type="number" name="quantity" 
+					class="quantity" value="1" style='width:3rem'>
+				</td>
+				<td class="minus-btn">
+					<button>-</button>
+				</td>
+			</tr>
+		</table>
+	</form>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){					
+			$('.plus-btn').on('click',function(evt){
+				// giu man hinh 
+				evt.preventDefault();
+				// tim phan tu input  chua giu lieu quatity - so luong
+				var quality = $(this).closest('form').find('input');
+				// lay gia tri
+				var qty = quality.val();
+				// Ep kieu ve gia tri so nguyen - default gia tri kieu text
+				var value = parseInt(qty);
+				// kiem tra va cong them 1 sau moi lan click
+				if (value >= 0) {
+					value = value + 1;
+				}else{
+					value = 0;
+				}
+				// Update value
+				quality.val(value);
+			});
+
+			$('.minus-btn').on('click',function(evt){
+				evt.preventDefault();
+				var quality = $(this).closest('form').find('input');
+				var qty = quality.val();
+				var value = parseInt(qty);
+				if (value >= 1) {
+					value = value - 1;
+				}else{
+					value = 0;
+					alert("Nothing to minus ... please press Plus button...");
+				}
+				// Update value
+				quality.val(value);
+			});
+
+		});
+	</script>
+
+</body>
+</html>

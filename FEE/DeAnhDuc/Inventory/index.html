@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="tucode.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="css/all.css">
+    <!-- Font Awesome JS -->
+    <script src="js/all.js"></script>
+    <script src="js/jquery-3.6.4.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="left col-5">
+                <form onsubmit="return false" id="info">
+                    <h2>PHIEU XUAT KHO</h2>
+                    <div class="row">
+                        <label for="maSP" class="col-3 ml-0 pl-0 form-label">Ma san pham</label>
+                        <div class="col-9 mr-0 pr-0">
+                            <input type="text" class="form-control" id="maSP">
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <label for="tenSP" class="form-label">Ten san pham</label>
+                        <input type="text" id="tenSP" class="form-control">
+                    </div>
+                    <div class="row mt-2">
+                        <label for="dmSP" class="form-label">Danh muc san pham</label>
+                        <input type="text" id="dmSP" class="form-control">
+                    </div>
+                    <div class="row mt-2">
+                        <label for="price" class="form-label">Don gia (VND)</label>
+                        <input type="number" id="price" class="form-control">
+                        <small class="invalid-feedback"></small>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-auto m-0 p-0">
+                            <label for="slXuatKho" class="visually-hidden">So luong xuat kho</label>
+                            <input type="text" id="slXuatKho" class="form-control">
+                            <small class="invalid-feedback"></small>
+                        </div>
+                        <div class="col-auto ml-0">
+                            <label for="xuatKhoDate" class="visually-hidden pl-1">Ngay xuat kho</label>
+                            <input type="date" class="form-control" id="xuatKhoDate">
+                            <!-- <div></div> -->
+                            <small class="invalid-feedback"></small>
+                        </div>
+                        <div class="col-auto">
+                            <button id="outBtn" class="btn btn-primary" style="margin-top: 40px;">Xuat kho</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="right col-7">
+                <h2>DANH SACH SAN PHAM</h2>
+                <table class="table" id="inventory">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Ma SP</th>
+                            <th>Ten SP</th>
+                            <th>SL con</th>
+                            <th>Danh muc SP</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="inventoryTable">
+
+                    </tbody>
+                    <tfoot>
+                        <th colspan="3">TONG SO LUONG CON</th>
+                        <th id="slCon"></th>
+                        <th colspan="2"></th>
+                    </tfoot>
+                </table>
+            </div>
+
+        </div>
+        <div class="row">
+            <h2>DANH SACH SAN PHAM DA XUAT KHO</h2>
+            <table class="table" id="resultTable">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Ma SP</th>
+                        <th>Ten SP</th>
+                        <th>Danh muc SP</th>
+                        <th>SL Xuat</th>
+                        <th>Don gia</th>
+                        <th>Ngay xuat</th>
+                        <th>Thanh tien</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="result">
+
+                </tbody>
+                <tfoot>
+                    <td colspan="4">TONG SO LUONG XUAT KHO</td>
+                    <td id="totalQuantity"></td>
+                    <td colspan="2">TONG TIEN SO LUONG THANH TIEN</td>
+                    <td id="total"></td>
+                    <td></td>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+    <script src="main.js"></script>
+
+</body>
+
+</html>

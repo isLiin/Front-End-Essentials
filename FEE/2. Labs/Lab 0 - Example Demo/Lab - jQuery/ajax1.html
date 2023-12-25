@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h2>jquery Ajax Example</h2>
+    <button id="loadData">Loading Data</button>
+    <br>
+    <div id="result"></div>
+    <div id="error"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#loadData").click(function(){
+                // event.preventDefault();
+                // alert("Click loading button ..");
+                // Ajax
+                $.ajax({
+                    type: 'get', //Phuong thuc gui request di: get, post, (put, delete)
+                    url:'readMe22.md', //duong dan noi nhan du lieu
+                    success: function(data,status){ //gui va nhan thanh cong
+                        // do data ra id result
+                        $("#result").html(data);
+                    },
+                    error: function(xhr, status){
+                        $("#error").html("Loi ... Loading Ajax data Fail");
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
