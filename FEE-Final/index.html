@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3.1 - FEE-Assignment-A301</title>
+  <link rel="stylesheet" href="../Common/fontAwesome/brands.min.css" />
+  <link rel="stylesheet" href="../Common/fontAwesome/regular.min.css" />
+  <link rel="stylesheet" href="../Common/fontAwesome/all.min.css" />
+  <link rel="stylesheet" href="../Common/boostrap/bootstrap.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div id="main">
+    <form id="form_info">
+      <div id="header">
+        <h4>Thong tin ca nhan</h4>
+      </div>
+      <div class="form-group row">
+        <div class="col-9 row">
+          <div class="col-8">
+            <div class="form-group">
+              <label for="formGroupExampleInput text-capitalize">họ và tên</label>
+              <input type="text" class="form-control" id="formGroupExampleInput_fullname">
+              <small class="text-danger" class="text-danger" id="msg_formGroupExampleInput_fullname"></small>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="form-group">
+              <label for="formGroupExampleInput text-capitalize">ngày sinh</label>
+              <input type="date" class="form-control" id="formGroupExampleInput_dob">
+              <small class="text-danger" id="msg_formGroupExampleInput_dob"></small>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="form-group">
+              <label for="formGroupExampleInput text-capitalize">địa chỉ lưu trú</label>
+              <input type="text" class="form-control" id="formGroupExampleInput_address">
+              <small class="text-danger" id="msg_formGroupExampleInput_address"></small>
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="form-group">
+            <label for="formGroupExampleInput text-capitalize">giới tính</label>
+            <select class="form-control" id="formGroupExampleInput_gender">
+              <option class="dropdown-item" value="all" selected>---Chọn giới tính---</option>
+              <option class="dropdown-item" value="nam">nam</option>
+              <option class="dropdown-item" value="nữ">nữ</option>
+              <option class="dropdown-item" value="khác">khác</option>
+            </select>
+            <small class="text-danger" id="msg_formGroupExampleInput_gender"></small>
+          </div>
+          <div class="form-group">
+            <label for="formGroupExampleInput text-capitalize">số <span class="text-uppercase">CCCD/CMND</span></label>
+            <input type="text" class="form-control" id="formGroupExampleInput_cccd" maxlength="12">
+            <small class="text-danger" id="msg_formGroupExampleInput_cccd"></small>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <form id="form_vacxin">
+      <div id="header">
+        <h4>Thông tin tiêm vacxin</h4>
+      </div>
+
+      <div class="form-group row">
+        <div class="col-9 row">
+          <div class="col-12">
+            <label for="formGroupExampleInput">Ban da tiem vacxin nao?</label>
+            <div class="form-check d-flex">
+              <div>
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="None"
+                  checked>
+                <label class="form-check-label" for="exampleRadios1">
+                  None
+                </label>
+              </div>
+              <div class="ml-5">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="Pfizer">
+                <label class="form-check-label" for="exampleRadios2">
+                  Pfizer
+                </label>
+              </div>
+              <div class="ml-5">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="AstraZeneca">
+                <label class="form-check-label" for="exampleRadios3">
+                  AstraZeneca
+                </label>
+              </div>
+              <div class="ml-5">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios4" value="Vero">
+                <label class="form-check-label" for="exampleRadios4">
+                  Vero Cell
+                </label>
+              </div>
+              <div class="ml-5">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios6" value="Sputnik">
+                <label class="form-check-label" for="exampleRadios6">
+                  Sputnik V
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <fieldset disabled>
+            <div class="form-group">
+              <label for="disabledTextInput">số lượng mũi tiêm</label>
+              <input type="number" id="disabledTextInputQuantity" class="form-control" placeholder="Disabled input" value="0">
+              <small class="text-danger" id="msg_disabledTextInputQuantity"></small>
+            </div>
+          </fieldset>
+        </div>
+        <div class="col-12 row" id="showComponentDate"> </div>
+        <div class="col-12">
+          <button type="button" class="btn btn-primary" id="btnSaveInfo">
+            <span>
+              <i class="fas fa-plus"></i>
+            </span>
+            Lưu thông tin
+          </button>
+        </div>
+      </div>
+    </form>
+
+    <div>
+
+      <div id="header" class=" d-flex justify-content-between">
+        <h4>Danh sách tiêm chủng vacxin</h4>
+        <div>
+          Danh sách này có
+          <span id="count" class="font-weight-bold">0</span>
+          người.
+        </div>
+      </div>
+      <table class="table">
+        <thead class="thead-dark">
+          <tr class="text-capitalize">
+            <th>STT</th>
+            <th>họ và tên</th>
+            <th>giới tính</th>
+            <th>ngày sinh</th>
+            <th class="text-uppercase">cccd/cmnd</th>
+            <th>vacxin</th>
+            <th>ngày tiêm</th>
+            <th>action</th>
+          </tr>
+        </thead>
+        <tbody id="data_table"></tbody>
+      </table>
+    </div>
+  </div>
+</body>
+<script src="../Common/fontAwesome/brands.min.js"></script>
+<script src="../Common/fontAwesome/regular.min.js"></script>
+<script src="../Common/fontAwesome/all.min.js"></script>
+<script src="../Common/jquery/popper.min.js"></script>
+<script src="../Common/jquery/jquery.min.js"></script>
+<script src="../Common/jquery/bootstrap.bundle.min.js"></script>
+<script src="./validation.js"></script>
+<script src="./script.js"></script>
+
+</html>
